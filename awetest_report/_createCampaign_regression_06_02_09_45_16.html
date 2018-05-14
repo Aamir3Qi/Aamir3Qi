@@ -1,0 +1,2898 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Awetest Service Report</title>
+    <link href="http://awetest.com/favicon.ico" rel="shortcut icon">
+
+    <script src="https://awetest.com/assets/test_base/service_api_log.js" type="text/javascript"></script>
+    <link href="https://awetest.com/assets/service_report.css" media="screen" rel="stylesheet" type="text/css">
+    <script src="https://awetest.com/assets/jquery.js"   type="text/javascript"></script>
+    <script src="https://awetest.com/assets/clipboard.min.js"   type="text/javascript"></script>
+    <script src="https://awetest.com/assets/Chart.js"   type="text/javascript"></script>
+    <script type="text/javascript" src="http://awetest.com/system/downloads/Report/awetest_part.js"></script>
+    <script type="text/javascript" src="http://awetest.com/system/downloads/Report/json2xml.js"></script>
+    <script type="text/javascript" src="http://awetest.com/system/downloads/Report/highlight.pack.js"></script>
+    <!--[if IE]>
+    <style>
+        .inner-table-wrapper {
+            position: relative;
+            left: -1px;
+        }
+    </style>
+    <![endif]-->
+
+</head>
+<body>
+<header class="header"></header>
+<div class="left-tab"></div>
+<div class="wrapper">
+    <div class="content">
+        <div class="row">
+            <div class="gl_page_inner">
+                <div class="gl_hr_header">
+                    <div class="header-element"><a href="" class="header-element-link">Test Report</a></div>
+                </div>
+                <div class="design-body">
+                    <div class="information-block">
+                        <div class="inf-bottom-part">
+                            <div class="main-info-wrapper">
+                                <div>
+                                    <span class="sprite sprite-i-multi-storey-building-white"></span>Total Time: <span id="total-time"></span> Seconds
+                                </div>
+                                <div>
+                                    <span class="sprite sprite-i-multi-storey-building-white"></span># of Scenarios: <span id="total-scenario-number"></span>
+                                </div>
+                                <div>
+                                    <span class="sprite sprite-i-multi-storey-building-white"></span>
+                                </div>
+                                <div><span class="sprite sprite-i-multi-storey-building-white"></span># Passed: <span id="passed-scenario-number"></span></div>
+                                <div>
+                                    <span class="sprite sprite-i-multi-storey-building-white"></span>
+                                </div>
+                                <div><span class="sprite sprite-i-multi-storey-building-white"></span>Pass %: <span id="pass-percentage"></span></div>
+                            </div>
+                            <div class="chart-wrapper">
+                                <canvas id="chart1" height="120px" width="120px"></canvas>
+                                <div class="chartjs-tooltip" id="chart-tooltip"></div>
+                                <div id="spfg_legend"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="information-table">
+                        <div class="table-control-row">
+                            <p class="active left-control expand-button closed" data-target="all">EXPAND ALL</p>
+                            <p class="right-control toggle-errors active">ALL</p>
+                            <p class="right-control toggle-errors">ERRORS</p>
+                            <p class="right-control">SHOW</p>
+                        </div>
+
+                        <table class="inf-table">
+                            <thead class="table-head">
+                                <tr>
+                                    <th width="39">#</th>
+                                    <th width="150">ID</th>
+                                    <th width="121">URL</th>
+                                    <th width="160">Scenario</th>
+                                    <th width="96">Date/Time</th>
+                                    <th width="67">Method</th>
+                                    <th width="90">Duration</th>
+                                    <th width="86">Exp Code</th>
+                                    <th width="86">Actual Code</th>
+                                    <th width="88">Result</th>
+                                </tr>
+                            </thead>
+
+                            <tbody><tr class='pass scenario' id='scenario1'>
+                                    <td width='39'>
+                                        <div class='jump-wrapper'>
+                                            <div data-destination='#scenario0'>↑</div>
+                                            <div data-destination='#scenario2'>↓</div>
+                                        </div>
+                                        <span class='expand-button closed' data-target='.expand-1'></span>1
+                                    </td>
+                                    <td width='80'>s_001</td>
+                                    <td width='121'><a href='https://young-citadel-48504.herokuapp.com/campaigns.json' class='table-link'>https://young-citadel-48504.herokuapp.com/campaigns.json</a></td>
+                                    <td width='235'>64 char max</td>
+                                    <td width='96'>2018-02-06 09:45:11 +0530</td>
+                                    <td width='67'>POST</td>
+                                    <td width='90' class='single-scenario-time'>17805</td>
+                                    <td width='86'>201</td>
+                                    <td width='86'>201</td><td width='90' class='result-pass result-count pass-count'><span class='sprite sprite-i-passed-green'></span>Pass</td><tr class='expand-row'>
+      <td class='no-padding no-border' colspan='10'>
+          <div class='inner-table-wrapper expand-1 hide'><span class='tab-toggle summary active' data-target='summary'>Summary</span>
+                    <span class='tab-toggle log' data-target='log'>Log</span>
+                    <span class='tab-toggle xml' data-target='xml'>Xml</span><table class='inf-table tab-content' id='summary-1'>
+                  <tr>
+                      <th>Request</th>
+                      <th>Expected Response</th>
+                      <th>Actual Response</th>
+                  </tr>
+                  <tr>
+                    <td>
+                        <div class='tooltip copy-to-clipboard'>
+                            <div class='sprite sprite-i-list-grey ripplelink'></div>
+                            <div class='tooltip-inner'>
+                                <div class='tooltip-ir-inner'>
+                                    Copy to clipboard
+                                </div>
+                            </div>
+                        </div>
+                        <div class='json-wrapper'>
+                            Headers<br>
+                            <pre>{
+    "Content-Type":"application/json",
+    "authorization":"Basic YWRtaW46cGFzc3dvcmQ="
+}</pre>
+                        </div>
+                    </td>
+                    <td>
+                        <div class='tooltip copy-to-clipboard'>
+                            <div class='sprite sprite-i-list-grey ripplelink'></div>
+                            <div class='tooltip-inner'>
+                                <div class='tooltip-ir-inner'>
+                                    Copy to clipboard
+                                </div>
+                            </div>
+                        </div>
+                        <div class='json-wrapper'>
+                            Headers<br>
+                            <pre>{
+    "date":"STRING",
+    "server":"Cowboy",
+    "connection":"close"
+}</pre>
+                        </div>
+                    </td>
+                    <td>
+                        <div class='tooltip copy-to-clipboard'>
+                            <div class='sprite sprite-i-list-grey ripplelink'></div>
+                            <div class='tooltip-inner'>
+                                <div class='tooltip-ir-inner'>
+                                    Copy to clipboard
+                                </div>
+                            </div>
+                        </div>
+                        <div class='json-wrapper'>
+                            Headers<br>
+                            <pre>{
+    "server":"Cowboy",
+    "connection":"close",
+    "date":"Tue, 06 Feb 2018 04:15:01 GMT",
+    "status":"201 Created",
+    "x-frame-options":"SAMEORIGIN",
+    "x-xss-protection":"1; mode=block",
+    "x-content-type-options":"nosniff",
+    "location":"https://young-citadel-48504.herokuapp.com/campaigns/260",
+    "content-type":"application/json; charset=utf-8",
+    "etag":"W/\"d2027e0700d04e4db6517d79d5596b45\"",
+    "cache-control":"max-age=0, private, must-revalidate",
+    "set-cookie":"_fat_free_crm_session=NVZ3NE5kdnRDY29GN0FzOVg0K2NHanF5NkJWV0VyL0dYMEFXN3p5TjBxb1BUb1ZvV3BId3o1Tlh0cUVGbGNBbVh0d1I0Q2FhWXpzY1pxR2kweEh0L2ROR09iTnptWW54RnQ5aVhGRGxnSktoYjJHWHQxeEFMb21YNjhkUG5odUdkRWZUczJzbU5HQnhtUHJMU2JpQjdLUzJJbjVVUnBGUlYycE40NlFYKzlVNTF4NGR6UUpTb3BCZ0dzM1dsUGREbEplYk4rWUlnY1JBL1JWQ0dhRjRWRTNtNHRMakFuRWphL1RnOGFRKzI4N1EwVTFCMXFRZWMzYUhiMmhlL0g3Y3JVOWJyOXNOR1FnRmc0NzBhTEtKMkZqWmlkQ3Y0RlI3NnFlYStsMEV3YzJjTTVxV0xZTmJETkR1bTZyNmNYK1hJSlR6U2RkM3VDcFIxTmVLbmpnb1ZNZ09YOXVtUWNyZXVDMHdBZWRoNVh6NG9SK3lSVWFJRHBLd0pHMXhoWERuLS1tU2taRWF6K1FYam00TzVzTjJ3UHNnPT0%3D--8e3f27d69ff9709f6c69ec4118864a2506ae024a; path=/; HttpOnly",
+    "x-request-id":"d79d2515-1d32-4080-b48e-527414610322",
+    "x-runtime":"0.096609",
+    "via":"1.1 vegur"
+}</pre>
+                        </div>
+                    </td>
+                  </tr>
+                  <tr>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <pre>{
+    "campaign":{
+        "user_id":1,
+        "assigned_to":1,
+        "name":"zeStWOycYTRSPqykkzDgykNnjLfUaphSOrjwYOVrOrdwrBARMegNkSayYfeVwfwr",
+        "access":"Public",
+        "status":null,
+        "budget":null,
+        "target_leads":null,
+        "target_conversion":null,
+        "target_revenue":null,
+        "leads_count":null,
+        "opportunities_count":null,
+        "revenue":null,
+        "starts_on":"2018-01-12",
+        "ends_on":null,
+        "objectives":null,
+        "deleted_at":null,
+        "created_at":"2018-01-12T08:00:00.000Z",
+        "updated_at":"2018-01-12T16:57:27.780Z",
+        "background_info":null,
+        "subscribed_users":[
+
+        ]
+    }
+}</pre>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <pre>{
+    "campaign":{
+        "id":"INTEGER",
+        "user_id":1,
+        "assigned_to":1,
+        "name":"zeStWOycYTRSPqykkzDgykNnjLfUaphSOrjwYOVrOrdwrBARMegNkSayYfeVwfwr",
+        "access":"Public",
+        "status":null,
+        "budget":null,
+        "target_leads":null,
+        "target_conversion":null,
+        "target_revenue":null,
+        "leads_count":null,
+        "opportunities_count":null,
+        "revenue":null,
+        "starts_on":"2018-01-12",
+        "ends_on":null,
+        "objectives":null,
+        "deleted_at":null,
+        "created_at":"2018-01-12T08:00:00.000Z",
+        "updated_at":"2018-01-12T16:57:27.780Z",
+        "background_info":null,
+        "subscribed_users":[
+
+        ]
+    }
+}</pre>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <pre>{
+    "campaign":{
+        "id":260,
+        "user_id":1,
+        "assigned_to":1,
+        "name":"zeStWOycYTRSPqykkzDgykNnjLfUaphSOrjwYOVrOrdwrBARMegNkSayYfeVwfwr",
+        "access":"Public",
+        "status":null,
+        "budget":null,
+        "target_leads":null,
+        "target_conversion":null,
+        "target_revenue":null,
+        "leads_count":null,
+        "opportunities_count":null,
+        "revenue":null,
+        "starts_on":"2018-01-12",
+        "ends_on":null,
+        "objectives":null,
+        "deleted_at":null,
+        "created_at":"2018-01-12T08:00:00.000Z",
+        "updated_at":"2018-01-12T16:57:27.780Z",
+        "background_info":null,
+        "subscribed_users":[
+
+        ]
+    }
+}</pre>
+                          </div>
+                      </td>
+                  </tr>
+                </table><table class='inf-table tab-content hide' id='log-1'>
+                      <tr><td><div style='max-height:500px; overflow: auto;
+  margin-bottom: 10px;'><pre>Execution Time: 17848 ms
+********* Test Started ***********
+* Executing function call **
+rand_string_alpha(64,&quot;NAME&quot;)
+zeStWOycYTRSPqykkzDgykNnjLfUaphSOrjwYOVrOrdwrBARMegNkSayYfeVwfwr
+*********end**********
+*********************************
+Request: POST
+URL: https://young-citadel-48504.herokuapp.com/campaigns.json
+************Header***************
+Content-Type:application/json
+authorization:Basic YWRtaW46cGFzc3dvcmQ=
+************Request**************
+{
+    &quot;campaign&quot;:{
+        &quot;user_id&quot;:1,
+        &quot;assigned_to&quot;:1,
+        &quot;name&quot;:&quot;zeStWOycYTRSPqykkzDgykNnjLfUaphSOrjwYOVrOrdwrBARMegNkSayYfeVwfwr&quot;,
+        &quot;access&quot;:&quot;Public&quot;,
+        &quot;status&quot;:null,
+        &quot;budget&quot;:null,
+        &quot;target_leads&quot;:null,
+        &quot;target_conversion&quot;:null,
+        &quot;target_revenue&quot;:null,
+        &quot;leads_count&quot;:null,
+        &quot;opportunities_count&quot;:null,
+        &quot;revenue&quot;:null,
+        &quot;starts_on&quot;:&quot;2018-01-12&quot;,
+        &quot;ends_on&quot;:null,
+        &quot;objectives&quot;:null,
+        &quot;deleted_at&quot;:null,
+        &quot;created_at&quot;:&quot;2018-01-12T08:00:00.000Z&quot;,
+        &quot;updated_at&quot;:&quot;2018-01-12T16:57:27.780Z&quot;,
+        &quot;background_info&quot;:null,
+        &quot;subscribed_users&quot;:[
+
+        ]
+    }
+}
+*********************************
+************Response*************
+Status: 201
+Duration: 17805 ms
+{
+    &quot;campaign&quot;:{
+        &quot;id&quot;:260,
+        &quot;user_id&quot;:1,
+        &quot;assigned_to&quot;:1,
+        &quot;name&quot;:&quot;zeStWOycYTRSPqykkzDgykNnjLfUaphSOrjwYOVrOrdwrBARMegNkSayYfeVwfwr&quot;,
+        &quot;access&quot;:&quot;Public&quot;,
+        &quot;status&quot;:null,
+        &quot;budget&quot;:null,
+        &quot;target_leads&quot;:null,
+        &quot;target_conversion&quot;:null,
+        &quot;target_revenue&quot;:null,
+        &quot;leads_count&quot;:null,
+        &quot;opportunities_count&quot;:null,
+        &quot;revenue&quot;:null,
+        &quot;starts_on&quot;:&quot;2018-01-12&quot;,
+        &quot;ends_on&quot;:null,
+        &quot;objectives&quot;:null,
+        &quot;deleted_at&quot;:null,
+        &quot;created_at&quot;:&quot;2018-01-12T08:00:00.000Z&quot;,
+        &quot;updated_at&quot;:&quot;2018-01-12T16:57:27.780Z&quot;,
+        &quot;background_info&quot;:null,
+        &quot;subscribed_users&quot;:[
+
+        ]
+    }
+}
+******Response Headers***********
+{
+    &quot;server&quot;:&quot;Cowboy&quot;,
+    &quot;connection&quot;:&quot;close&quot;,
+    &quot;date&quot;:&quot;Tue, 06 Feb 2018 04:15:01 GMT&quot;,
+    &quot;status&quot;:&quot;201 Created&quot;,
+    &quot;x-frame-options&quot;:&quot;SAMEORIGIN&quot;,
+    &quot;x-xss-protection&quot;:&quot;1; mode=block&quot;,
+    &quot;x-content-type-options&quot;:&quot;nosniff&quot;,
+    &quot;location&quot;:&quot;https://young-citadel-48504.herokuapp.com/campaigns/260&quot;,
+    &quot;content-type&quot;:&quot;application/json; charset=utf-8&quot;,
+    &quot;etag&quot;:&quot;W/\&quot;d2027e0700d04e4db6517d79d5596b45\&quot;&quot;,
+    &quot;cache-control&quot;:&quot;max-age=0, private, must-revalidate&quot;,
+    &quot;set-cookie&quot;:&quot;_fat_free_crm_session=NVZ3NE5kdnRDY29GN0FzOVg0K2NHanF5NkJWV0VyL0dYMEFXN3p5TjBxb1BUb1ZvV3BId3o1Tlh0cUVGbGNBbVh0d1I0Q2FhWXpzY1pxR2kweEh0L2ROR09iTnptWW54RnQ5aVhGRGxnSktoYjJHWHQxeEFMb21YNjhkUG5odUdkRWZUczJzbU5HQnhtUHJMU2JpQjdLUzJJbjVVUnBGUlYycE40NlFYKzlVNTF4NGR6UUpTb3BCZ0dzM1dsUGREbEplYk4rWUlnY1JBL1JWQ0dhRjRWRTNtNHRMakFuRWphL1RnOGFRKzI4N1EwVTFCMXFRZWMzYUhiMmhlL0g3Y3JVOWJyOXNOR1FnRmc0NzBhTEtKMkZqWmlkQ3Y0RlI3NnFlYStsMEV3YzJjTTVxV0xZTmJETkR1bTZyNmNYK1hJSlR6U2RkM3VDcFIxTmVLbmpnb1ZNZ09YOXVtUWNyZXVDMHdBZWRoNVh6NG9SK3lSVWFJRHBLd0pHMXhoWERuLS1tU2taRWF6K1FYam00TzVzTjJ3UHNnPT0%3D--8e3f27d69ff9709f6c69ec4118864a2506ae024a; path=/; HttpOnly&quot;,
+    &quot;x-request-id&quot;:&quot;d79d2515-1d32-4080-b48e-527414610322&quot;,
+    &quot;x-runtime&quot;:&quot;0.096609&quot;,
+    &quot;via&quot;:&quot;1.1 vegur&quot;
+}
+*********************************
+***Current Params****
+{
+    &quot;NAME&quot;:&quot;zeStWOycYTRSPqykkzDgykNnjLfUaphSOrjwYOVrOrdwrBARMegNkSayYfeVwfwr&quot;,
+    &quot;id&quot;:260,
+    &quot;date&quot;:&quot;Tue, 06 Feb 2018 04:15:01 GMT&quot;
+}
+***test items**
+
+*********************
+************Expected Response: *****************
+{
+    &quot;campaign&quot;:{
+        &quot;id&quot;:&quot;INTEGER&quot;,
+        &quot;user_id&quot;:1,
+        &quot;assigned_to&quot;:1,
+        &quot;name&quot;:&quot;zeStWOycYTRSPqykkzDgykNnjLfUaphSOrjwYOVrOrdwrBARMegNkSayYfeVwfwr&quot;,
+        &quot;access&quot;:&quot;Public&quot;,
+        &quot;status&quot;:null,
+        &quot;budget&quot;:null,
+        &quot;target_leads&quot;:null,
+        &quot;target_conversion&quot;:null,
+        &quot;target_revenue&quot;:null,
+        &quot;leads_count&quot;:null,
+        &quot;opportunities_count&quot;:null,
+        &quot;revenue&quot;:null,
+        &quot;starts_on&quot;:&quot;2018-01-12&quot;,
+        &quot;ends_on&quot;:null,
+        &quot;objectives&quot;:null,
+        &quot;deleted_at&quot;:null,
+        &quot;created_at&quot;:&quot;2018-01-12T08:00:00.000Z&quot;,
+        &quot;updated_at&quot;:&quot;2018-01-12T16:57:27.780Z&quot;,
+        &quot;background_info&quot;:null,
+        &quot;subscribed_users&quot;:[
+
+        ]
+    }
+}
+*****************************
+******* Expected Code: 201
+******* Expected Headers:**********
+{
+    &quot;date&quot;:&quot;STRING&quot;,
+    &quot;server&quot;:&quot;Cowboy&quot;,
+    &quot;connection&quot;:&quot;close&quot;
+}
+**************************
+* Executing function call **
+call_api_by_id(true,&quot;deleteCampaign&quot;)
+after steps error:
+undefined method `log&#39; for nil:NilClass
+-----
+*********** Test Pass.***********</pre></div></td></tr>
+                    </table>
+              <table class='inf-table tab-content hide' id='xml-1'>
+                  <tr>
+                      <th>Request</th>
+                      <th>Expected Response</th>
+                      <th>Actual Response</th>
+                  </tr><tr>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Headers<br>
+                              <div class='json-to-xml'>{
+    "Content-Type":"application/json",
+    "authorization":"Basic YWRtaW46cGFzc3dvcmQ="
+}</div>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Headers<br>
+                              <div class='json-to-xml'>{
+    "date":"STRING",
+    "server":"Cowboy",
+    "connection":"close"
+}</div>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Headers<br>
+                              <div class='json-to-xml'>{
+    "server":"Cowboy",
+    "connection":"close",
+    "date":"Tue, 06 Feb 2018 04:15:01 GMT",
+    "status":"201 Created",
+    "x-frame-options":"SAMEORIGIN",
+    "x-xss-protection":"1; mode=block",
+    "x-content-type-options":"nosniff",
+    "location":"https://young-citadel-48504.herokuapp.com/campaigns/260",
+    "content-type":"application/json; charset=utf-8",
+    "etag":"W/\"d2027e0700d04e4db6517d79d5596b45\"",
+    "cache-control":"max-age=0, private, must-revalidate",
+    "set-cookie":"_fat_free_crm_session=NVZ3NE5kdnRDY29GN0FzOVg0K2NHanF5NkJWV0VyL0dYMEFXN3p5TjBxb1BUb1ZvV3BId3o1Tlh0cUVGbGNBbVh0d1I0Q2FhWXpzY1pxR2kweEh0L2ROR09iTnptWW54RnQ5aVhGRGxnSktoYjJHWHQxeEFMb21YNjhkUG5odUdkRWZUczJzbU5HQnhtUHJMU2JpQjdLUzJJbjVVUnBGUlYycE40NlFYKzlVNTF4NGR6UUpTb3BCZ0dzM1dsUGREbEplYk4rWUlnY1JBL1JWQ0dhRjRWRTNtNHRMakFuRWphL1RnOGFRKzI4N1EwVTFCMXFRZWMzYUhiMmhlL0g3Y3JVOWJyOXNOR1FnRmc0NzBhTEtKMkZqWmlkQ3Y0RlI3NnFlYStsMEV3YzJjTTVxV0xZTmJETkR1bTZyNmNYK1hJSlR6U2RkM3VDcFIxTmVLbmpnb1ZNZ09YOXVtUWNyZXVDMHdBZWRoNVh6NG9SK3lSVWFJRHBLd0pHMXhoWERuLS1tU2taRWF6K1FYam00TzVzTjJ3UHNnPT0%3D--8e3f27d69ff9709f6c69ec4118864a2506ae024a; path=/; HttpOnly",
+    "x-request-id":"d79d2515-1d32-4080-b48e-527414610322",
+    "x-runtime":"0.096609",
+    "via":"1.1 vegur"
+}</div>
+                          </div>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <div class='json-to-xml'>{
+    "campaign":{
+        "user_id":1,
+        "assigned_to":1,
+        "name":"zeStWOycYTRSPqykkzDgykNnjLfUaphSOrjwYOVrOrdwrBARMegNkSayYfeVwfwr",
+        "access":"Public",
+        "status":null,
+        "budget":null,
+        "target_leads":null,
+        "target_conversion":null,
+        "target_revenue":null,
+        "leads_count":null,
+        "opportunities_count":null,
+        "revenue":null,
+        "starts_on":"2018-01-12",
+        "ends_on":null,
+        "objectives":null,
+        "deleted_at":null,
+        "created_at":"2018-01-12T08:00:00.000Z",
+        "updated_at":"2018-01-12T16:57:27.780Z",
+        "background_info":null,
+        "subscribed_users":[
+
+        ]
+    }
+}</div>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <div class='json-to-xml'>{
+    "campaign":{
+        "id":"INTEGER",
+        "user_id":1,
+        "assigned_to":1,
+        "name":"zeStWOycYTRSPqykkzDgykNnjLfUaphSOrjwYOVrOrdwrBARMegNkSayYfeVwfwr",
+        "access":"Public",
+        "status":null,
+        "budget":null,
+        "target_leads":null,
+        "target_conversion":null,
+        "target_revenue":null,
+        "leads_count":null,
+        "opportunities_count":null,
+        "revenue":null,
+        "starts_on":"2018-01-12",
+        "ends_on":null,
+        "objectives":null,
+        "deleted_at":null,
+        "created_at":"2018-01-12T08:00:00.000Z",
+        "updated_at":"2018-01-12T16:57:27.780Z",
+        "background_info":null,
+        "subscribed_users":[
+
+        ]
+    }
+}</div>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <div class='json-to-xml'>{
+    "campaign":{
+        "id":260,
+        "user_id":1,
+        "assigned_to":1,
+        "name":"zeStWOycYTRSPqykkzDgykNnjLfUaphSOrjwYOVrOrdwrBARMegNkSayYfeVwfwr",
+        "access":"Public",
+        "status":null,
+        "budget":null,
+        "target_leads":null,
+        "target_conversion":null,
+        "target_revenue":null,
+        "leads_count":null,
+        "opportunities_count":null,
+        "revenue":null,
+        "starts_on":"2018-01-12",
+        "ends_on":null,
+        "objectives":null,
+        "deleted_at":null,
+        "created_at":"2018-01-12T08:00:00.000Z",
+        "updated_at":"2018-01-12T16:57:27.780Z",
+        "background_info":null,
+        "subscribed_users":[
+
+        ]
+    }
+}</div>
+                          </div>
+                      </td>
+                  </tr>
+              </table>
+          </div>
+      </td>
+  </tr><tr class='fail scenario' id='scenario2'>
+                                    <td width='39'>
+                                        <div class='jump-wrapper'>
+                                            <div data-destination='#scenario1'>↑</div>
+                                            <div data-destination='#scenario3'>↓</div>
+                                        </div>
+                                        <span class='expand-button closed' data-target='.expand-2'></span>2
+                                    </td>
+                                    <td width='80'>s_002</td>
+                                    <td width='121'><a href='campaign' class='table-link'>campaign</a></td>
+                                    <td width='235'>invalid, 65 char more than max</td>
+                                    <td width='96'>2018-02-06 09:45:11 +0530</td>
+                                    <td width='67'>POST</td>
+                                    <td width='90' class='single-scenario-time'>0</td>
+                                    <td width='86'>500</td>
+                                    <td width='86'></td><td width='90' class='result-fail result-count fail-count'><span class='sprite sprite-i-failed-red'></span>Fail</td><tr class='expand-row'>
+      <td class='no-padding no-border' colspan='10'>
+          <div class='inner-table-wrapper expand-2 hide'><span class='tab-toggle summary active' data-target='summary'>Summary</span>
+                    <span class='tab-toggle log' data-target='log'>Log</span>
+                    <span class='tab-toggle xml' data-target='xml'>Xml</span><table class='inf-table tab-content' id='summary-2'>
+                  <tr>
+                      <th>Request</th>
+                      <th>Expected Response</th>
+                      <th>Actual Response</th>
+                  </tr>
+                  <tr>
+                    <td>
+                        <div class='tooltip copy-to-clipboard'>
+                            <div class='sprite sprite-i-list-grey ripplelink'></div>
+                            <div class='tooltip-inner'>
+                                <div class='tooltip-ir-inner'>
+                                    Copy to clipboard
+                                </div>
+                            </div>
+                        </div>
+                        <div class='json-wrapper'>
+                            Headers<br>
+                            <pre>{
+    "Content-Type":"application/json",
+    "authorization":"AUTHORIZATION"
+}</pre>
+                        </div>
+                    </td>
+                    <td>
+                        <div class='tooltip copy-to-clipboard'>
+                            <div class='sprite sprite-i-list-grey ripplelink'></div>
+                            <div class='tooltip-inner'>
+                                <div class='tooltip-ir-inner'>
+                                    Copy to clipboard
+                                </div>
+                            </div>
+                        </div>
+                        <div class='json-wrapper'>
+                            Headers<br>
+                            <pre>{
+    "date":"STRING",
+    "server":"Cowboy",
+    "connection":"keep-alive"
+}</pre>
+                        </div>
+                    </td>
+                    <td>
+                        <div class='tooltip copy-to-clipboard'>
+                            <div class='sprite sprite-i-list-grey ripplelink'></div>
+                            <div class='tooltip-inner'>
+                                <div class='tooltip-ir-inner'>
+                                    Copy to clipboard
+                                </div>
+                            </div>
+                        </div>
+                        <div class='json-wrapper'>
+                            Headers<br>
+                            <pre></pre>
+                        </div>
+                    </td>
+                  </tr>
+                  <tr>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <pre>{
+    "campaign":{
+        "user_id":1,
+        "assigned_to":1,
+        "name":"NAME",
+        "access":"Public",
+        "status":null,
+        "budget":null,
+        "target_leads":null,
+        "target_conversion":null,
+        "target_revenue":null,
+        "leads_count":null,
+        "opportunities_count":null,
+        "revenue":null,
+        "starts_on":"2018-01-12",
+        "ends_on":null,
+        "objectives":null,
+        "deleted_at":null,
+        "created_at":"2018-01-12T08:00:00.000Z",
+        "updated_at":"2018-01-12T16:57:27.780Z",
+        "background_info":null,
+        "subscribed_users":[
+
+        ]
+    }
+}</pre>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <pre>{
+    "status":"500",
+    "error":"Internal Server Error"
+}</pre>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <pre></pre>
+                          </div>
+                      </td>
+                  </tr>
+                </table><table class='inf-table tab-content hide' id='log-2'>
+                      <tr><td><div style='max-height:500px; overflow: auto;
+  margin-bottom: 10px;'><pre>
+********* ERROR ********* 
+ undefined local variable or method `zeStWOycYTRSPqykkzDgykNnjLfUaphSOrjwYOVrOrdwrBARMegNkSayYfeVwfwr&#39; for #&lt;ServiceTest:0x72c31c8&gt;
+
+ ******************
+
+</pre></div></td></tr>
+                    </table>
+              <table class='inf-table tab-content hide' id='xml-2'>
+                  <tr>
+                      <th>Request</th>
+                      <th>Expected Response</th>
+                      <th>Actual Response</th>
+                  </tr><tr>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Headers<br>
+                              <div class='json-to-xml'>{
+    "Content-Type":"application/json",
+    "authorization":"AUTHORIZATION"
+}</div>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Headers<br>
+                              <div class='json-to-xml'>{
+    "date":"STRING",
+    "server":"Cowboy",
+    "connection":"keep-alive"
+}</div>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Headers<br>
+                              <div class='json-to-xml'></div>
+                          </div>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <div class='json-to-xml'>{
+    "campaign":{
+        "user_id":1,
+        "assigned_to":1,
+        "name":"NAME",
+        "access":"Public",
+        "status":null,
+        "budget":null,
+        "target_leads":null,
+        "target_conversion":null,
+        "target_revenue":null,
+        "leads_count":null,
+        "opportunities_count":null,
+        "revenue":null,
+        "starts_on":"2018-01-12",
+        "ends_on":null,
+        "objectives":null,
+        "deleted_at":null,
+        "created_at":"2018-01-12T08:00:00.000Z",
+        "updated_at":"2018-01-12T16:57:27.780Z",
+        "background_info":null,
+        "subscribed_users":[
+
+        ]
+    }
+}</div>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <div class='json-to-xml'>{
+    "status":"500",
+    "error":"Internal Server Error"
+}</div>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <div class='json-to-xml'></div>
+                          </div>
+                      </td>
+                  </tr>
+              </table>
+          </div>
+      </td>
+  </tr><tr class='fail scenario' id='scenario3'>
+                                    <td width='39'>
+                                        <div class='jump-wrapper'>
+                                            <div data-destination='#scenario2'>↑</div>
+                                            <div data-destination='#scenario4'>↓</div>
+                                        </div>
+                                        <span class='expand-button closed' data-target='.expand-3'></span>3
+                                    </td>
+                                    <td width='80'>s_003</td>
+                                    <td width='121'><a href='https://young-citadel-48504.herokuapp.com/campaigns.json' class='table-link'>https://young-citadel-48504.herokuapp.com/campaigns.json</a></td>
+                                    <td width='235'>with space</td>
+                                    <td width='96'>2018-02-06 09:45:12 +0530</td>
+                                    <td width='67'>POST</td>
+                                    <td width='90' class='single-scenario-time'>1323</td>
+                                    <td width='86'>201</td>
+                                    <td width='86'>422</td><td width='90' class='result-fail result-count fail-count'><span class='sprite sprite-i-failed-red'></span>Fail</td><tr class='expand-row'>
+      <td class='no-padding no-border' colspan='10'>
+          <div class='inner-table-wrapper expand-3 hide'><span class='tab-toggle summary active' data-target='summary'>Summary</span>
+                    <span class='tab-toggle log' data-target='log'>Log</span>
+                    <span class='tab-toggle xml' data-target='xml'>Xml</span><table class='inf-table tab-content' id='summary-3'>
+                  <tr>
+                      <th>Request</th>
+                      <th>Expected Response</th>
+                      <th>Actual Response</th>
+                  </tr>
+                  <tr>
+                    <td>
+                        <div class='tooltip copy-to-clipboard'>
+                            <div class='sprite sprite-i-list-grey ripplelink'></div>
+                            <div class='tooltip-inner'>
+                                <div class='tooltip-ir-inner'>
+                                    Copy to clipboard
+                                </div>
+                            </div>
+                        </div>
+                        <div class='json-wrapper'>
+                            Headers<br>
+                            <pre>{
+    "Content-Type":"application/json",
+    "authorization":"Basic YWRtaW46cGFzc3dvcmQ="
+}</pre>
+                        </div>
+                    </td>
+                    <td>
+                        <div class='tooltip copy-to-clipboard'>
+                            <div class='sprite sprite-i-list-grey ripplelink'></div>
+                            <div class='tooltip-inner'>
+                                <div class='tooltip-ir-inner'>
+                                    Copy to clipboard
+                                </div>
+                            </div>
+                        </div>
+                        <div class='json-wrapper'>
+                            Headers<br>
+                            <pre>{
+    "date":"STRING",
+    "server":"Cowboy",
+    "connection":"close"
+}</pre>
+                        </div>
+                    </td>
+                    <td>
+                        <div class='tooltip copy-to-clipboard'>
+                            <div class='sprite sprite-i-list-grey ripplelink'></div>
+                            <div class='tooltip-inner'>
+                                <div class='tooltip-ir-inner'>
+                                    Copy to clipboard
+                                </div>
+                            </div>
+                        </div>
+                        <div class='json-wrapper'>
+                            Headers<br>
+                            <pre>{
+    "server":"Cowboy",
+    "connection":"close",
+    "date":"Tue, 06 Feb 2018 04:15:02 GMT",
+    "status":"422 Unprocessable Entity",
+    "x-frame-options":"SAMEORIGIN",
+    "x-xss-protection":"1; mode=block",
+    "x-content-type-options":"nosniff",
+    "content-type":"application/json; charset=utf-8",
+    "cache-control":"no-cache",
+    "set-cookie":"_fat_free_crm_session=aWhIRHB1b1BPWHRlM0UzMDJ5N2NJd1RXeEtVaVRCek1sNHFXT0dVREZKaDJsTGdueGdtUi9VZEpsSGpQU3p6T3Z3aENVSGs2Wnh6bFl3MlZRdTdLT1hGQU11Z2ZqNStud0xIVDNrNnF6U2NDOVZhSmYzSzNVY0xvdDJidXk2UnhXK0toNlN4SUFEQUxkOEtTUkN3dFU1MkpRWXI4eTA3dnpiNEZZdGx4VGNhY1Eyam1BSUVRNVpBSVB6dGR6em8wWHlNUXUxcmtwbWNiRThaREJUV2sxeTZIcHJyV3dRekJlZEVNYnZyTzNOdmFJUU5TUlZwSDZpWDFncWluTHlsdWdHRHk0WkpxYjBCd21XaFpoK3lGRlBGcXJIeE1KYXBJTThHUDk4MUp0eVNGSXhTODEzVWNwYTFKaVJsNHBnZjMxeE9NMWx2UHNrZ2ZZemtFSjh0a0dBPT0tLUtudDFpdmRqdXJpTXdyZlVRZHZsTVE9PQ%3D%3D--f86c0615a9cf3d03d691c753845b50cb71acd20b; path=/; HttpOnly",
+    "x-request-id":"74582343-926e-4362-9bc8-c9a00213552c",
+    "x-runtime":"0.146802",
+    "via":"1.1 vegur"
+}</pre>
+                        </div>
+                    </td>
+                  </tr>
+                  <tr>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <pre>{
+    "campaign":{
+        "user_id":1,
+        "assigned_to":1,
+        "name":"zeStWOycYTRSPqykkzDgykNnjLfUaphSOrjwYOVrOrdwrBARMegNkSayYfeVwfwr",
+        "access":"Public",
+        "status":null,
+        "budget":null,
+        "target_leads":null,
+        "target_conversion":null,
+        "target_revenue":null,
+        "leads_count":null,
+        "opportunities_count":null,
+        "revenue":null,
+        "starts_on":"2018-01-12",
+        "ends_on":null,
+        "objectives":null,
+        "deleted_at":null,
+        "created_at":"2018-01-12T08:00:00.000Z",
+        "updated_at":"2018-01-12T16:57:27.780Z",
+        "background_info":null,
+        "subscribed_users":[
+
+        ]
+    }
+}</pre>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <pre>{
+    "campaign":{
+        "id":"INTEGER",
+        "user_id":1,
+        "assigned_to":1,
+        "name":"zeStWOycYTRSPqykkzDgykNnjLfUaphSOrjwYOVrOrdwrBARMegNkSayYfeVwfwr",
+        "access":"Public",
+        "status":null,
+        "budget":null,
+        "target_leads":null,
+        "target_conversion":null,
+        "target_revenue":null,
+        "leads_count":null,
+        "opportunities_count":null,
+        "revenue":null,
+        "starts_on":"2018-01-12",
+        "ends_on":null,
+        "objectives":null,
+        "deleted_at":null,
+        "created_at":"2018-01-12T08:00:00.000Z",
+        "updated_at":"2018-01-12T16:57:27.780Z",
+        "background_info":null,
+        "subscribed_users":[
+
+        ]
+    }
+}</pre>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <pre>{
+    "errors":{
+        "name":[
+            "has already been taken"
+        ]
+    }
+}</pre>
+                          </div>
+                      </td>
+                  </tr>
+                </table><table class='inf-table tab-content hide' id='log-3'>
+                      <tr><td><div style='max-height:500px; overflow: auto;
+  margin-bottom: 10px;'><pre>
+********* ERROR ********* 
+ Did not receive the expected response.. 
+Difference is reported in format(Nesting=&gt;[Expected_response, Actual_response]) 
+{
+    &quot;campaign&quot;:[
+        {
+            &quot;id&quot;:&quot;INTEGER&quot;,
+            &quot;user_id&quot;:1,
+            &quot;assigned_to&quot;:1,
+            &quot;name&quot;:&quot;zeStWOycYTRSPqykkzDgykNnjLfUaphSOrjwYOVrOrdwrBARMegNkSayYfeVwfwr&quot;,
+            &quot;access&quot;:&quot;Public&quot;,
+            &quot;status&quot;:null,
+            &quot;budget&quot;:null,
+            &quot;target_leads&quot;:null,
+            &quot;target_conversion&quot;:null,
+            &quot;target_revenue&quot;:null,
+            &quot;leads_count&quot;:null,
+            &quot;opportunities_count&quot;:null,
+            &quot;revenue&quot;:null,
+            &quot;starts_on&quot;:&quot;2018-01-12&quot;,
+            &quot;ends_on&quot;:null,
+            &quot;objectives&quot;:null,
+            &quot;deleted_at&quot;:null,
+            &quot;created_at&quot;:&quot;2018-01-12T08:00:00.000Z&quot;,
+            &quot;updated_at&quot;:&quot;2018-01-12T16:57:27.780Z&quot;,
+            &quot;background_info&quot;:null,
+            &quot;subscribed_users&quot;:[
+
+            ]
+        },
+        null
+    ]
+}
+Response Code: [201, 422]
+
+ ******************
+Execution Time: 1330 ms
+********* Test Started ***********
+*********************************
+Request: POST
+URL: https://young-citadel-48504.herokuapp.com/campaigns.json
+************Header***************
+Content-Type:application/json
+authorization:Basic YWRtaW46cGFzc3dvcmQ=
+************Request**************
+{
+    &quot;campaign&quot;:{
+        &quot;user_id&quot;:1,
+        &quot;assigned_to&quot;:1,
+        &quot;name&quot;:&quot;zeStWOycYTRSPqykkzDgykNnjLfUaphSOrjwYOVrOrdwrBARMegNkSayYfeVwfwr&quot;,
+        &quot;access&quot;:&quot;Public&quot;,
+        &quot;status&quot;:null,
+        &quot;budget&quot;:null,
+        &quot;target_leads&quot;:null,
+        &quot;target_conversion&quot;:null,
+        &quot;target_revenue&quot;:null,
+        &quot;leads_count&quot;:null,
+        &quot;opportunities_count&quot;:null,
+        &quot;revenue&quot;:null,
+        &quot;starts_on&quot;:&quot;2018-01-12&quot;,
+        &quot;ends_on&quot;:null,
+        &quot;objectives&quot;:null,
+        &quot;deleted_at&quot;:null,
+        &quot;created_at&quot;:&quot;2018-01-12T08:00:00.000Z&quot;,
+        &quot;updated_at&quot;:&quot;2018-01-12T16:57:27.780Z&quot;,
+        &quot;background_info&quot;:null,
+        &quot;subscribed_users&quot;:[
+
+        ]
+    }
+}
+*********************************
+************Response*************
+Status: 422
+Duration: 1323 ms
+{
+    &quot;errors&quot;:{
+        &quot;name&quot;:[
+            &quot;has already been taken&quot;
+        ]
+    }
+}
+******Response Headers***********
+{
+    &quot;server&quot;:&quot;Cowboy&quot;,
+    &quot;connection&quot;:&quot;close&quot;,
+    &quot;date&quot;:&quot;Tue, 06 Feb 2018 04:15:02 GMT&quot;,
+    &quot;status&quot;:&quot;422 Unprocessable Entity&quot;,
+    &quot;x-frame-options&quot;:&quot;SAMEORIGIN&quot;,
+    &quot;x-xss-protection&quot;:&quot;1; mode=block&quot;,
+    &quot;x-content-type-options&quot;:&quot;nosniff&quot;,
+    &quot;content-type&quot;:&quot;application/json; charset=utf-8&quot;,
+    &quot;cache-control&quot;:&quot;no-cache&quot;,
+    &quot;set-cookie&quot;:&quot;_fat_free_crm_session=aWhIRHB1b1BPWHRlM0UzMDJ5N2NJd1RXeEtVaVRCek1sNHFXT0dVREZKaDJsTGdueGdtUi9VZEpsSGpQU3p6T3Z3aENVSGs2Wnh6bFl3MlZRdTdLT1hGQU11Z2ZqNStud0xIVDNrNnF6U2NDOVZhSmYzSzNVY0xvdDJidXk2UnhXK0toNlN4SUFEQUxkOEtTUkN3dFU1MkpRWXI4eTA3dnpiNEZZdGx4VGNhY1Eyam1BSUVRNVpBSVB6dGR6em8wWHlNUXUxcmtwbWNiRThaREJUV2sxeTZIcHJyV3dRekJlZEVNYnZyTzNOdmFJUU5TUlZwSDZpWDFncWluTHlsdWdHRHk0WkpxYjBCd21XaFpoK3lGRlBGcXJIeE1KYXBJTThHUDk4MUp0eVNGSXhTODEzVWNwYTFKaVJsNHBnZjMxeE9NMWx2UHNrZ2ZZemtFSjh0a0dBPT0tLUtudDFpdmRqdXJpTXdyZlVRZHZsTVE9PQ%3D%3D--f86c0615a9cf3d03d691c753845b50cb71acd20b; path=/; HttpOnly&quot;,
+    &quot;x-request-id&quot;:&quot;74582343-926e-4362-9bc8-c9a00213552c&quot;,
+    &quot;x-runtime&quot;:&quot;0.146802&quot;,
+    &quot;via&quot;:&quot;1.1 vegur&quot;
+}
+*********************************
+***Current Params****
+{
+    &quot;NAME&quot;:&quot;zeStWOycYTRSPqykkzDgykNnjLfUaphSOrjwYOVrOrdwrBARMegNkSayYfeVwfwr&quot;,
+    &quot;id&quot;:260,
+    &quot;date&quot;:&quot;Tue, 06 Feb 2018 04:15:02 GMT&quot;
+}
+***test items**
+
+*********************
+************Expected Response: *****************
+{
+    &quot;campaign&quot;:{
+        &quot;id&quot;:&quot;INTEGER&quot;,
+        &quot;user_id&quot;:1,
+        &quot;assigned_to&quot;:1,
+        &quot;name&quot;:&quot;zeStWOycYTRSPqykkzDgykNnjLfUaphSOrjwYOVrOrdwrBARMegNkSayYfeVwfwr&quot;,
+        &quot;access&quot;:&quot;Public&quot;,
+        &quot;status&quot;:null,
+        &quot;budget&quot;:null,
+        &quot;target_leads&quot;:null,
+        &quot;target_conversion&quot;:null,
+        &quot;target_revenue&quot;:null,
+        &quot;leads_count&quot;:null,
+        &quot;opportunities_count&quot;:null,
+        &quot;revenue&quot;:null,
+        &quot;starts_on&quot;:&quot;2018-01-12&quot;,
+        &quot;ends_on&quot;:null,
+        &quot;objectives&quot;:null,
+        &quot;deleted_at&quot;:null,
+        &quot;created_at&quot;:&quot;2018-01-12T08:00:00.000Z&quot;,
+        &quot;updated_at&quot;:&quot;2018-01-12T16:57:27.780Z&quot;,
+        &quot;background_info&quot;:null,
+        &quot;subscribed_users&quot;:[
+
+        ]
+    }
+}
+*****************************
+******* Expected Code: 201
+******* Expected Headers:**********
+{
+    &quot;date&quot;:&quot;STRING&quot;,
+    &quot;server&quot;:&quot;Cowboy&quot;,
+    &quot;connection&quot;:&quot;close&quot;
+}
+**************************
+*********** Test Fail.***********
+</pre></div></td></tr>
+                    </table>
+              <table class='inf-table tab-content hide' id='xml-3'>
+                  <tr>
+                      <th>Request</th>
+                      <th>Expected Response</th>
+                      <th>Actual Response</th>
+                  </tr><tr>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Headers<br>
+                              <div class='json-to-xml'>{
+    "Content-Type":"application/json",
+    "authorization":"Basic YWRtaW46cGFzc3dvcmQ="
+}</div>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Headers<br>
+                              <div class='json-to-xml'>{
+    "date":"STRING",
+    "server":"Cowboy",
+    "connection":"close"
+}</div>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Headers<br>
+                              <div class='json-to-xml'>{
+    "server":"Cowboy",
+    "connection":"close",
+    "date":"Tue, 06 Feb 2018 04:15:02 GMT",
+    "status":"422 Unprocessable Entity",
+    "x-frame-options":"SAMEORIGIN",
+    "x-xss-protection":"1; mode=block",
+    "x-content-type-options":"nosniff",
+    "content-type":"application/json; charset=utf-8",
+    "cache-control":"no-cache",
+    "set-cookie":"_fat_free_crm_session=aWhIRHB1b1BPWHRlM0UzMDJ5N2NJd1RXeEtVaVRCek1sNHFXT0dVREZKaDJsTGdueGdtUi9VZEpsSGpQU3p6T3Z3aENVSGs2Wnh6bFl3MlZRdTdLT1hGQU11Z2ZqNStud0xIVDNrNnF6U2NDOVZhSmYzSzNVY0xvdDJidXk2UnhXK0toNlN4SUFEQUxkOEtTUkN3dFU1MkpRWXI4eTA3dnpiNEZZdGx4VGNhY1Eyam1BSUVRNVpBSVB6dGR6em8wWHlNUXUxcmtwbWNiRThaREJUV2sxeTZIcHJyV3dRekJlZEVNYnZyTzNOdmFJUU5TUlZwSDZpWDFncWluTHlsdWdHRHk0WkpxYjBCd21XaFpoK3lGRlBGcXJIeE1KYXBJTThHUDk4MUp0eVNGSXhTODEzVWNwYTFKaVJsNHBnZjMxeE9NMWx2UHNrZ2ZZemtFSjh0a0dBPT0tLUtudDFpdmRqdXJpTXdyZlVRZHZsTVE9PQ%3D%3D--f86c0615a9cf3d03d691c753845b50cb71acd20b; path=/; HttpOnly",
+    "x-request-id":"74582343-926e-4362-9bc8-c9a00213552c",
+    "x-runtime":"0.146802",
+    "via":"1.1 vegur"
+}</div>
+                          </div>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <div class='json-to-xml'>{
+    "campaign":{
+        "user_id":1,
+        "assigned_to":1,
+        "name":"zeStWOycYTRSPqykkzDgykNnjLfUaphSOrjwYOVrOrdwrBARMegNkSayYfeVwfwr",
+        "access":"Public",
+        "status":null,
+        "budget":null,
+        "target_leads":null,
+        "target_conversion":null,
+        "target_revenue":null,
+        "leads_count":null,
+        "opportunities_count":null,
+        "revenue":null,
+        "starts_on":"2018-01-12",
+        "ends_on":null,
+        "objectives":null,
+        "deleted_at":null,
+        "created_at":"2018-01-12T08:00:00.000Z",
+        "updated_at":"2018-01-12T16:57:27.780Z",
+        "background_info":null,
+        "subscribed_users":[
+
+        ]
+    }
+}</div>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <div class='json-to-xml'>{
+    "campaign":{
+        "id":"INTEGER",
+        "user_id":1,
+        "assigned_to":1,
+        "name":"zeStWOycYTRSPqykkzDgykNnjLfUaphSOrjwYOVrOrdwrBARMegNkSayYfeVwfwr",
+        "access":"Public",
+        "status":null,
+        "budget":null,
+        "target_leads":null,
+        "target_conversion":null,
+        "target_revenue":null,
+        "leads_count":null,
+        "opportunities_count":null,
+        "revenue":null,
+        "starts_on":"2018-01-12",
+        "ends_on":null,
+        "objectives":null,
+        "deleted_at":null,
+        "created_at":"2018-01-12T08:00:00.000Z",
+        "updated_at":"2018-01-12T16:57:27.780Z",
+        "background_info":null,
+        "subscribed_users":[
+
+        ]
+    }
+}</div>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <div class='json-to-xml'>{
+    "errors":{
+        "name":[
+            "has already been taken"
+        ]
+    }
+}</div>
+                          </div>
+                      </td>
+                  </tr>
+              </table>
+          </div>
+      </td>
+  </tr><tr class='fail scenario' id='scenario4'>
+                                    <td width='39'>
+                                        <div class='jump-wrapper'>
+                                            <div data-destination='#scenario3'>↑</div>
+                                            <div data-destination='#scenario5'>↓</div>
+                                        </div>
+                                        <span class='expand-button closed' data-target='.expand-4'></span>4
+                                    </td>
+                                    <td width='80'>s_004</td>
+                                    <td width='121'><a href='https://young-citadel-48504.herokuapp.com/campaigns.json' class='table-link'>https://young-citadel-48504.herokuapp.com/campaigns.json</a></td>
+                                    <td width='235'>array</td>
+                                    <td width='96'>2018-02-06 09:45:14 +0530</td>
+                                    <td width='67'>POST</td>
+                                    <td width='90' class='single-scenario-time'>1217</td>
+                                    <td width='86'>201</td>
+                                    <td width='86'>422</td><td width='90' class='result-fail result-count fail-count'><span class='sprite sprite-i-failed-red'></span>Fail</td><tr class='expand-row'>
+      <td class='no-padding no-border' colspan='10'>
+          <div class='inner-table-wrapper expand-4 hide'><span class='tab-toggle summary active' data-target='summary'>Summary</span>
+                    <span class='tab-toggle log' data-target='log'>Log</span>
+                    <span class='tab-toggle xml' data-target='xml'>Xml</span><table class='inf-table tab-content' id='summary-4'>
+                  <tr>
+                      <th>Request</th>
+                      <th>Expected Response</th>
+                      <th>Actual Response</th>
+                  </tr>
+                  <tr>
+                    <td>
+                        <div class='tooltip copy-to-clipboard'>
+                            <div class='sprite sprite-i-list-grey ripplelink'></div>
+                            <div class='tooltip-inner'>
+                                <div class='tooltip-ir-inner'>
+                                    Copy to clipboard
+                                </div>
+                            </div>
+                        </div>
+                        <div class='json-wrapper'>
+                            Headers<br>
+                            <pre>{
+    "Content-Type":"application/json",
+    "authorization":"Basic YWRtaW46cGFzc3dvcmQ="
+}</pre>
+                        </div>
+                    </td>
+                    <td>
+                        <div class='tooltip copy-to-clipboard'>
+                            <div class='sprite sprite-i-list-grey ripplelink'></div>
+                            <div class='tooltip-inner'>
+                                <div class='tooltip-ir-inner'>
+                                    Copy to clipboard
+                                </div>
+                            </div>
+                        </div>
+                        <div class='json-wrapper'>
+                            Headers<br>
+                            <pre>{
+    "date":"STRING",
+    "server":"Cowboy",
+    "connection":"close"
+}</pre>
+                        </div>
+                    </td>
+                    <td>
+                        <div class='tooltip copy-to-clipboard'>
+                            <div class='sprite sprite-i-list-grey ripplelink'></div>
+                            <div class='tooltip-inner'>
+                                <div class='tooltip-ir-inner'>
+                                    Copy to clipboard
+                                </div>
+                            </div>
+                        </div>
+                        <div class='json-wrapper'>
+                            Headers<br>
+                            <pre>{
+    "server":"Cowboy",
+    "connection":"close",
+    "date":"Tue, 06 Feb 2018 04:15:03 GMT",
+    "status":"422 Unprocessable Entity",
+    "x-frame-options":"SAMEORIGIN",
+    "x-xss-protection":"1; mode=block",
+    "x-content-type-options":"nosniff",
+    "content-type":"application/json; charset=utf-8",
+    "cache-control":"no-cache",
+    "set-cookie":"_fat_free_crm_session=M2xScUpJTXE0bEFINkFPZG5PM2N0OE9OMHNLWk53ZlBETjBjc2FSN2g3b3p2ZnBLcnVmVk8wWWxJL01sN2NwMlR5WnR4bWI3Qk1lOWxaMC93ZUZqVUd0dkJLMVJ3KytkaVQ5ME93V09SVmtjVFR1VXRxVEpJMi9oQUw4MkdwOWRqOExJSE9XRURaemx5cnFTSVJXSUFGY2JkMTg2b2JpT2JLVWlHRWt5a01mb2VCK2tzaGtLa0gxc3FEZnZzVmxtc1NsaEs3QTB5bXR1aXFHSS9pYTZLZU1aMDluWllzc2NiYmtramdhZVliN3o2Uk5nVFZGa3lBREplcUc2Yk9qL1lHMU91SjNka2hVWU40TUVKeEppTVcrQjdsZXhZbS9ORVpQcnVzRFNwbkRSNGVIaXBpeUpyaFQ3QnhHYWxNTWVPQXoxMFRLREtIdDhGZlovS2JjVGd3PT0tLU1SdXh2dnhBdFRwdmpFSGsxVjBsUmc9PQ%3D%3D--b12647529223a623d1c192103de44e143d6ed9f0; path=/; HttpOnly",
+    "x-request-id":"b55e3f1e-1fcc-49a1-8381-e23819b056f3",
+    "x-runtime":"0.043564",
+    "via":"1.1 vegur"
+}</pre>
+                        </div>
+                    </td>
+                  </tr>
+                  <tr>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <pre>{
+    "campaign":{
+        "user_id":1,
+        "assigned_to":1,
+        "name":[
+            "TEST1"
+        ],
+        "access":"Public",
+        "status":null,
+        "budget":null,
+        "target_leads":null,
+        "target_conversion":null,
+        "target_revenue":null,
+        "leads_count":null,
+        "opportunities_count":null,
+        "revenue":null,
+        "starts_on":"2018-01-12",
+        "ends_on":null,
+        "objectives":null,
+        "deleted_at":null,
+        "created_at":"2018-01-12T08:00:00.000Z",
+        "updated_at":"2018-01-12T16:57:27.780Z",
+        "background_info":null,
+        "subscribed_users":[
+
+        ]
+    }
+}</pre>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <pre>{
+    "campaign":{
+        "id":"INTEGER",
+        "user_id":1,
+        "assigned_to":1,
+        "name":"[\"TEST1\"]",
+        "access":"Public",
+        "status":null,
+        "budget":null,
+        "target_leads":null,
+        "target_conversion":null,
+        "target_revenue":null,
+        "leads_count":null,
+        "opportunities_count":null,
+        "revenue":null,
+        "starts_on":"2018-01-12",
+        "ends_on":null,
+        "objectives":null,
+        "deleted_at":null,
+        "created_at":"2018-01-12T08:00:00.000Z",
+        "updated_at":"2018-01-12T16:57:27.780Z",
+        "background_info":null,
+        "subscribed_users":[
+
+        ]
+    }
+}</pre>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <pre>{
+    "errors":{
+        "name":[
+            "has already been taken"
+        ]
+    }
+}</pre>
+                          </div>
+                      </td>
+                  </tr>
+                </table><table class='inf-table tab-content hide' id='log-4'>
+                      <tr><td><div style='max-height:500px; overflow: auto;
+  margin-bottom: 10px;'><pre>
+********* ERROR ********* 
+ Did not receive the expected response.. 
+Difference is reported in format(Nesting=&gt;[Expected_response, Actual_response]) 
+{
+    &quot;campaign&quot;:[
+        {
+            &quot;id&quot;:&quot;INTEGER&quot;,
+            &quot;user_id&quot;:1,
+            &quot;assigned_to&quot;:1,
+            &quot;name&quot;:&quot;[\&quot;TEST1\&quot;]&quot;,
+            &quot;access&quot;:&quot;Public&quot;,
+            &quot;status&quot;:null,
+            &quot;budget&quot;:null,
+            &quot;target_leads&quot;:null,
+            &quot;target_conversion&quot;:null,
+            &quot;target_revenue&quot;:null,
+            &quot;leads_count&quot;:null,
+            &quot;opportunities_count&quot;:null,
+            &quot;revenue&quot;:null,
+            &quot;starts_on&quot;:&quot;2018-01-12&quot;,
+            &quot;ends_on&quot;:null,
+            &quot;objectives&quot;:null,
+            &quot;deleted_at&quot;:null,
+            &quot;created_at&quot;:&quot;2018-01-12T08:00:00.000Z&quot;,
+            &quot;updated_at&quot;:&quot;2018-01-12T16:57:27.780Z&quot;,
+            &quot;background_info&quot;:null,
+            &quot;subscribed_users&quot;:[
+
+            ]
+        },
+        null
+    ]
+}
+Response Code: [201, 422]
+
+ ******************
+Execution Time: 1223 ms
+********* Test Started ***********
+*********************************
+Request: POST
+URL: https://young-citadel-48504.herokuapp.com/campaigns.json
+************Header***************
+Content-Type:application/json
+authorization:Basic YWRtaW46cGFzc3dvcmQ=
+************Request**************
+{
+    &quot;campaign&quot;:{
+        &quot;user_id&quot;:1,
+        &quot;assigned_to&quot;:1,
+        &quot;name&quot;:[
+            &quot;TEST1&quot;
+        ],
+        &quot;access&quot;:&quot;Public&quot;,
+        &quot;status&quot;:null,
+        &quot;budget&quot;:null,
+        &quot;target_leads&quot;:null,
+        &quot;target_conversion&quot;:null,
+        &quot;target_revenue&quot;:null,
+        &quot;leads_count&quot;:null,
+        &quot;opportunities_count&quot;:null,
+        &quot;revenue&quot;:null,
+        &quot;starts_on&quot;:&quot;2018-01-12&quot;,
+        &quot;ends_on&quot;:null,
+        &quot;objectives&quot;:null,
+        &quot;deleted_at&quot;:null,
+        &quot;created_at&quot;:&quot;2018-01-12T08:00:00.000Z&quot;,
+        &quot;updated_at&quot;:&quot;2018-01-12T16:57:27.780Z&quot;,
+        &quot;background_info&quot;:null,
+        &quot;subscribed_users&quot;:[
+
+        ]
+    }
+}
+*********************************
+************Response*************
+Status: 422
+Duration: 1217 ms
+{
+    &quot;errors&quot;:{
+        &quot;name&quot;:[
+            &quot;has already been taken&quot;
+        ]
+    }
+}
+******Response Headers***********
+{
+    &quot;server&quot;:&quot;Cowboy&quot;,
+    &quot;connection&quot;:&quot;close&quot;,
+    &quot;date&quot;:&quot;Tue, 06 Feb 2018 04:15:03 GMT&quot;,
+    &quot;status&quot;:&quot;422 Unprocessable Entity&quot;,
+    &quot;x-frame-options&quot;:&quot;SAMEORIGIN&quot;,
+    &quot;x-xss-protection&quot;:&quot;1; mode=block&quot;,
+    &quot;x-content-type-options&quot;:&quot;nosniff&quot;,
+    &quot;content-type&quot;:&quot;application/json; charset=utf-8&quot;,
+    &quot;cache-control&quot;:&quot;no-cache&quot;,
+    &quot;set-cookie&quot;:&quot;_fat_free_crm_session=M2xScUpJTXE0bEFINkFPZG5PM2N0OE9OMHNLWk53ZlBETjBjc2FSN2g3b3p2ZnBLcnVmVk8wWWxJL01sN2NwMlR5WnR4bWI3Qk1lOWxaMC93ZUZqVUd0dkJLMVJ3KytkaVQ5ME93V09SVmtjVFR1VXRxVEpJMi9oQUw4MkdwOWRqOExJSE9XRURaemx5cnFTSVJXSUFGY2JkMTg2b2JpT2JLVWlHRWt5a01mb2VCK2tzaGtLa0gxc3FEZnZzVmxtc1NsaEs3QTB5bXR1aXFHSS9pYTZLZU1aMDluWllzc2NiYmtramdhZVliN3o2Uk5nVFZGa3lBREplcUc2Yk9qL1lHMU91SjNka2hVWU40TUVKeEppTVcrQjdsZXhZbS9ORVpQcnVzRFNwbkRSNGVIaXBpeUpyaFQ3QnhHYWxNTWVPQXoxMFRLREtIdDhGZlovS2JjVGd3PT0tLU1SdXh2dnhBdFRwdmpFSGsxVjBsUmc9PQ%3D%3D--b12647529223a623d1c192103de44e143d6ed9f0; path=/; HttpOnly&quot;,
+    &quot;x-request-id&quot;:&quot;b55e3f1e-1fcc-49a1-8381-e23819b056f3&quot;,
+    &quot;x-runtime&quot;:&quot;0.043564&quot;,
+    &quot;via&quot;:&quot;1.1 vegur&quot;
+}
+*********************************
+***Current Params****
+{
+    &quot;NAME&quot;:&quot;zeStWOycYTRSPqykkzDgykNnjLfUaphSOrjwYOVrOrdwrBARMegNkSayYfeVwfwr&quot;,
+    &quot;id&quot;:260,
+    &quot;date&quot;:&quot;Tue, 06 Feb 2018 04:15:03 GMT&quot;
+}
+***test items**
+
+*********************
+************Expected Response: *****************
+{
+    &quot;campaign&quot;:{
+        &quot;id&quot;:&quot;INTEGER&quot;,
+        &quot;user_id&quot;:1,
+        &quot;assigned_to&quot;:1,
+        &quot;name&quot;:&quot;[\&quot;TEST1\&quot;]&quot;,
+        &quot;access&quot;:&quot;Public&quot;,
+        &quot;status&quot;:null,
+        &quot;budget&quot;:null,
+        &quot;target_leads&quot;:null,
+        &quot;target_conversion&quot;:null,
+        &quot;target_revenue&quot;:null,
+        &quot;leads_count&quot;:null,
+        &quot;opportunities_count&quot;:null,
+        &quot;revenue&quot;:null,
+        &quot;starts_on&quot;:&quot;2018-01-12&quot;,
+        &quot;ends_on&quot;:null,
+        &quot;objectives&quot;:null,
+        &quot;deleted_at&quot;:null,
+        &quot;created_at&quot;:&quot;2018-01-12T08:00:00.000Z&quot;,
+        &quot;updated_at&quot;:&quot;2018-01-12T16:57:27.780Z&quot;,
+        &quot;background_info&quot;:null,
+        &quot;subscribed_users&quot;:[
+
+        ]
+    }
+}
+*****************************
+******* Expected Code: 201
+******* Expected Headers:**********
+{
+    &quot;date&quot;:&quot;STRING&quot;,
+    &quot;server&quot;:&quot;Cowboy&quot;,
+    &quot;connection&quot;:&quot;close&quot;
+}
+**************************
+*********** Test Fail.***********
+</pre></div></td></tr>
+                    </table>
+              <table class='inf-table tab-content hide' id='xml-4'>
+                  <tr>
+                      <th>Request</th>
+                      <th>Expected Response</th>
+                      <th>Actual Response</th>
+                  </tr><tr>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Headers<br>
+                              <div class='json-to-xml'>{
+    "Content-Type":"application/json",
+    "authorization":"Basic YWRtaW46cGFzc3dvcmQ="
+}</div>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Headers<br>
+                              <div class='json-to-xml'>{
+    "date":"STRING",
+    "server":"Cowboy",
+    "connection":"close"
+}</div>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Headers<br>
+                              <div class='json-to-xml'>{
+    "server":"Cowboy",
+    "connection":"close",
+    "date":"Tue, 06 Feb 2018 04:15:03 GMT",
+    "status":"422 Unprocessable Entity",
+    "x-frame-options":"SAMEORIGIN",
+    "x-xss-protection":"1; mode=block",
+    "x-content-type-options":"nosniff",
+    "content-type":"application/json; charset=utf-8",
+    "cache-control":"no-cache",
+    "set-cookie":"_fat_free_crm_session=M2xScUpJTXE0bEFINkFPZG5PM2N0OE9OMHNLWk53ZlBETjBjc2FSN2g3b3p2ZnBLcnVmVk8wWWxJL01sN2NwMlR5WnR4bWI3Qk1lOWxaMC93ZUZqVUd0dkJLMVJ3KytkaVQ5ME93V09SVmtjVFR1VXRxVEpJMi9oQUw4MkdwOWRqOExJSE9XRURaemx5cnFTSVJXSUFGY2JkMTg2b2JpT2JLVWlHRWt5a01mb2VCK2tzaGtLa0gxc3FEZnZzVmxtc1NsaEs3QTB5bXR1aXFHSS9pYTZLZU1aMDluWllzc2NiYmtramdhZVliN3o2Uk5nVFZGa3lBREplcUc2Yk9qL1lHMU91SjNka2hVWU40TUVKeEppTVcrQjdsZXhZbS9ORVpQcnVzRFNwbkRSNGVIaXBpeUpyaFQ3QnhHYWxNTWVPQXoxMFRLREtIdDhGZlovS2JjVGd3PT0tLU1SdXh2dnhBdFRwdmpFSGsxVjBsUmc9PQ%3D%3D--b12647529223a623d1c192103de44e143d6ed9f0; path=/; HttpOnly",
+    "x-request-id":"b55e3f1e-1fcc-49a1-8381-e23819b056f3",
+    "x-runtime":"0.043564",
+    "via":"1.1 vegur"
+}</div>
+                          </div>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <div class='json-to-xml'>{
+    "campaign":{
+        "user_id":1,
+        "assigned_to":1,
+        "name":[
+            "TEST1"
+        ],
+        "access":"Public",
+        "status":null,
+        "budget":null,
+        "target_leads":null,
+        "target_conversion":null,
+        "target_revenue":null,
+        "leads_count":null,
+        "opportunities_count":null,
+        "revenue":null,
+        "starts_on":"2018-01-12",
+        "ends_on":null,
+        "objectives":null,
+        "deleted_at":null,
+        "created_at":"2018-01-12T08:00:00.000Z",
+        "updated_at":"2018-01-12T16:57:27.780Z",
+        "background_info":null,
+        "subscribed_users":[
+
+        ]
+    }
+}</div>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <div class='json-to-xml'>{
+    "campaign":{
+        "id":"INTEGER",
+        "user_id":1,
+        "assigned_to":1,
+        "name":"[\"TEST1\"]",
+        "access":"Public",
+        "status":null,
+        "budget":null,
+        "target_leads":null,
+        "target_conversion":null,
+        "target_revenue":null,
+        "leads_count":null,
+        "opportunities_count":null,
+        "revenue":null,
+        "starts_on":"2018-01-12",
+        "ends_on":null,
+        "objectives":null,
+        "deleted_at":null,
+        "created_at":"2018-01-12T08:00:00.000Z",
+        "updated_at":"2018-01-12T16:57:27.780Z",
+        "background_info":null,
+        "subscribed_users":[
+
+        ]
+    }
+}</div>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <div class='json-to-xml'>{
+    "errors":{
+        "name":[
+            "has already been taken"
+        ]
+    }
+}</div>
+                          </div>
+                      </td>
+                  </tr>
+              </table>
+          </div>
+      </td>
+  </tr><tr class='pass scenario' id='scenario5'>
+                                    <td width='39'>
+                                        <div class='jump-wrapper'>
+                                            <div data-destination='#scenario4'>↑</div>
+                                            <div data-destination='#scenario6'>↓</div>
+                                        </div>
+                                        <span class='expand-button closed' data-target='.expand-5'></span>5
+                                    </td>
+                                    <td width='80'>s_005</td>
+                                    <td width='121'><a href='https://young-citadel-48504.herokuapp.com/campaigns.json' class='table-link'>https://young-citadel-48504.herokuapp.com/campaigns.json</a></td>
+                                    <td width='235'>invalid type, empty string</td>
+                                    <td width='96'>2018-02-06 09:45:15 +0530</td>
+                                    <td width='67'>POST</td>
+                                    <td width='90' class='single-scenario-time'>1254</td>
+                                    <td width='86'>422</td>
+                                    <td width='86'>422</td><td width='90' class='result-pass result-count pass-count'><span class='sprite sprite-i-passed-green'></span>Pass</td><tr class='expand-row'>
+      <td class='no-padding no-border' colspan='10'>
+          <div class='inner-table-wrapper expand-5 hide'><span class='tab-toggle summary active' data-target='summary'>Summary</span>
+                    <span class='tab-toggle log' data-target='log'>Log</span>
+                    <span class='tab-toggle xml' data-target='xml'>Xml</span><table class='inf-table tab-content' id='summary-5'>
+                  <tr>
+                      <th>Request</th>
+                      <th>Expected Response</th>
+                      <th>Actual Response</th>
+                  </tr>
+                  <tr>
+                    <td>
+                        <div class='tooltip copy-to-clipboard'>
+                            <div class='sprite sprite-i-list-grey ripplelink'></div>
+                            <div class='tooltip-inner'>
+                                <div class='tooltip-ir-inner'>
+                                    Copy to clipboard
+                                </div>
+                            </div>
+                        </div>
+                        <div class='json-wrapper'>
+                            Headers<br>
+                            <pre>{
+    "Content-Type":"application/json",
+    "authorization":"Basic YWRtaW46cGFzc3dvcmQ="
+}</pre>
+                        </div>
+                    </td>
+                    <td>
+                        <div class='tooltip copy-to-clipboard'>
+                            <div class='sprite sprite-i-list-grey ripplelink'></div>
+                            <div class='tooltip-inner'>
+                                <div class='tooltip-ir-inner'>
+                                    Copy to clipboard
+                                </div>
+                            </div>
+                        </div>
+                        <div class='json-wrapper'>
+                            Headers<br>
+                            <pre>{
+    "date":"STRING",
+    "server":"Cowboy",
+    "connection":"close"
+}</pre>
+                        </div>
+                    </td>
+                    <td>
+                        <div class='tooltip copy-to-clipboard'>
+                            <div class='sprite sprite-i-list-grey ripplelink'></div>
+                            <div class='tooltip-inner'>
+                                <div class='tooltip-ir-inner'>
+                                    Copy to clipboard
+                                </div>
+                            </div>
+                        </div>
+                        <div class='json-wrapper'>
+                            Headers<br>
+                            <pre>{
+    "server":"Cowboy",
+    "connection":"close",
+    "date":"Tue, 06 Feb 2018 04:15:05 GMT",
+    "status":"422 Unprocessable Entity",
+    "x-frame-options":"SAMEORIGIN",
+    "x-xss-protection":"1; mode=block",
+    "x-content-type-options":"nosniff",
+    "content-type":"application/json; charset=utf-8",
+    "cache-control":"no-cache",
+    "set-cookie":"_fat_free_crm_session=OXJXeHdqcUdaL1ZIVzhsT2kvbU1WVDY5Q1cwNHhvdHpnVWcxSTAybFkxWUY3bUlEN212aUw2K0ZxcVRMbDFWR0J4eHFRWGtibExjMzllcDJROTNxS3BZd002eThKTFNuMlZUSzJMQllNNi9EaGFSWFhSWnRrblA1RExQSzcweGRzcXk0aE1iTGUzdStiQmxaSUNsMGZZNUdnTCtMQm5Yc3BRSnNWUmFsd1NoNXlQWEZnRnB6aDJaRnh5Rk9ONlIrcFJ6cy95TC9wTDBKNFpYTVdua0dCSXAzVjM0eHNHTDFraGo4Z2JGVGhZVXJoQXd0NEJSbTd2eThuZGdxUlg1S3V2ZlpXNkp4MUxnbDRKdis4bWJ1Q1pkdERBMllnTGoySlVNSnhtRGhlZDAvRWFNNXBxdFZub2ZsSzZhV1d0MzhqNmF1cWxQNHovSCtGd3B0WU5oL0JRPT0tLXVBYktvK25sSGVERzI5dStDK2xHSlE9PQ%3D%3D--ba83047ac457aa4d4c13b3b34b1a4d0bed6ca93b; path=/; HttpOnly",
+    "x-request-id":"62e553fd-20a7-4c27-98a0-a549f98ece85",
+    "x-runtime":"0.041493",
+    "via":"1.1 vegur"
+}</pre>
+                        </div>
+                    </td>
+                  </tr>
+                  <tr>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <pre>{
+    "campaign":{
+        "user_id":1,
+        "assigned_to":1,
+        "name":"",
+        "access":"Public",
+        "status":null,
+        "budget":null,
+        "target_leads":null,
+        "target_conversion":null,
+        "target_revenue":null,
+        "leads_count":null,
+        "opportunities_count":null,
+        "revenue":null,
+        "starts_on":"2018-01-12",
+        "ends_on":null,
+        "objectives":null,
+        "deleted_at":null,
+        "created_at":"2018-01-12T08:00:00.000Z",
+        "updated_at":"2018-01-12T16:57:27.780Z",
+        "background_info":null,
+        "subscribed_users":[
+
+        ]
+    }
+}</pre>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <pre>{
+    "errors":{
+        "name":[
+            "^Please specify campaign name."
+        ]
+    }
+}</pre>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <pre>{
+    "errors":{
+        "name":[
+            "^Please specify campaign name."
+        ]
+    }
+}</pre>
+                          </div>
+                      </td>
+                  </tr>
+                </table><table class='inf-table tab-content hide' id='log-5'>
+                      <tr><td><div style='max-height:500px; overflow: auto;
+  margin-bottom: 10px;'><pre>Execution Time: 1258 ms
+********* Test Started ***********
+* Executing function call **
+clear
+*********end**********
+*********************************
+Request: POST
+URL: https://young-citadel-48504.herokuapp.com/campaigns.json
+************Header***************
+Content-Type:application/json
+authorization:Basic YWRtaW46cGFzc3dvcmQ=
+************Request**************
+{
+    &quot;campaign&quot;:{
+        &quot;user_id&quot;:1,
+        &quot;assigned_to&quot;:1,
+        &quot;name&quot;:&quot;&quot;,
+        &quot;access&quot;:&quot;Public&quot;,
+        &quot;status&quot;:null,
+        &quot;budget&quot;:null,
+        &quot;target_leads&quot;:null,
+        &quot;target_conversion&quot;:null,
+        &quot;target_revenue&quot;:null,
+        &quot;leads_count&quot;:null,
+        &quot;opportunities_count&quot;:null,
+        &quot;revenue&quot;:null,
+        &quot;starts_on&quot;:&quot;2018-01-12&quot;,
+        &quot;ends_on&quot;:null,
+        &quot;objectives&quot;:null,
+        &quot;deleted_at&quot;:null,
+        &quot;created_at&quot;:&quot;2018-01-12T08:00:00.000Z&quot;,
+        &quot;updated_at&quot;:&quot;2018-01-12T16:57:27.780Z&quot;,
+        &quot;background_info&quot;:null,
+        &quot;subscribed_users&quot;:[
+
+        ]
+    }
+}
+*********************************
+************Response*************
+Status: 422
+Duration: 1254 ms
+{
+    &quot;errors&quot;:{
+        &quot;name&quot;:[
+            &quot;^Please specify campaign name.&quot;
+        ]
+    }
+}
+******Response Headers***********
+{
+    &quot;server&quot;:&quot;Cowboy&quot;,
+    &quot;connection&quot;:&quot;close&quot;,
+    &quot;date&quot;:&quot;Tue, 06 Feb 2018 04:15:05 GMT&quot;,
+    &quot;status&quot;:&quot;422 Unprocessable Entity&quot;,
+    &quot;x-frame-options&quot;:&quot;SAMEORIGIN&quot;,
+    &quot;x-xss-protection&quot;:&quot;1; mode=block&quot;,
+    &quot;x-content-type-options&quot;:&quot;nosniff&quot;,
+    &quot;content-type&quot;:&quot;application/json; charset=utf-8&quot;,
+    &quot;cache-control&quot;:&quot;no-cache&quot;,
+    &quot;set-cookie&quot;:&quot;_fat_free_crm_session=OXJXeHdqcUdaL1ZIVzhsT2kvbU1WVDY5Q1cwNHhvdHpnVWcxSTAybFkxWUY3bUlEN212aUw2K0ZxcVRMbDFWR0J4eHFRWGtibExjMzllcDJROTNxS3BZd002eThKTFNuMlZUSzJMQllNNi9EaGFSWFhSWnRrblA1RExQSzcweGRzcXk0aE1iTGUzdStiQmxaSUNsMGZZNUdnTCtMQm5Yc3BRSnNWUmFsd1NoNXlQWEZnRnB6aDJaRnh5Rk9ONlIrcFJ6cy95TC9wTDBKNFpYTVdua0dCSXAzVjM0eHNHTDFraGo4Z2JGVGhZVXJoQXd0NEJSbTd2eThuZGdxUlg1S3V2ZlpXNkp4MUxnbDRKdis4bWJ1Q1pkdERBMllnTGoySlVNSnhtRGhlZDAvRWFNNXBxdFZub2ZsSzZhV1d0MzhqNmF1cWxQNHovSCtGd3B0WU5oL0JRPT0tLXVBYktvK25sSGVERzI5dStDK2xHSlE9PQ%3D%3D--ba83047ac457aa4d4c13b3b34b1a4d0bed6ca93b; path=/; HttpOnly&quot;,
+    &quot;x-request-id&quot;:&quot;62e553fd-20a7-4c27-98a0-a549f98ece85&quot;,
+    &quot;x-runtime&quot;:&quot;0.041493&quot;,
+    &quot;via&quot;:&quot;1.1 vegur&quot;
+}
+*********************************
+***Current Params****
+{
+}
+***test items**
+
+*********************
+************Expected Response: *****************
+{
+    &quot;errors&quot;:{
+        &quot;name&quot;:[
+            &quot;^Please specify campaign name.&quot;
+        ]
+    }
+}
+*****************************
+******* Expected Code: 422
+******* Expected Headers:**********
+{
+    &quot;date&quot;:&quot;STRING&quot;,
+    &quot;server&quot;:&quot;Cowboy&quot;,
+    &quot;connection&quot;:&quot;close&quot;
+}
+**************************
+*********** Test Pass.***********</pre></div></td></tr>
+                    </table>
+              <table class='inf-table tab-content hide' id='xml-5'>
+                  <tr>
+                      <th>Request</th>
+                      <th>Expected Response</th>
+                      <th>Actual Response</th>
+                  </tr><tr>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Headers<br>
+                              <div class='json-to-xml'>{
+    "Content-Type":"application/json",
+    "authorization":"Basic YWRtaW46cGFzc3dvcmQ="
+}</div>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Headers<br>
+                              <div class='json-to-xml'>{
+    "date":"STRING",
+    "server":"Cowboy",
+    "connection":"close"
+}</div>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Headers<br>
+                              <div class='json-to-xml'>{
+    "server":"Cowboy",
+    "connection":"close",
+    "date":"Tue, 06 Feb 2018 04:15:05 GMT",
+    "status":"422 Unprocessable Entity",
+    "x-frame-options":"SAMEORIGIN",
+    "x-xss-protection":"1; mode=block",
+    "x-content-type-options":"nosniff",
+    "content-type":"application/json; charset=utf-8",
+    "cache-control":"no-cache",
+    "set-cookie":"_fat_free_crm_session=OXJXeHdqcUdaL1ZIVzhsT2kvbU1WVDY5Q1cwNHhvdHpnVWcxSTAybFkxWUY3bUlEN212aUw2K0ZxcVRMbDFWR0J4eHFRWGtibExjMzllcDJROTNxS3BZd002eThKTFNuMlZUSzJMQllNNi9EaGFSWFhSWnRrblA1RExQSzcweGRzcXk0aE1iTGUzdStiQmxaSUNsMGZZNUdnTCtMQm5Yc3BRSnNWUmFsd1NoNXlQWEZnRnB6aDJaRnh5Rk9ONlIrcFJ6cy95TC9wTDBKNFpYTVdua0dCSXAzVjM0eHNHTDFraGo4Z2JGVGhZVXJoQXd0NEJSbTd2eThuZGdxUlg1S3V2ZlpXNkp4MUxnbDRKdis4bWJ1Q1pkdERBMllnTGoySlVNSnhtRGhlZDAvRWFNNXBxdFZub2ZsSzZhV1d0MzhqNmF1cWxQNHovSCtGd3B0WU5oL0JRPT0tLXVBYktvK25sSGVERzI5dStDK2xHSlE9PQ%3D%3D--ba83047ac457aa4d4c13b3b34b1a4d0bed6ca93b; path=/; HttpOnly",
+    "x-request-id":"62e553fd-20a7-4c27-98a0-a549f98ece85",
+    "x-runtime":"0.041493",
+    "via":"1.1 vegur"
+}</div>
+                          </div>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <div class='json-to-xml'>{
+    "campaign":{
+        "user_id":1,
+        "assigned_to":1,
+        "name":"",
+        "access":"Public",
+        "status":null,
+        "budget":null,
+        "target_leads":null,
+        "target_conversion":null,
+        "target_revenue":null,
+        "leads_count":null,
+        "opportunities_count":null,
+        "revenue":null,
+        "starts_on":"2018-01-12",
+        "ends_on":null,
+        "objectives":null,
+        "deleted_at":null,
+        "created_at":"2018-01-12T08:00:00.000Z",
+        "updated_at":"2018-01-12T16:57:27.780Z",
+        "background_info":null,
+        "subscribed_users":[
+
+        ]
+    }
+}</div>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <div class='json-to-xml'>{
+    "errors":{
+        "name":[
+            "^Please specify campaign name."
+        ]
+    }
+}</div>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <div class='json-to-xml'>{
+    "errors":{
+        "name":[
+            "^Please specify campaign name."
+        ]
+    }
+}</div>
+                          </div>
+                      </td>
+                  </tr>
+              </table>
+          </div>
+      </td>
+  </tr><tr class='pass scenario' id='scenario6'>
+                                    <td width='39'>
+                                        <div class='jump-wrapper'>
+                                            <div data-destination='#scenario5'>↑</div>
+                                            <div data-destination='#scenario7'>↓</div>
+                                        </div>
+                                        <span class='expand-button closed' data-target='.expand-6'></span>6
+                                    </td>
+                                    <td width='80'>s_006</td>
+                                    <td width='121'><a href='https://young-citadel-48504.herokuapp.com/campaigns.json' class='table-link'>https://young-citadel-48504.herokuapp.com/campaigns.json</a></td>
+                                    <td width='235'>invalid type, empty array</td>
+                                    <td width='96'>2018-02-06 09:45:16 +0530</td>
+                                    <td width='67'>POST</td>
+                                    <td width='90' class='single-scenario-time'>1262</td>
+                                    <td width='86'>422</td>
+                                    <td width='86'>422</td><td width='90' class='result-pass result-count pass-count'><span class='sprite sprite-i-passed-green'></span>Pass</td><tr class='expand-row'>
+      <td class='no-padding no-border' colspan='10'>
+          <div class='inner-table-wrapper expand-6 hide'><span class='tab-toggle summary active' data-target='summary'>Summary</span>
+                    <span class='tab-toggle log' data-target='log'>Log</span>
+                    <span class='tab-toggle xml' data-target='xml'>Xml</span><table class='inf-table tab-content' id='summary-6'>
+                  <tr>
+                      <th>Request</th>
+                      <th>Expected Response</th>
+                      <th>Actual Response</th>
+                  </tr>
+                  <tr>
+                    <td>
+                        <div class='tooltip copy-to-clipboard'>
+                            <div class='sprite sprite-i-list-grey ripplelink'></div>
+                            <div class='tooltip-inner'>
+                                <div class='tooltip-ir-inner'>
+                                    Copy to clipboard
+                                </div>
+                            </div>
+                        </div>
+                        <div class='json-wrapper'>
+                            Headers<br>
+                            <pre>{
+    "Content-Type":"application/json",
+    "authorization":"Basic YWRtaW46cGFzc3dvcmQ="
+}</pre>
+                        </div>
+                    </td>
+                    <td>
+                        <div class='tooltip copy-to-clipboard'>
+                            <div class='sprite sprite-i-list-grey ripplelink'></div>
+                            <div class='tooltip-inner'>
+                                <div class='tooltip-ir-inner'>
+                                    Copy to clipboard
+                                </div>
+                            </div>
+                        </div>
+                        <div class='json-wrapper'>
+                            Headers<br>
+                            <pre>{
+    "date":"STRING",
+    "server":"Cowboy",
+    "connection":"close"
+}</pre>
+                        </div>
+                    </td>
+                    <td>
+                        <div class='tooltip copy-to-clipboard'>
+                            <div class='sprite sprite-i-list-grey ripplelink'></div>
+                            <div class='tooltip-inner'>
+                                <div class='tooltip-ir-inner'>
+                                    Copy to clipboard
+                                </div>
+                            </div>
+                        </div>
+                        <div class='json-wrapper'>
+                            Headers<br>
+                            <pre>{
+    "server":"Cowboy",
+    "connection":"close",
+    "date":"Tue, 06 Feb 2018 04:15:06 GMT",
+    "status":"422 Unprocessable Entity",
+    "x-frame-options":"SAMEORIGIN",
+    "x-xss-protection":"1; mode=block",
+    "x-content-type-options":"nosniff",
+    "content-type":"application/json; charset=utf-8",
+    "cache-control":"no-cache",
+    "set-cookie":"_fat_free_crm_session=SC9jeVBYa0NaeXlpaTdQR1lKNFN6TGp0djlrOGtHOUJlMXUwYmJLZjhIVlJ1M1NWTEtWaUVCcEN4TDJqVUdHN3ZORkpLcTJmNFM5RTQwNHlmK1NBOFgzOXQxVzd5dzAvV3k2aTl3OElGdHU4cEdZSnl1Y1FWY0xONkZvbVFVZFNwYk9NRzZwdEtJbGZjUVYrcTNUMEVmUjJRc05iTHZBTTEwK2RvL0tWanZWSlpvdis1dndLaC9YeHNpeUFGOTNMR0t3SzlzbmJVeXRJYTFvWUlJY3JzRXFyT1N0bWY1UGhna3lwWDRDckZJVHNIN3BSTWl2OWhKSEQ5VzlSMnh2a3E4aVFHK2I5VXZxNGM3OU1ZdG1rSW1WT25mMFc2NjhORUY1WUN3MnhhNnc5Z3ViVmhGcVpJZ3JZOEJqaFQ2UWhPVERTQ0VUSGJCZ2Q4eWVWcWN1amRRPT0tLU5IUmpKQjFTaEwveHBMbEMwODdMdmc9PQ%3D%3D--92222211a662864fa3cbdbabddaadbfa4c3dc224; path=/; HttpOnly",
+    "x-request-id":"4269d92d-7b41-4097-b3c9-b33d20aae193",
+    "x-runtime":"0.052377",
+    "via":"1.1 vegur"
+}</pre>
+                        </div>
+                    </td>
+                  </tr>
+                  <tr>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <pre>{
+    "campaign":{
+        "user_id":1,
+        "assigned_to":1,
+        "name":[
+
+        ],
+        "access":"Public",
+        "status":null,
+        "budget":null,
+        "target_leads":null,
+        "target_conversion":null,
+        "target_revenue":null,
+        "leads_count":null,
+        "opportunities_count":null,
+        "revenue":null,
+        "starts_on":"2018-01-12",
+        "ends_on":null,
+        "objectives":null,
+        "deleted_at":null,
+        "created_at":"2018-01-12T08:00:00.000Z",
+        "updated_at":"2018-01-12T16:57:27.780Z",
+        "background_info":null,
+        "subscribed_users":[
+
+        ]
+    }
+}</pre>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <pre>{
+    "errors":{
+        "name":[
+            "^Please specify campaign name."
+        ]
+    }
+}</pre>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <pre>{
+    "errors":{
+        "name":[
+            "^Please specify campaign name."
+        ]
+    }
+}</pre>
+                          </div>
+                      </td>
+                  </tr>
+                </table><table class='inf-table tab-content hide' id='log-6'>
+                      <tr><td><div style='max-height:500px; overflow: auto;
+  margin-bottom: 10px;'><pre>Execution Time: 1265 ms
+********* Test Started ***********
+* Executing function call **
+clear
+*********end**********
+*********************************
+Request: POST
+URL: https://young-citadel-48504.herokuapp.com/campaigns.json
+************Header***************
+Content-Type:application/json
+authorization:Basic YWRtaW46cGFzc3dvcmQ=
+************Request**************
+{
+    &quot;campaign&quot;:{
+        &quot;user_id&quot;:1,
+        &quot;assigned_to&quot;:1,
+        &quot;name&quot;:[
+
+        ],
+        &quot;access&quot;:&quot;Public&quot;,
+        &quot;status&quot;:null,
+        &quot;budget&quot;:null,
+        &quot;target_leads&quot;:null,
+        &quot;target_conversion&quot;:null,
+        &quot;target_revenue&quot;:null,
+        &quot;leads_count&quot;:null,
+        &quot;opportunities_count&quot;:null,
+        &quot;revenue&quot;:null,
+        &quot;starts_on&quot;:&quot;2018-01-12&quot;,
+        &quot;ends_on&quot;:null,
+        &quot;objectives&quot;:null,
+        &quot;deleted_at&quot;:null,
+        &quot;created_at&quot;:&quot;2018-01-12T08:00:00.000Z&quot;,
+        &quot;updated_at&quot;:&quot;2018-01-12T16:57:27.780Z&quot;,
+        &quot;background_info&quot;:null,
+        &quot;subscribed_users&quot;:[
+
+        ]
+    }
+}
+*********************************
+************Response*************
+Status: 422
+Duration: 1262 ms
+{
+    &quot;errors&quot;:{
+        &quot;name&quot;:[
+            &quot;^Please specify campaign name.&quot;
+        ]
+    }
+}
+******Response Headers***********
+{
+    &quot;server&quot;:&quot;Cowboy&quot;,
+    &quot;connection&quot;:&quot;close&quot;,
+    &quot;date&quot;:&quot;Tue, 06 Feb 2018 04:15:06 GMT&quot;,
+    &quot;status&quot;:&quot;422 Unprocessable Entity&quot;,
+    &quot;x-frame-options&quot;:&quot;SAMEORIGIN&quot;,
+    &quot;x-xss-protection&quot;:&quot;1; mode=block&quot;,
+    &quot;x-content-type-options&quot;:&quot;nosniff&quot;,
+    &quot;content-type&quot;:&quot;application/json; charset=utf-8&quot;,
+    &quot;cache-control&quot;:&quot;no-cache&quot;,
+    &quot;set-cookie&quot;:&quot;_fat_free_crm_session=SC9jeVBYa0NaeXlpaTdQR1lKNFN6TGp0djlrOGtHOUJlMXUwYmJLZjhIVlJ1M1NWTEtWaUVCcEN4TDJqVUdHN3ZORkpLcTJmNFM5RTQwNHlmK1NBOFgzOXQxVzd5dzAvV3k2aTl3OElGdHU4cEdZSnl1Y1FWY0xONkZvbVFVZFNwYk9NRzZwdEtJbGZjUVYrcTNUMEVmUjJRc05iTHZBTTEwK2RvL0tWanZWSlpvdis1dndLaC9YeHNpeUFGOTNMR0t3SzlzbmJVeXRJYTFvWUlJY3JzRXFyT1N0bWY1UGhna3lwWDRDckZJVHNIN3BSTWl2OWhKSEQ5VzlSMnh2a3E4aVFHK2I5VXZxNGM3OU1ZdG1rSW1WT25mMFc2NjhORUY1WUN3MnhhNnc5Z3ViVmhGcVpJZ3JZOEJqaFQ2UWhPVERTQ0VUSGJCZ2Q4eWVWcWN1amRRPT0tLU5IUmpKQjFTaEwveHBMbEMwODdMdmc9PQ%3D%3D--92222211a662864fa3cbdbabddaadbfa4c3dc224; path=/; HttpOnly&quot;,
+    &quot;x-request-id&quot;:&quot;4269d92d-7b41-4097-b3c9-b33d20aae193&quot;,
+    &quot;x-runtime&quot;:&quot;0.052377&quot;,
+    &quot;via&quot;:&quot;1.1 vegur&quot;
+}
+*********************************
+***Current Params****
+{
+}
+***test items**
+
+*********************
+************Expected Response: *****************
+{
+    &quot;errors&quot;:{
+        &quot;name&quot;:[
+            &quot;^Please specify campaign name.&quot;
+        ]
+    }
+}
+*****************************
+******* Expected Code: 422
+******* Expected Headers:**********
+{
+    &quot;date&quot;:&quot;STRING&quot;,
+    &quot;server&quot;:&quot;Cowboy&quot;,
+    &quot;connection&quot;:&quot;close&quot;
+}
+**************************
+*********** Test Pass.***********</pre></div></td></tr>
+                    </table>
+              <table class='inf-table tab-content hide' id='xml-6'>
+                  <tr>
+                      <th>Request</th>
+                      <th>Expected Response</th>
+                      <th>Actual Response</th>
+                  </tr><tr>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Headers<br>
+                              <div class='json-to-xml'>{
+    "Content-Type":"application/json",
+    "authorization":"Basic YWRtaW46cGFzc3dvcmQ="
+}</div>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Headers<br>
+                              <div class='json-to-xml'>{
+    "date":"STRING",
+    "server":"Cowboy",
+    "connection":"close"
+}</div>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Headers<br>
+                              <div class='json-to-xml'>{
+    "server":"Cowboy",
+    "connection":"close",
+    "date":"Tue, 06 Feb 2018 04:15:06 GMT",
+    "status":"422 Unprocessable Entity",
+    "x-frame-options":"SAMEORIGIN",
+    "x-xss-protection":"1; mode=block",
+    "x-content-type-options":"nosniff",
+    "content-type":"application/json; charset=utf-8",
+    "cache-control":"no-cache",
+    "set-cookie":"_fat_free_crm_session=SC9jeVBYa0NaeXlpaTdQR1lKNFN6TGp0djlrOGtHOUJlMXUwYmJLZjhIVlJ1M1NWTEtWaUVCcEN4TDJqVUdHN3ZORkpLcTJmNFM5RTQwNHlmK1NBOFgzOXQxVzd5dzAvV3k2aTl3OElGdHU4cEdZSnl1Y1FWY0xONkZvbVFVZFNwYk9NRzZwdEtJbGZjUVYrcTNUMEVmUjJRc05iTHZBTTEwK2RvL0tWanZWSlpvdis1dndLaC9YeHNpeUFGOTNMR0t3SzlzbmJVeXRJYTFvWUlJY3JzRXFyT1N0bWY1UGhna3lwWDRDckZJVHNIN3BSTWl2OWhKSEQ5VzlSMnh2a3E4aVFHK2I5VXZxNGM3OU1ZdG1rSW1WT25mMFc2NjhORUY1WUN3MnhhNnc5Z3ViVmhGcVpJZ3JZOEJqaFQ2UWhPVERTQ0VUSGJCZ2Q4eWVWcWN1amRRPT0tLU5IUmpKQjFTaEwveHBMbEMwODdMdmc9PQ%3D%3D--92222211a662864fa3cbdbabddaadbfa4c3dc224; path=/; HttpOnly",
+    "x-request-id":"4269d92d-7b41-4097-b3c9-b33d20aae193",
+    "x-runtime":"0.052377",
+    "via":"1.1 vegur"
+}</div>
+                          </div>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <div class='json-to-xml'>{
+    "campaign":{
+        "user_id":1,
+        "assigned_to":1,
+        "name":[
+
+        ],
+        "access":"Public",
+        "status":null,
+        "budget":null,
+        "target_leads":null,
+        "target_conversion":null,
+        "target_revenue":null,
+        "leads_count":null,
+        "opportunities_count":null,
+        "revenue":null,
+        "starts_on":"2018-01-12",
+        "ends_on":null,
+        "objectives":null,
+        "deleted_at":null,
+        "created_at":"2018-01-12T08:00:00.000Z",
+        "updated_at":"2018-01-12T16:57:27.780Z",
+        "background_info":null,
+        "subscribed_users":[
+
+        ]
+    }
+}</div>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <div class='json-to-xml'>{
+    "errors":{
+        "name":[
+            "^Please specify campaign name."
+        ]
+    }
+}</div>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <div class='json-to-xml'>{
+    "errors":{
+        "name":[
+            "^Please specify campaign name."
+        ]
+    }
+}</div>
+                          </div>
+                      </td>
+                  </tr>
+              </table>
+          </div>
+      </td>
+  </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div id="return-to-top"><i class="sprite sprite-i-dropdown-grey"></i></div>
+
+<script type="text/javascript">
+    function formatXml(xml) {
+        var formatted = "";
+        var reg = /(>)(<)(\/*)/g;
+        xml = xml.replace(reg, "$1\r\n$2$3");
+        var pad = 0;
+        jQuery.each(xml.split("\r\n"), function(index, node) {
+            var indent = 0;
+            if (node.match( /.+<\/\w[^>]*>$/ )) {
+                indent = 0;
+            } else if (node.match( /^<\/\w/ )) {
+                if (pad != 0) {
+                    pad -= 1;
+                }
+            } else if (node.match( /^<\w[^>]*[^\/]>.*$/ )) {
+                indent = 1;
+            } else {
+                indent = 0;
+            }
+
+            var padding = "";
+            for (var i = 0; i < pad; i++) {
+                padding += "  ";
+            }
+
+            formatted += padding + node + "\r\n";
+            pad += indent;
+        });
+
+        return formatted;
+    }
+
+    var totalScenarioNumber = $(".result-count").length;
+    var passedScenarioNumber = $(".result-count.pass-count").length;
+    var passPercentage = (passedScenarioNumber * 100 / totalScenarioNumber).toFixed(2) + "%";
+    $("#total-scenario-number").html(totalScenarioNumber);
+    $("#passed-scenario-number").html(passedScenarioNumber);
+    $("#pass-percentage").html(passPercentage);
+    var totalTimeInSecond = 0;
+    $(".single-scenario-time").each(function () {
+        var timeText = $(this).html();
+        totalTimeInSecond += Number(timeText.split(" ")[0]);
+    });
+		var totalTimeInSec = Math.round(totalTimeInSecond);
+    $("#total-time").html(totalTimeInSec);
+
+    $(".json-to-xml").each(function () {
+        var validJson = false;
+        var originalJson = $(this).text();
+        var preParseJson = originalJson.replace(/=>/g, ":");
+        var realJson = preParseJson;
+        try {
+            realJson = JSON.parse(preParseJson);
+            validJson = true;
+        }
+        catch (err) {
+            console.log(err.message);
+        }
+        if (validJson == true) {
+            var finalXml = realJson;
+            try {
+                finalXml = json2xml(realJson);
+            }
+            catch (err) {
+                console.log(err.message);
+            }
+            var xmlHead = "<pre><code class=\"xml\">";
+            var xmlTail = "</code></pre>";
+            var lol = (formatXml(finalXml));
+            var replacedFinalXml = lol.replace(/>/g, "&gt;").replace(/</g, "&lt;").replace(/"/g, "&quot;");
+  $(this).html(xmlHead + replacedFinalXml + xmlTail);
+  }
+  });
+  hljs.initHighlightingOnLoad();
+  </script>
+</body>
+</html>

@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Awetest Service Report</title>
+    <link href="http://awetest.com/favicon.ico" rel="shortcut icon">
+
+    <script src="https://awetest.com/assets/test_base/service_api_log.js" type="text/javascript"></script>
+    <link href="https://awetest.com/assets/service_report.css" media="screen" rel="stylesheet" type="text/css">
+    <script src="https://awetest.com/assets/jquery.js"   type="text/javascript"></script>
+    <script src="https://awetest.com/assets/clipboard.min.js"   type="text/javascript"></script>
+    <script src="https://awetest.com/assets/Chart.js"   type="text/javascript"></script>
+    <script type="text/javascript" src="http://awetest.com/system/downloads/Report/awetest_part.js"></script>
+    <script type="text/javascript" src="http://awetest.com/system/downloads/Report/json2xml.js"></script>
+    <script type="text/javascript" src="http://awetest.com/system/downloads/Report/highlight.pack.js"></script>
+    <!--[if IE]>
+    <style>
+        .inner-table-wrapper {
+            position: relative;
+            left: -1px;
+        }
+    </style>
+    <![endif]-->
+
+</head>
+<body>
+<header class="header"></header>
+<div class="left-tab"></div>
+<div class="wrapper">
+    <div class="content">
+        <div class="row">
+            <div class="gl_page_inner">
+                <div class="gl_hr_header">
+                    <div class="header-element"><a href="" class="header-element-link">Test Report</a></div>
+                </div>
+                <div class="design-body">
+                    <div class="information-block">
+                        <div class="inf-bottom-part">
+                            <div class="main-info-wrapper">
+                                <div>
+                                    <span class="sprite sprite-i-multi-storey-building-white"></span>Total Time: <span id="total-time"></span> Seconds
+                                </div>
+                                <div>
+                                    <span class="sprite sprite-i-multi-storey-building-white"></span># of Scenarios: <span id="total-scenario-number"></span>
+                                </div>
+                                <div>
+                                    <span class="sprite sprite-i-multi-storey-building-white"></span>
+                                </div>
+                                <div><span class="sprite sprite-i-multi-storey-building-white"></span># Passed: <span id="passed-scenario-number"></span></div>
+                                <div>
+                                    <span class="sprite sprite-i-multi-storey-building-white"></span>
+                                </div>
+                                <div><span class="sprite sprite-i-multi-storey-building-white"></span>Pass %: <span id="pass-percentage"></span></div>
+                            </div>
+                            <div class="chart-wrapper">
+                                <canvas id="chart1" height="120px" width="120px"></canvas>
+                                <div class="chartjs-tooltip" id="chart-tooltip"></div>
+                                <div id="spfg_legend"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="information-table">
+                        <div class="table-control-row">
+                            <p class="active left-control expand-button closed" data-target="all">EXPAND ALL</p>
+                            <p class="right-control toggle-errors active">ALL</p>
+                            <p class="right-control toggle-errors">ERRORS</p>
+                            <p class="right-control">SHOW</p>
+                        </div>
+
+                        <table class="inf-table">
+                            <thead class="table-head">
+                                <tr>
+                                    <th width="39">#</th>
+                                    <th width="150">ID</th>
+                                    <th width="121">URL</th>
+                                    <th width="160">Scenario</th>
+                                    <th width="96">Date/Time</th>
+                                    <th width="67">Method</th>
+                                    <th width="90">Duration</th>
+                                    <th width="86">Exp Code</th>
+                                    <th width="86">Actual Code</th>
+                                    <th width="88">Result</th>
+                                </tr>
+                            </thead>
+
+                            <tbody><tr class='pass scenario' id='scenario1'>
+                                    <td width='39'>
+                                        <div class='jump-wrapper'>
+                                            <div data-destination='#scenario0'>↑</div>
+                                            <div data-destination='#scenario2'>↓</div>
+                                        </div>
+                                        <span class='expand-button closed' data-target='.expand-1'></span>1
+                                    </td>
+                                    <td width='80'>s_002</td>
+                                    <td width='121'><a href='https://young-citadel-48504.herokuapp.com/campaigns.json' class='table-link'>https://young-citadel-48504.herokuapp.com/campaigns.json</a></td>
+                                    <td width='235'>invalid, 65 char more than max</td>
+                                    <td width='96'>2018-02-06 10:21:36 +0530</td>
+                                    <td width='67'>POST</td>
+                                    <td width='90' class='single-scenario-time'>18187</td>
+                                    <td width='86'>500</td>
+                                    <td width='86'>500</td><td width='90' class='result-pass result-count pass-count'><span class='sprite sprite-i-passed-green'></span>Pass</td><tr class='expand-row'>
+      <td class='no-padding no-border' colspan='10'>
+          <div class='inner-table-wrapper expand-1 hide'><span class='tab-toggle summary active' data-target='summary'>Summary</span>
+                    <span class='tab-toggle log' data-target='log'>Log</span>
+                    <span class='tab-toggle xml' data-target='xml'>Xml</span><table class='inf-table tab-content' id='summary-1'>
+                  <tr>
+                      <th>Request</th>
+                      <th>Expected Response</th>
+                      <th>Actual Response</th>
+                  </tr>
+                  <tr>
+                    <td>
+                        <div class='tooltip copy-to-clipboard'>
+                            <div class='sprite sprite-i-list-grey ripplelink'></div>
+                            <div class='tooltip-inner'>
+                                <div class='tooltip-ir-inner'>
+                                    Copy to clipboard
+                                </div>
+                            </div>
+                        </div>
+                        <div class='json-wrapper'>
+                            Headers<br>
+                            <pre>{
+    "Content-Type":"application/json",
+    "authorization":"Basic YWRtaW46cGFzc3dvcmQ="
+}</pre>
+                        </div>
+                    </td>
+                    <td>
+                        <div class='tooltip copy-to-clipboard'>
+                            <div class='sprite sprite-i-list-grey ripplelink'></div>
+                            <div class='tooltip-inner'>
+                                <div class='tooltip-ir-inner'>
+                                    Copy to clipboard
+                                </div>
+                            </div>
+                        </div>
+                        <div class='json-wrapper'>
+                            Headers<br>
+                            <pre>{
+    "date":"STRING",
+    "server":"Cowboy",
+    "connection":"keep-alive"
+}</pre>
+                        </div>
+                    </td>
+                    <td>
+                        <div class='tooltip copy-to-clipboard'>
+                            <div class='sprite sprite-i-list-grey ripplelink'></div>
+                            <div class='tooltip-inner'>
+                                <div class='tooltip-ir-inner'>
+                                    Copy to clipboard
+                                </div>
+                            </div>
+                        </div>
+                        <div class='json-wrapper'>
+                            Headers<br>
+                            <pre>{
+    "server":"Cowboy",
+    "connection":"keep-alive",
+    "date":"Tue, 06 Feb 2018 04:51:25 GMT",
+    "status":"500 Internal Server Error",
+    "content-type":"application/json; charset=utf-8",
+    "content-length":"48",
+    "x-request-id":"ec31356f-53e0-4343-8e57-043e5885f797",
+    "x-runtime":"0.031393",
+    "via":"1.1 vegur"
+}</pre>
+                        </div>
+                    </td>
+                  </tr>
+                  <tr>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <pre>{
+    "campaign":{
+        "user_id":1,
+        "assigned_to":1,
+        "name":"MAwFgrFrLeZvjctRxPVMNsNMxxxZCPOhHAFfjdshpynuWbwBYrrqGCDVurYLgdLfU",
+        "access":"Public",
+        "status":null,
+        "budget":null,
+        "target_leads":null,
+        "target_conversion":null,
+        "target_revenue":null,
+        "leads_count":null,
+        "opportunities_count":null,
+        "revenue":null,
+        "starts_on":"2018-01-12",
+        "ends_on":null,
+        "objectives":null,
+        "deleted_at":null,
+        "created_at":"2018-01-12T08:00:00.000Z",
+        "updated_at":"2018-01-12T16:57:27.780Z",
+        "background_info":null,
+        "subscribed_users":[
+
+        ]
+    }
+}</pre>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <pre>{
+    "status":"500",
+    "error":"Internal Server Error"
+}</pre>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <pre>{
+    "status":"500",
+    "error":"Internal Server Error"
+}</pre>
+                          </div>
+                      </td>
+                  </tr>
+                </table><table class='inf-table tab-content hide' id='log-1'>
+                      <tr><td><div style='max-height:500px; overflow: auto;
+  margin-bottom: 10px;'><pre>Execution Time: 19383 ms
+********* Test Started ***********
+* Executing function call **
+rand_string_alpha(65,&quot;name&quot;)
+MAwFgrFrLeZvjctRxPVMNsNMxxxZCPOhHAFfjdshpynuWbwBYrrqGCDVurYLgdLfU
+*********end**********
+*********************************
+Request: POST
+URL: https://young-citadel-48504.herokuapp.com/campaigns.json
+************Header***************
+Content-Type:application/json
+authorization:Basic YWRtaW46cGFzc3dvcmQ=
+************Request**************
+{
+    &quot;campaign&quot;:{
+        &quot;user_id&quot;:1,
+        &quot;assigned_to&quot;:1,
+        &quot;name&quot;:&quot;MAwFgrFrLeZvjctRxPVMNsNMxxxZCPOhHAFfjdshpynuWbwBYrrqGCDVurYLgdLfU&quot;,
+        &quot;access&quot;:&quot;Public&quot;,
+        &quot;status&quot;:null,
+        &quot;budget&quot;:null,
+        &quot;target_leads&quot;:null,
+        &quot;target_conversion&quot;:null,
+        &quot;target_revenue&quot;:null,
+        &quot;leads_count&quot;:null,
+        &quot;opportunities_count&quot;:null,
+        &quot;revenue&quot;:null,
+        &quot;starts_on&quot;:&quot;2018-01-12&quot;,
+        &quot;ends_on&quot;:null,
+        &quot;objectives&quot;:null,
+        &quot;deleted_at&quot;:null,
+        &quot;created_at&quot;:&quot;2018-01-12T08:00:00.000Z&quot;,
+        &quot;updated_at&quot;:&quot;2018-01-12T16:57:27.780Z&quot;,
+        &quot;background_info&quot;:null,
+        &quot;subscribed_users&quot;:[
+
+        ]
+    }
+}
+*********************************
+************Response*************
+Status: 500
+Duration: 18187 ms
+{
+    &quot;status&quot;:&quot;500&quot;,
+    &quot;error&quot;:&quot;Internal Server Error&quot;
+}
+******Response Headers***********
+{
+    &quot;server&quot;:&quot;Cowboy&quot;,
+    &quot;connection&quot;:&quot;keep-alive&quot;,
+    &quot;date&quot;:&quot;Tue, 06 Feb 2018 04:51:25 GMT&quot;,
+    &quot;status&quot;:&quot;500 Internal Server Error&quot;,
+    &quot;content-type&quot;:&quot;application/json; charset=utf-8&quot;,
+    &quot;content-length&quot;:&quot;48&quot;,
+    &quot;x-request-id&quot;:&quot;ec31356f-53e0-4343-8e57-043e5885f797&quot;,
+    &quot;x-runtime&quot;:&quot;0.031393&quot;,
+    &quot;via&quot;:&quot;1.1 vegur&quot;
+}
+*********************************
+***Current Params****
+{
+    &quot;name&quot;:&quot;MAwFgrFrLeZvjctRxPVMNsNMxxxZCPOhHAFfjdshpynuWbwBYrrqGCDVurYLgdLfU&quot;,
+    &quot;date&quot;:&quot;Tue, 06 Feb 2018 04:51:25 GMT&quot;
+}
+***test items**
+
+*********************
+************Expected Response: *****************
+{
+    &quot;status&quot;:&quot;500&quot;,
+    &quot;error&quot;:&quot;Internal Server Error&quot;
+}
+*****************************
+******* Expected Code: 500
+******* Expected Headers:**********
+{
+    &quot;date&quot;:&quot;STRING&quot;,
+    &quot;server&quot;:&quot;Cowboy&quot;,
+    &quot;connection&quot;:&quot;keep-alive&quot;
+}
+**************************
+* Executing function call **
+call_api_by_id(true,&quot;deleteCampaign&quot;)
+********* Test Started ***********
+*********************************
+Request: DELETE
+URL: https://young-citadel-48504.herokuapp.com/campaigns/%22ID%22.json
+************Header***************
+Content-Type:application/json
+authorization:Basic YWRtaW46cGFzc3dvcmQ=
+*********************************
+************Response*************
+Status: 404
+Duration: 1172 ms
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;hash&gt;
+  &lt;status&gt;404&lt;/status&gt;
+  &lt;error&gt;Not Found&lt;/error&gt;
+&lt;/hash&gt;
+
+******Response Headers***********
+{
+    &quot;server&quot;:&quot;Cowboy&quot;,
+    &quot;connection&quot;:&quot;keep-alive&quot;,
+    &quot;date&quot;:&quot;Tue, 06 Feb 2018 04:51:26 GMT&quot;,
+    &quot;status&quot;:&quot;404 Not Found&quot;,
+    &quot;content-type&quot;:&quot;application/xml; charset=utf-8&quot;,
+    &quot;content-length&quot;:&quot;104&quot;,
+    &quot;x-request-id&quot;:&quot;359ca0e0-80eb-40c4-b491-7ccf0aec5e46&quot;,
+    &quot;x-runtime&quot;:&quot;0.010137&quot;,
+    &quot;via&quot;:&quot;1.1 vegur&quot;
+}
+*********************************
+** Response is not a json and did not parse with custom function
+784: unexpected token at &#39;&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;hash&gt;
+  &lt;status&gt;404&lt;/status&gt;
+  &lt;error&gt;Not Found&lt;/error&gt;
+&lt;/hash&gt;
+&#39;
+************
+***Current Params****
+{
+    &quot;name&quot;:&quot;MAwFgrFrLeZvjctRxPVMNsNMxxxZCPOhHAFfjdshpynuWbwBYrrqGCDVurYLgdLfU&quot;,
+    &quot;date&quot;:&quot;Tue, 06 Feb 2018 04:51:25 GMT&quot;
+}
+***test items**
+
+*********************
+*********end**********
+*********** Test Pass.***********</pre></div></td></tr>
+                    </table>
+              <table class='inf-table tab-content hide' id='xml-1'>
+                  <tr>
+                      <th>Request</th>
+                      <th>Expected Response</th>
+                      <th>Actual Response</th>
+                  </tr><tr>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Headers<br>
+                              <div class='json-to-xml'>{
+    "Content-Type":"application/json",
+    "authorization":"Basic YWRtaW46cGFzc3dvcmQ="
+}</div>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Headers<br>
+                              <div class='json-to-xml'>{
+    "date":"STRING",
+    "server":"Cowboy",
+    "connection":"keep-alive"
+}</div>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Headers<br>
+                              <div class='json-to-xml'>{
+    "server":"Cowboy",
+    "connection":"keep-alive",
+    "date":"Tue, 06 Feb 2018 04:51:25 GMT",
+    "status":"500 Internal Server Error",
+    "content-type":"application/json; charset=utf-8",
+    "content-length":"48",
+    "x-request-id":"ec31356f-53e0-4343-8e57-043e5885f797",
+    "x-runtime":"0.031393",
+    "via":"1.1 vegur"
+}</div>
+                          </div>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <div class='json-to-xml'>{
+    "campaign":{
+        "user_id":1,
+        "assigned_to":1,
+        "name":"MAwFgrFrLeZvjctRxPVMNsNMxxxZCPOhHAFfjdshpynuWbwBYrrqGCDVurYLgdLfU",
+        "access":"Public",
+        "status":null,
+        "budget":null,
+        "target_leads":null,
+        "target_conversion":null,
+        "target_revenue":null,
+        "leads_count":null,
+        "opportunities_count":null,
+        "revenue":null,
+        "starts_on":"2018-01-12",
+        "ends_on":null,
+        "objectives":null,
+        "deleted_at":null,
+        "created_at":"2018-01-12T08:00:00.000Z",
+        "updated_at":"2018-01-12T16:57:27.780Z",
+        "background_info":null,
+        "subscribed_users":[
+
+        ]
+    }
+}</div>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <div class='json-to-xml'>{
+    "status":"500",
+    "error":"Internal Server Error"
+}</div>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <div class='json-to-xml'>{
+    "status":"500",
+    "error":"Internal Server Error"
+}</div>
+                          </div>
+                      </td>
+                  </tr>
+              </table>
+          </div>
+      </td>
+  </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div id="return-to-top"><i class="sprite sprite-i-dropdown-grey"></i></div>
+
+<script type="text/javascript">
+    function formatXml(xml) {
+        var formatted = "";
+        var reg = /(>)(<)(\/*)/g;
+        xml = xml.replace(reg, "$1\r\n$2$3");
+        var pad = 0;
+        jQuery.each(xml.split("\r\n"), function(index, node) {
+            var indent = 0;
+            if (node.match( /.+<\/\w[^>]*>$/ )) {
+                indent = 0;
+            } else if (node.match( /^<\/\w/ )) {
+                if (pad != 0) {
+                    pad -= 1;
+                }
+            } else if (node.match( /^<\w[^>]*[^\/]>.*$/ )) {
+                indent = 1;
+            } else {
+                indent = 0;
+            }
+
+            var padding = "";
+            for (var i = 0; i < pad; i++) {
+                padding += "  ";
+            }
+
+            formatted += padding + node + "\r\n";
+            pad += indent;
+        });
+
+        return formatted;
+    }
+
+    var totalScenarioNumber = $(".result-count").length;
+    var passedScenarioNumber = $(".result-count.pass-count").length;
+    var passPercentage = (passedScenarioNumber * 100 / totalScenarioNumber).toFixed(2) + "%";
+    $("#total-scenario-number").html(totalScenarioNumber);
+    $("#passed-scenario-number").html(passedScenarioNumber);
+    $("#pass-percentage").html(passPercentage);
+    var totalTimeInSecond = 0;
+    $(".single-scenario-time").each(function () {
+        var timeText = $(this).html();
+        totalTimeInSecond += Number(timeText.split(" ")[0]);
+    });
+		var totalTimeInSec = Math.round(totalTimeInSecond);
+    $("#total-time").html(totalTimeInSec);
+
+    $(".json-to-xml").each(function () {
+        var validJson = false;
+        var originalJson = $(this).text();
+        var preParseJson = originalJson.replace(/=>/g, ":");
+        var realJson = preParseJson;
+        try {
+            realJson = JSON.parse(preParseJson);
+            validJson = true;
+        }
+        catch (err) {
+            console.log(err.message);
+        }
+        if (validJson == true) {
+            var finalXml = realJson;
+            try {
+                finalXml = json2xml(realJson);
+            }
+            catch (err) {
+                console.log(err.message);
+            }
+            var xmlHead = "<pre><code class=\"xml\">";
+            var xmlTail = "</code></pre>";
+            var lol = (formatXml(finalXml));
+            var replacedFinalXml = lol.replace(/>/g, "&gt;").replace(/</g, "&lt;").replace(/"/g, "&quot;");
+  $(this).html(xmlHead + replacedFinalXml + xmlTail);
+  }
+  });
+  hljs.initHighlightingOnLoad();
+  </script>
+</body>
+</html>

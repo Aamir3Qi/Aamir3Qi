@@ -1,0 +1,21 @@
+{
+    "params":{
+        "environment":{
+            "url":"",
+            "name":"DEV"
+        },
+        "variables": {
+            "performance": {
+                "enabled": "false",
+                "duration_minutes": "1", //max duration
+                "threads_number": "500", //max thread number
+                "max_loops": "0", //max number of loops
+                "evenly_increment_by": "", //ONLY WORKS WITH DURATION
+                "increment_by_thread_num": "20", //increment by number of threads, works with increment_every_num_seconds only
+                "increment_every_num_seconds": "10", //works with increment_by_thread_num
+                "log_all_requests": "true", //log all data to excel
+                "request_retry_attempts": "0" //retry request if it fails before continuing the flow
+            }
+        }
+    }
+}

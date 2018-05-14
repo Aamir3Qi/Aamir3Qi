@@ -1,0 +1,64 @@
+Update 2017 Sep. 5 [Latest]
+user method current_test to get the current test object in your custom functions
+see the new methods are available in custom functions file for use
+
+
+
+
+Update 2017
+Replace the following ruby files with new files
+
+    create_feature.rb
+
+    features/step_definitions
+        classes.rb
+        function_def.rb
+        my_steps.rb
+        jdbc_connectin.rb
+        write_to_xl.rb
+        predefined_steps.rb
+
+Copy new objects from env_constants.json to your env_constants.json matching the json structure:
+    "common_params"
+    "proxy"
+    "validation_keys"
+
+Copy new function "validate_special_value" from app_functions.rb to your file
+
+All the custom functions that are called from excel steps must return a string with anything that should be logged/printed instead of actually printing it for example
+    def my_validation
+        log = ''
+        do stuff
+        log << "\n" + "did something"
+        log << "\n" +"validation passed"
+        do stuff
+        return log
+    end
+
+
+Recreate feature files
+
+
+the function generate_request now takes 2 parameters (request_body, test_params), Update the function and use the following parameterns instead of global variables.
+
+What's new Dec. 2016
+Able to use a separate excel file for sample requests to be merged. sample_requests.xlsx  with sample_requests tab.
+
+
+
+What's new:
+
+Able to merge URL, API Name/End Point, Request Type. Will use those values from merge request if values are missing in the test
+no longer need to add "-c" flag for creating feature files, if you want to put feature files in the folder new_files, use command ruby create_feature -n
+Refactored framework now uses classes.
+Custom validations. To use a custom validation add it to env_params validations_keys and define it in validate_special_value function.
+Excel report will have a full as in html report
+Common params for all environments
+ability to call test by id (with all setup/validation/after steps) and perform validations at the same time with execute_text(test_id) function
+ability to easy create function with multiple service calls and their setup/after steps as well as validating response
+ability to limit printing into the log for big objects (response, headers, capture_params)
+fixed issues:
+    errors would print in the middle of logs and also would print test passed at the end. for validation steps
+    log prints in order
+    other minor fixes
+

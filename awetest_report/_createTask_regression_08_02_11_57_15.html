@@ -1,0 +1,3136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Awetest Service Report</title>
+    <link href="http://awetest.com/favicon.ico" rel="shortcut icon">
+
+    <script src="https://awetest.com/assets/test_base/service_api_log.js" type="text/javascript"></script>
+    <link href="https://awetest.com/assets/service_report.css" media="screen" rel="stylesheet" type="text/css">
+    <script src="https://awetest.com/assets/jquery.js"   type="text/javascript"></script>
+    <script src="https://awetest.com/assets/clipboard.min.js"   type="text/javascript"></script>
+    <script src="https://awetest.com/assets/Chart.js"   type="text/javascript"></script>
+    <script type="text/javascript" src="http://awetest.com/system/downloads/Report/awetest_part.js"></script>
+    <script type="text/javascript" src="http://awetest.com/system/downloads/Report/json2xml.js"></script>
+    <script type="text/javascript" src="http://awetest.com/system/downloads/Report/highlight.pack.js"></script>
+    <!--[if IE]>
+    <style>
+        .inner-table-wrapper {
+            position: relative;
+            left: -1px;
+        }
+    </style>
+    <![endif]-->
+
+</head>
+<body>
+<header class="header"></header>
+<div class="left-tab"></div>
+<div class="wrapper">
+    <div class="content">
+        <div class="row">
+            <div class="gl_page_inner">
+                <div class="gl_hr_header">
+                    <div class="header-element"><a href="" class="header-element-link">Test Report</a></div>
+                </div>
+                <div class="design-body">
+                    <div class="information-block">
+                        <div class="inf-bottom-part">
+                            <div class="main-info-wrapper">
+                                <div>
+                                    <span class="sprite sprite-i-multi-storey-building-white"></span>Total Time: <span id="total-time"></span> Seconds
+                                </div>
+                                <div>
+                                    <span class="sprite sprite-i-multi-storey-building-white"></span># of Scenarios: <span id="total-scenario-number"></span>
+                                </div>
+                                <div>
+                                    <span class="sprite sprite-i-multi-storey-building-white"></span>
+                                </div>
+                                <div><span class="sprite sprite-i-multi-storey-building-white"></span># Passed: <span id="passed-scenario-number"></span></div>
+                                <div>
+                                    <span class="sprite sprite-i-multi-storey-building-white"></span>
+                                </div>
+                                <div><span class="sprite sprite-i-multi-storey-building-white"></span>Pass %: <span id="pass-percentage"></span></div>
+                            </div>
+                            <div class="chart-wrapper">
+                                <canvas id="chart1" height="120px" width="120px"></canvas>
+                                <div class="chartjs-tooltip" id="chart-tooltip"></div>
+                                <div id="spfg_legend"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="information-table">
+                        <div class="table-control-row">
+                            <p class="active left-control expand-button closed" data-target="all">EXPAND ALL</p>
+                            <p class="right-control toggle-errors active">ALL</p>
+                            <p class="right-control toggle-errors">ERRORS</p>
+                            <p class="right-control">SHOW</p>
+                        </div>
+
+                        <table class="inf-table">
+                            <thead class="table-head">
+                                <tr>
+                                    <th width="39">#</th>
+                                    <th width="150">ID</th>
+                                    <th width="121">URL</th>
+                                    <th width="160">Scenario</th>
+                                    <th width="96">Date/Time</th>
+                                    <th width="67">Method</th>
+                                    <th width="90">Duration</th>
+                                    <th width="86">Exp Code</th>
+                                    <th width="86">Actual Code</th>
+                                    <th width="88">Result</th>
+                                </tr>
+                            </thead>
+
+                            <tbody><tr class='pass scenario' id='scenario1'>
+                                    <td width='39'>
+                                        <div class='jump-wrapper'>
+                                            <div data-destination='#scenario0'>↑</div>
+                                            <div data-destination='#scenario2'>↓</div>
+                                        </div>
+                                        <span class='expand-button closed' data-target='.expand-1'></span>1
+                                    </td>
+                                    <td width='80'>s_001</td>
+                                    <td width='121'><a href='https://young-citadel-48504.herokuapp.com/tasks.json' class='table-link'>https://young-citadel-48504.herokuapp.com/tasks.json</a></td>
+                                    <td width='235'>Verify field accept 64 char max</td>
+                                    <td width='96'>2018-02-08 11:57:08 +0530</td>
+                                    <td width='67'>POST</td>
+                                    <td width='90' class='single-scenario-time'>12756</td>
+                                    <td width='86'>201</td>
+                                    <td width='86'>201</td><td width='90' class='result-pass result-count pass-count'><span class='sprite sprite-i-passed-green'></span>Pass</td><tr class='expand-row'>
+      <td class='no-padding no-border' colspan='10'>
+          <div class='inner-table-wrapper expand-1 hide'><span class='tab-toggle summary active' data-target='summary'>Summary</span>
+                    <span class='tab-toggle log' data-target='log'>Log</span>
+                    <span class='tab-toggle xml' data-target='xml'>Xml</span><table class='inf-table tab-content' id='summary-1'>
+                  <tr>
+                      <th>Request</th>
+                      <th>Expected Response</th>
+                      <th>Actual Response</th>
+                  </tr>
+                  <tr>
+                    <td>
+                        <div class='tooltip copy-to-clipboard'>
+                            <div class='sprite sprite-i-list-grey ripplelink'></div>
+                            <div class='tooltip-inner'>
+                                <div class='tooltip-ir-inner'>
+                                    Copy to clipboard
+                                </div>
+                            </div>
+                        </div>
+                        <div class='json-wrapper'>
+                            Headers<br>
+                            <pre>{
+    "Content-Type":"application/json",
+    "authorization":"Basic YWRtaW46cGFzc3dvcmQ="
+}</pre>
+                        </div>
+                    </td>
+                    <td>
+                        <div class='tooltip copy-to-clipboard'>
+                            <div class='sprite sprite-i-list-grey ripplelink'></div>
+                            <div class='tooltip-inner'>
+                                <div class='tooltip-ir-inner'>
+                                    Copy to clipboard
+                                </div>
+                            </div>
+                        </div>
+                        <div class='json-wrapper'>
+                            Headers<br>
+                            <pre>{
+    "date":"STRING",
+    "server":"Cowboy",
+    "connection":"close"
+}</pre>
+                        </div>
+                    </td>
+                    <td>
+                        <div class='tooltip copy-to-clipboard'>
+                            <div class='sprite sprite-i-list-grey ripplelink'></div>
+                            <div class='tooltip-inner'>
+                                <div class='tooltip-ir-inner'>
+                                    Copy to clipboard
+                                </div>
+                            </div>
+                        </div>
+                        <div class='json-wrapper'>
+                            Headers<br>
+                            <pre>{
+    "server":"Cowboy",
+    "connection":"close",
+    "date":"Thu, 08 Feb 2018 06:26:55 GMT",
+    "status":"201 Created",
+    "x-frame-options":"SAMEORIGIN",
+    "x-xss-protection":"1; mode=block",
+    "x-content-type-options":"nosniff",
+    "location":"https://young-citadel-48504.herokuapp.com/tasks/270",
+    "content-type":"application/json; charset=utf-8",
+    "etag":"W/\"64ec5b49c6131338fc14aebcea330ffb\"",
+    "cache-control":"max-age=0, private, must-revalidate",
+    "set-cookie":"_fat_free_crm_session=Q29zZ3hpQTdMNm5tNkF3Q1FGd3RwWE5wSEF3endnczM0eVlhZnpnaUpXZGEzYnB6OEZnOE55dUdqUVI4VjlOdFAzRlhYNExmSGJhNnBsZzc3VHozL25kazVnbVB0UGlkcUhXZkQ4MHBhYWVTOFFmcWx3Ti8rUStGdmJuZUpocWcvQkQwQWl3N2QwMnBoaDdvSWEwM0VuY0RsdS9mL0JOQlpuS1Z5TWFqT2VKQk4yT0ZYeVN6OTFKNEJqQjNRNU9wbjNhL3hTQzFJSzZKaHZJUDQxV3JCOHhKMkE0VlQ3eE83UFV5SWQyakp6bEovRmRSSlJVcjFIb0hBZlp4UjJ2eStyQWpDRFJ6WXNvTFkxVjdJSmFMSGZ0UFVWTWdZZ0JGbTBEb3pFRlhkUWpSTUtKTmYvL0dnVDdyaW9oOEU0ZW92cmN1bEdUUTN0c09LRlJESzFZazBnPT0tLUxvdEJxbFlTK3ZQQ1pCME1JS3oxWlE9PQ%3D%3D--28dcccacddf3ea034c7670dab6c4a52a0af13345; path=/; HttpOnly",
+    "x-request-id":"11f403aa-9f03-4a88-bd82-9df37d27c537",
+    "x-runtime":"0.043671",
+    "via":"1.1 vegur"
+}</pre>
+                        </div>
+                    </td>
+                  </tr>
+                  <tr>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <pre>{
+    "task":{
+        "user_id":1,
+        "assigned_to":null,
+        "completed_by":null,
+        "name":"EVNCkaNpJWFeDFMDEBYLagxtJgRHUUFeWKgeVSvVsJycAXhkgvnsYOXZFtTLdACu",
+        "asset_id":null,
+        "asset_type":"",
+        "priority":null,
+        "category":"money",
+        "bucket":"due_next_week",
+        "due_at":"2018-01-21T18:29:59.999Z",
+        "completed_at":null,
+        "deleted_at":null,
+        "created_at":"2018-01-10T03:29:02.058Z",
+        "updated_at":"2018-01-10T03:29:02.058Z",
+        "background_info":null,
+        "subscribed_users":[
+
+        ]
+    }
+}</pre>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <pre>{
+    "task":{
+        "id":"INTEGER",
+        "user_id":1,
+        "assigned_to":null,
+        "completed_by":null,
+        "name":"EVNCkaNpJWFeDFMDEBYLagxtJgRHUUFeWKgeVSvVsJycAXhkgvnsYOXZFtTLdACu",
+        "asset_id":null,
+        "asset_type":"",
+        "priority":null,
+        "category":"money",
+        "bucket":"due_next_week",
+        "due_at":"STRING",
+        "completed_at":null,
+        "deleted_at":null,
+        "created_at":"STRING",
+        "updated_at":"STRING",
+        "background_info":null,
+        "subscribed_users":[
+
+        ]
+    }
+}</pre>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <pre>{
+    "task":{
+        "id":270,
+        "user_id":1,
+        "assigned_to":null,
+        "completed_by":null,
+        "name":"EVNCkaNpJWFeDFMDEBYLagxtJgRHUUFeWKgeVSvVsJycAXhkgvnsYOXZFtTLdACu",
+        "asset_id":null,
+        "asset_type":"",
+        "priority":null,
+        "category":"money",
+        "bucket":"due_next_week",
+        "due_at":"2018-02-18T23:59:59.999+05:30",
+        "completed_at":null,
+        "deleted_at":null,
+        "created_at":"2018-01-10T08:59:02.058+05:30",
+        "updated_at":"2018-01-10T08:59:02.058+05:30",
+        "background_info":null,
+        "subscribed_users":[
+
+        ]
+    }
+}</pre>
+                          </div>
+                      </td>
+                  </tr>
+                </table><table class='inf-table tab-content hide' id='log-1'>
+                      <tr><td><div style='max-height:500px; overflow: auto;
+  margin-bottom: 10px;'><pre>Execution Time: 13873 ms
+********* Test Started ***********
+* Executing function call **
+rand_string_alpha(64,&quot;name&quot;)
+EVNCkaNpJWFeDFMDEBYLagxtJgRHUUFeWKgeVSvVsJycAXhkgvnsYOXZFtTLdACu
+*********end**********
+*********************************
+Request: POST
+URL: https://young-citadel-48504.herokuapp.com/tasks.json
+************Header***************
+Content-Type:application/json
+authorization:Basic YWRtaW46cGFzc3dvcmQ=
+************Request**************
+{
+    &quot;task&quot;:{
+        &quot;user_id&quot;:1,
+        &quot;assigned_to&quot;:null,
+        &quot;completed_by&quot;:null,
+        &quot;name&quot;:&quot;EVNCkaNpJWFeDFMDEBYLagxtJgRHUUFeWKgeVSvVsJycAXhkgvnsYOXZFtTLdACu&quot;,
+        &quot;asset_id&quot;:null,
+        &quot;asset_type&quot;:&quot;&quot;,
+        &quot;priority&quot;:null,
+        &quot;category&quot;:&quot;money&quot;,
+        &quot;bucket&quot;:&quot;due_next_week&quot;,
+        &quot;due_at&quot;:&quot;2018-01-21T18:29:59.999Z&quot;,
+        &quot;completed_at&quot;:null,
+        &quot;deleted_at&quot;:null,
+        &quot;created_at&quot;:&quot;2018-01-10T03:29:02.058Z&quot;,
+        &quot;updated_at&quot;:&quot;2018-01-10T03:29:02.058Z&quot;,
+        &quot;background_info&quot;:null,
+        &quot;subscribed_users&quot;:[
+
+        ]
+    }
+}
+*********************************
+************Response*************
+Status: 201
+Duration: 12756 ms
+{
+    &quot;task&quot;:{
+        &quot;id&quot;:270,
+        &quot;user_id&quot;:1,
+        &quot;assigned_to&quot;:null,
+        &quot;completed_by&quot;:null,
+        &quot;name&quot;:&quot;EVNCkaNpJWFeDFMDEBYLagxtJgRHUUFeWKgeVSvVsJycAXhkgvnsYOXZFtTLdACu&quot;,
+        &quot;asset_id&quot;:null,
+        &quot;asset_type&quot;:&quot;&quot;,
+        &quot;priority&quot;:null,
+        &quot;category&quot;:&quot;money&quot;,
+        &quot;bucket&quot;:&quot;due_next_week&quot;,
+        &quot;due_at&quot;:&quot;2018-02-18T23:59:59.999+05:30&quot;,
+        &quot;completed_at&quot;:null,
+        &quot;deleted_at&quot;:null,
+        &quot;created_at&quot;:&quot;2018-01-10T08:59:02.058+05:30&quot;,
+        &quot;updated_at&quot;:&quot;2018-01-10T08:59:02.058+05:30&quot;,
+        &quot;background_info&quot;:null,
+        &quot;subscribed_users&quot;:[
+
+        ]
+    }
+}
+******Response Headers***********
+{
+    &quot;server&quot;:&quot;Cowboy&quot;,
+    &quot;connection&quot;:&quot;close&quot;,
+    &quot;date&quot;:&quot;Thu, 08 Feb 2018 06:26:55 GMT&quot;,
+    &quot;status&quot;:&quot;201 Created&quot;,
+    &quot;x-frame-options&quot;:&quot;SAMEORIGIN&quot;,
+    &quot;x-xss-protection&quot;:&quot;1; mode=block&quot;,
+    &quot;x-content-type-options&quot;:&quot;nosniff&quot;,
+    &quot;location&quot;:&quot;https://young-citadel-48504.herokuapp.com/tasks/270&quot;,
+    &quot;content-type&quot;:&quot;application/json; charset=utf-8&quot;,
+    &quot;etag&quot;:&quot;W/\&quot;64ec5b49c6131338fc14aebcea330ffb\&quot;&quot;,
+    &quot;cache-control&quot;:&quot;max-age=0, private, must-revalidate&quot;,
+    &quot;set-cookie&quot;:&quot;_fat_free_crm_session=Q29zZ3hpQTdMNm5tNkF3Q1FGd3RwWE5wSEF3endnczM0eVlhZnpnaUpXZGEzYnB6OEZnOE55dUdqUVI4VjlOdFAzRlhYNExmSGJhNnBsZzc3VHozL25kazVnbVB0UGlkcUhXZkQ4MHBhYWVTOFFmcWx3Ti8rUStGdmJuZUpocWcvQkQwQWl3N2QwMnBoaDdvSWEwM0VuY0RsdS9mL0JOQlpuS1Z5TWFqT2VKQk4yT0ZYeVN6OTFKNEJqQjNRNU9wbjNhL3hTQzFJSzZKaHZJUDQxV3JCOHhKMkE0VlQ3eE83UFV5SWQyakp6bEovRmRSSlJVcjFIb0hBZlp4UjJ2eStyQWpDRFJ6WXNvTFkxVjdJSmFMSGZ0UFVWTWdZZ0JGbTBEb3pFRlhkUWpSTUtKTmYvL0dnVDdyaW9oOEU0ZW92cmN1bEdUUTN0c09LRlJESzFZazBnPT0tLUxvdEJxbFlTK3ZQQ1pCME1JS3oxWlE9PQ%3D%3D--28dcccacddf3ea034c7670dab6c4a52a0af13345; path=/; HttpOnly&quot;,
+    &quot;x-request-id&quot;:&quot;11f403aa-9f03-4a88-bd82-9df37d27c537&quot;,
+    &quot;x-runtime&quot;:&quot;0.043671&quot;,
+    &quot;via&quot;:&quot;1.1 vegur&quot;
+}
+*********************************
+***Current Params****
+{
+    &quot;name&quot;:&quot;EVNCkaNpJWFeDFMDEBYLagxtJgRHUUFeWKgeVSvVsJycAXhkgvnsYOXZFtTLdACu&quot;,
+    &quot;id&quot;:270,
+    &quot;date&quot;:&quot;Thu, 08 Feb 2018 06:26:55 GMT&quot;
+}
+***test items**
+
+*********************
+************Expected Response: *****************
+{
+    &quot;task&quot;:{
+        &quot;id&quot;:&quot;INTEGER&quot;,
+        &quot;user_id&quot;:1,
+        &quot;assigned_to&quot;:null,
+        &quot;completed_by&quot;:null,
+        &quot;name&quot;:&quot;EVNCkaNpJWFeDFMDEBYLagxtJgRHUUFeWKgeVSvVsJycAXhkgvnsYOXZFtTLdACu&quot;,
+        &quot;asset_id&quot;:null,
+        &quot;asset_type&quot;:&quot;&quot;,
+        &quot;priority&quot;:null,
+        &quot;category&quot;:&quot;money&quot;,
+        &quot;bucket&quot;:&quot;due_next_week&quot;,
+        &quot;due_at&quot;:&quot;STRING&quot;,
+        &quot;completed_at&quot;:null,
+        &quot;deleted_at&quot;:null,
+        &quot;created_at&quot;:&quot;STRING&quot;,
+        &quot;updated_at&quot;:&quot;STRING&quot;,
+        &quot;background_info&quot;:null,
+        &quot;subscribed_users&quot;:[
+
+        ]
+    }
+}
+*****************************
+******* Expected Code: 201
+******* Expected Headers:**********
+{
+    &quot;date&quot;:&quot;STRING&quot;,
+    &quot;server&quot;:&quot;Cowboy&quot;,
+    &quot;connection&quot;:&quot;close&quot;
+}
+**************************
+* Executing function call **
+call_api_by_id(true,&quot;deleteTask&quot;)
+********* Test Started ***********
+*********************************
+Request: DELETE
+URL: https://young-citadel-48504.herokuapp.com/tasks/270.json
+************Header***************
+Content-Type:application/json
+authorization:Basic YWRtaW46cGFzc3dvcmQ=
+*********************************
+************Response*************
+Status: 204
+Duration: 1086 ms
+
+******Response Headers***********
+{
+    &quot;server&quot;:&quot;Cowboy&quot;,
+    &quot;content-length&quot;:&quot;0&quot;,
+    &quot;connection&quot;:&quot;keep-alive&quot;,
+    &quot;date&quot;:&quot;Thu, 08 Feb 2018 06:26:56 GMT&quot;,
+    &quot;status&quot;:&quot;204 No Content&quot;,
+    &quot;x-frame-options&quot;:&quot;SAMEORIGIN&quot;,
+    &quot;x-xss-protection&quot;:&quot;1; mode=block&quot;,
+    &quot;x-content-type-options&quot;:&quot;nosniff&quot;,
+    &quot;cache-control&quot;:&quot;no-cache&quot;,
+    &quot;set-cookie&quot;:&quot;_fat_free_crm_session=TkxUdi9iRDc0d3pXRkNMWEt3UDRzN0NhblkrY3Z4dVAwakNOREh5YWVPNjY2aDlDd2s4TEdaa3RtdmQxaFpyTm5VYUJIeVB0d1RNYmh0algrcTNObUc2ekRPOXk0WW9RME5PRWdoNmw2NWZzMWJINCtYVWZ4dnVLRmF5TlRNVlRUR01TejNoREFTVk1xNFVUMjJKeGxTbzRhOXFvNnc1SmNaQWRXZlZuZHpqUkcvNzkrTEJsMFlEa0dSVVhTWUpPQWRmYmRBYjllclRvOVhENXEvQThqMXpuVjNuV2xLUk1Cby9hV01TVmpNVHZjSFMrME1hb2p4SlFQTzZHTlQvTmMvMVBJUDFpSElEVlk1SmpsRmRrOHlZVzJzSmhVSWg4d1J2Y2Ezc28vSHdWYjA0RS9HOVdjWXVOaFRPNVNmWjRKSHJzVmliOEdwRFlVa2FROGVHdkpBPT0tLUdBTWNMQlNvL3Z3U1gveEpVSXYvNVE9PQ%3D%3D--597042f55b6c8df722408e2e9d519f7594fcbdd7; path=/; HttpOnly&quot;,
+    &quot;x-request-id&quot;:&quot;29fc6a4d-cd92-40e2-9275-3c5011a28efb&quot;,
+    &quot;x-runtime&quot;:&quot;0.041991&quot;,
+    &quot;via&quot;:&quot;1.1 vegur&quot;
+}
+*********************************
+** Response is not a json and did not parse with custom function
+A JSON text must at least contain two octets!
+************
+***Current Params****
+{
+    &quot;name&quot;:&quot;EVNCkaNpJWFeDFMDEBYLagxtJgRHUUFeWKgeVSvVsJycAXhkgvnsYOXZFtTLdACu&quot;,
+    &quot;id&quot;:270,
+    &quot;date&quot;:&quot;Thu, 08 Feb 2018 06:26:55 GMT&quot;
+}
+***test items**
+
+*********************
+*********end**********
+*********** Test Pass.***********</pre></div></td></tr>
+                    </table>
+              <table class='inf-table tab-content hide' id='xml-1'>
+                  <tr>
+                      <th>Request</th>
+                      <th>Expected Response</th>
+                      <th>Actual Response</th>
+                  </tr><tr>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Headers<br>
+                              <div class='json-to-xml'>{
+    "Content-Type":"application/json",
+    "authorization":"Basic YWRtaW46cGFzc3dvcmQ="
+}</div>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Headers<br>
+                              <div class='json-to-xml'>{
+    "date":"STRING",
+    "server":"Cowboy",
+    "connection":"close"
+}</div>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Headers<br>
+                              <div class='json-to-xml'>{
+    "server":"Cowboy",
+    "connection":"close",
+    "date":"Thu, 08 Feb 2018 06:26:55 GMT",
+    "status":"201 Created",
+    "x-frame-options":"SAMEORIGIN",
+    "x-xss-protection":"1; mode=block",
+    "x-content-type-options":"nosniff",
+    "location":"https://young-citadel-48504.herokuapp.com/tasks/270",
+    "content-type":"application/json; charset=utf-8",
+    "etag":"W/\"64ec5b49c6131338fc14aebcea330ffb\"",
+    "cache-control":"max-age=0, private, must-revalidate",
+    "set-cookie":"_fat_free_crm_session=Q29zZ3hpQTdMNm5tNkF3Q1FGd3RwWE5wSEF3endnczM0eVlhZnpnaUpXZGEzYnB6OEZnOE55dUdqUVI4VjlOdFAzRlhYNExmSGJhNnBsZzc3VHozL25kazVnbVB0UGlkcUhXZkQ4MHBhYWVTOFFmcWx3Ti8rUStGdmJuZUpocWcvQkQwQWl3N2QwMnBoaDdvSWEwM0VuY0RsdS9mL0JOQlpuS1Z5TWFqT2VKQk4yT0ZYeVN6OTFKNEJqQjNRNU9wbjNhL3hTQzFJSzZKaHZJUDQxV3JCOHhKMkE0VlQ3eE83UFV5SWQyakp6bEovRmRSSlJVcjFIb0hBZlp4UjJ2eStyQWpDRFJ6WXNvTFkxVjdJSmFMSGZ0UFVWTWdZZ0JGbTBEb3pFRlhkUWpSTUtKTmYvL0dnVDdyaW9oOEU0ZW92cmN1bEdUUTN0c09LRlJESzFZazBnPT0tLUxvdEJxbFlTK3ZQQ1pCME1JS3oxWlE9PQ%3D%3D--28dcccacddf3ea034c7670dab6c4a52a0af13345; path=/; HttpOnly",
+    "x-request-id":"11f403aa-9f03-4a88-bd82-9df37d27c537",
+    "x-runtime":"0.043671",
+    "via":"1.1 vegur"
+}</div>
+                          </div>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <div class='json-to-xml'>{
+    "task":{
+        "user_id":1,
+        "assigned_to":null,
+        "completed_by":null,
+        "name":"EVNCkaNpJWFeDFMDEBYLagxtJgRHUUFeWKgeVSvVsJycAXhkgvnsYOXZFtTLdACu",
+        "asset_id":null,
+        "asset_type":"",
+        "priority":null,
+        "category":"money",
+        "bucket":"due_next_week",
+        "due_at":"2018-01-21T18:29:59.999Z",
+        "completed_at":null,
+        "deleted_at":null,
+        "created_at":"2018-01-10T03:29:02.058Z",
+        "updated_at":"2018-01-10T03:29:02.058Z",
+        "background_info":null,
+        "subscribed_users":[
+
+        ]
+    }
+}</div>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <div class='json-to-xml'>{
+    "task":{
+        "id":"INTEGER",
+        "user_id":1,
+        "assigned_to":null,
+        "completed_by":null,
+        "name":"EVNCkaNpJWFeDFMDEBYLagxtJgRHUUFeWKgeVSvVsJycAXhkgvnsYOXZFtTLdACu",
+        "asset_id":null,
+        "asset_type":"",
+        "priority":null,
+        "category":"money",
+        "bucket":"due_next_week",
+        "due_at":"STRING",
+        "completed_at":null,
+        "deleted_at":null,
+        "created_at":"STRING",
+        "updated_at":"STRING",
+        "background_info":null,
+        "subscribed_users":[
+
+        ]
+    }
+}</div>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <div class='json-to-xml'>{
+    "task":{
+        "id":270,
+        "user_id":1,
+        "assigned_to":null,
+        "completed_by":null,
+        "name":"EVNCkaNpJWFeDFMDEBYLagxtJgRHUUFeWKgeVSvVsJycAXhkgvnsYOXZFtTLdACu",
+        "asset_id":null,
+        "asset_type":"",
+        "priority":null,
+        "category":"money",
+        "bucket":"due_next_week",
+        "due_at":"2018-02-18T23:59:59.999+05:30",
+        "completed_at":null,
+        "deleted_at":null,
+        "created_at":"2018-01-10T08:59:02.058+05:30",
+        "updated_at":"2018-01-10T08:59:02.058+05:30",
+        "background_info":null,
+        "subscribed_users":[
+
+        ]
+    }
+}</div>
+                          </div>
+                      </td>
+                  </tr>
+              </table>
+          </div>
+      </td>
+  </tr><tr class='fail scenario' id='scenario2'>
+                                    <td width='39'>
+                                        <div class='jump-wrapper'>
+                                            <div data-destination='#scenario1'>↑</div>
+                                            <div data-destination='#scenario3'>↓</div>
+                                        </div>
+                                        <span class='expand-button closed' data-target='.expand-2'></span>2
+                                    </td>
+                                    <td width='80'>s_002</td>
+                                    <td width='121'><a href='https://young-citadel-48504.herokuapp.com/tasks.json' class='table-link'>https://young-citadel-48504.herokuapp.com/tasks.json</a></td>
+                                    <td width='235'>Verify field should not accept 65 char</td>
+                                    <td width='96'>2018-02-08 11:57:09 +0530</td>
+                                    <td width='67'>POST</td>
+                                    <td width='90' class='single-scenario-time'>1025</td>
+                                    <td width='86'>500</td>
+                                    <td width='86'>201</td><td width='90' class='result-fail result-count fail-count'><span class='sprite sprite-i-failed-red'></span>Fail</td><tr class='expand-row'>
+      <td class='no-padding no-border' colspan='10'>
+          <div class='inner-table-wrapper expand-2 hide'><span class='tab-toggle summary active' data-target='summary'>Summary</span>
+                    <span class='tab-toggle log' data-target='log'>Log</span>
+                    <span class='tab-toggle xml' data-target='xml'>Xml</span><table class='inf-table tab-content' id='summary-2'>
+                  <tr>
+                      <th>Request</th>
+                      <th>Expected Response</th>
+                      <th>Actual Response</th>
+                  </tr>
+                  <tr>
+                    <td>
+                        <div class='tooltip copy-to-clipboard'>
+                            <div class='sprite sprite-i-list-grey ripplelink'></div>
+                            <div class='tooltip-inner'>
+                                <div class='tooltip-ir-inner'>
+                                    Copy to clipboard
+                                </div>
+                            </div>
+                        </div>
+                        <div class='json-wrapper'>
+                            Headers<br>
+                            <pre>{
+    "Content-Type":"application/json",
+    "authorization":"Basic YWRtaW46cGFzc3dvcmQ="
+}</pre>
+                        </div>
+                    </td>
+                    <td>
+                        <div class='tooltip copy-to-clipboard'>
+                            <div class='sprite sprite-i-list-grey ripplelink'></div>
+                            <div class='tooltip-inner'>
+                                <div class='tooltip-ir-inner'>
+                                    Copy to clipboard
+                                </div>
+                            </div>
+                        </div>
+                        <div class='json-wrapper'>
+                            Headers<br>
+                            <pre>{
+    "date":"STRING",
+    "server":"Cowboy",
+    "connection":"keep-alive"
+}</pre>
+                        </div>
+                    </td>
+                    <td>
+                        <div class='tooltip copy-to-clipboard'>
+                            <div class='sprite sprite-i-list-grey ripplelink'></div>
+                            <div class='tooltip-inner'>
+                                <div class='tooltip-ir-inner'>
+                                    Copy to clipboard
+                                </div>
+                            </div>
+                        </div>
+                        <div class='json-wrapper'>
+                            Headers<br>
+                            <pre>{
+    "server":"Cowboy",
+    "connection":"close",
+    "date":"Thu, 08 Feb 2018 06:26:58 GMT",
+    "status":"201 Created",
+    "x-frame-options":"SAMEORIGIN",
+    "x-xss-protection":"1; mode=block",
+    "x-content-type-options":"nosniff",
+    "location":"https://young-citadel-48504.herokuapp.com/tasks/271",
+    "content-type":"application/json; charset=utf-8",
+    "etag":"W/\"6ac567371a89b3ca8d4c3b4167775966\"",
+    "cache-control":"max-age=0, private, must-revalidate",
+    "set-cookie":"_fat_free_crm_session=aER6S3lqUnBMRW1uVWpJczNESGlLVm83Ujc2VmtHNzZheHpMNklFOTkvMm0wbWtRMGwzbUxCa1BwYUk4NW9tN0ZyVTJBcVlhZ3BZL0xualRNeS9FTGtQWk5CNWc3d01HMGgxbnhIRGE4akZxa2l4OEJQM3lYSUNEZXZVV0doVCt6Z3k0OHczM0d4RHdzN3puYWdmU21wTFRCT2ZhS1JGTWZIU0o5cWtMZksvWkxjb3c2azQ4WUhQd0ttM2p5T1BTMFhnQzg0ZEFTLzFudk5RSC9RNkVTUnV6eXp6OTRYVG83UGs4ei9ZTXhHQm9SWkZYbEJuR3JwdTAxNEthU1NVUktxdlRyRXZSdmNWUEZkQlBtR0xMc1RhRzZBNVdGaHhpOFc4ZnA5T01VMUlMakJzSVdsNUZiWGJFajl1TG5mVXYxMWNWOWphTnZzRVo4VU56RU45akhRPT0tLVJ6blpSaUpxdHJIYmtReHZTVTNzakE9PQ%3D%3D--c4393950332aadcc6e52b2163d35332002ab97a7; path=/; HttpOnly",
+    "x-request-id":"578a0cf8-dbf8-40d8-a7de-34b3f07d2070",
+    "x-runtime":"0.029709",
+    "via":"1.1 vegur"
+}</pre>
+                        </div>
+                    </td>
+                  </tr>
+                  <tr>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <pre>{
+    "task":{
+        "user_id":1,
+        "assigned_to":null,
+        "completed_by":null,
+        "name":"DSehYQnMdrNhGpvMLTtfwseOOkGpHdFKvjRPRnnWJYQrkLwzzvQmGqHrXNcQJePKq",
+        "asset_id":null,
+        "asset_type":"",
+        "priority":null,
+        "category":"money",
+        "bucket":"due_next_week",
+        "due_at":"2018-01-21T18:29:59.999Z",
+        "completed_at":null,
+        "deleted_at":null,
+        "created_at":"2018-01-10T03:29:02.058Z",
+        "updated_at":"2018-01-10T03:29:02.058Z",
+        "background_info":null,
+        "subscribed_users":[
+
+        ]
+    }
+}</pre>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <pre>{
+    "status":"500",
+    "error":"Internal Server Error"
+}</pre>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <pre>{
+    "task":{
+        "id":271,
+        "user_id":1,
+        "assigned_to":null,
+        "completed_by":null,
+        "name":"DSehYQnMdrNhGpvMLTtfwseOOkGpHdFKvjRPRnnWJYQrkLwzzvQmGqHrXNcQJePKq",
+        "asset_id":null,
+        "asset_type":"",
+        "priority":null,
+        "category":"money",
+        "bucket":"due_next_week",
+        "due_at":"2018-02-18T23:59:59.999+05:30",
+        "completed_at":null,
+        "deleted_at":null,
+        "created_at":"2018-01-10T08:59:02.058+05:30",
+        "updated_at":"2018-01-10T08:59:02.058+05:30",
+        "background_info":null,
+        "subscribed_users":[
+
+        ]
+    }
+}</pre>
+                          </div>
+                      </td>
+                  </tr>
+                </table><table class='inf-table tab-content hide' id='log-2'>
+                      <tr><td><div style='max-height:500px; overflow: auto;
+  margin-bottom: 10px;'><pre>
+********* ERROR ********* 
+ Did not receive the expected response.. 
+Difference is reported in format(Nesting=&gt;[Expected_response, Actual_response]) 
+{
+    &quot;status&quot;:[
+        &quot;500&quot;,
+        null
+    ],
+    &quot;error&quot;:[
+        &quot;Internal Server Error&quot;,
+        null
+    ]
+}
+Response Code: [500, 201]
+Did not receive the expected headers.. 
+Difference is reported in format(Nesting=&gt;[Expected_header, Actual_header]) 
+{&quot;connection&quot;=&gt;[&quot;keep-alive&quot;, &quot;close&quot;]}
+
+ ******************
+Execution Time: 1028 ms
+********* Test Started ***********
+* Executing function call **
+rand_string_alpha(65,&quot;name&quot;)
+DSehYQnMdrNhGpvMLTtfwseOOkGpHdFKvjRPRnnWJYQrkLwzzvQmGqHrXNcQJePKq
+*********end**********
+*********************************
+Request: POST
+URL: https://young-citadel-48504.herokuapp.com/tasks.json
+************Header***************
+Content-Type:application/json
+authorization:Basic YWRtaW46cGFzc3dvcmQ=
+************Request**************
+{
+    &quot;task&quot;:{
+        &quot;user_id&quot;:1,
+        &quot;assigned_to&quot;:null,
+        &quot;completed_by&quot;:null,
+        &quot;name&quot;:&quot;DSehYQnMdrNhGpvMLTtfwseOOkGpHdFKvjRPRnnWJYQrkLwzzvQmGqHrXNcQJePKq&quot;,
+        &quot;asset_id&quot;:null,
+        &quot;asset_type&quot;:&quot;&quot;,
+        &quot;priority&quot;:null,
+        &quot;category&quot;:&quot;money&quot;,
+        &quot;bucket&quot;:&quot;due_next_week&quot;,
+        &quot;due_at&quot;:&quot;2018-01-21T18:29:59.999Z&quot;,
+        &quot;completed_at&quot;:null,
+        &quot;deleted_at&quot;:null,
+        &quot;created_at&quot;:&quot;2018-01-10T03:29:02.058Z&quot;,
+        &quot;updated_at&quot;:&quot;2018-01-10T03:29:02.058Z&quot;,
+        &quot;background_info&quot;:null,
+        &quot;subscribed_users&quot;:[
+
+        ]
+    }
+}
+*********************************
+************Response*************
+Status: 201
+Duration: 1025 ms
+{
+    &quot;task&quot;:{
+        &quot;id&quot;:271,
+        &quot;user_id&quot;:1,
+        &quot;assigned_to&quot;:null,
+        &quot;completed_by&quot;:null,
+        &quot;name&quot;:&quot;DSehYQnMdrNhGpvMLTtfwseOOkGpHdFKvjRPRnnWJYQrkLwzzvQmGqHrXNcQJePKq&quot;,
+        &quot;asset_id&quot;:null,
+        &quot;asset_type&quot;:&quot;&quot;,
+        &quot;priority&quot;:null,
+        &quot;category&quot;:&quot;money&quot;,
+        &quot;bucket&quot;:&quot;due_next_week&quot;,
+        &quot;due_at&quot;:&quot;2018-02-18T23:59:59.999+05:30&quot;,
+        &quot;completed_at&quot;:null,
+        &quot;deleted_at&quot;:null,
+        &quot;created_at&quot;:&quot;2018-01-10T08:59:02.058+05:30&quot;,
+        &quot;updated_at&quot;:&quot;2018-01-10T08:59:02.058+05:30&quot;,
+        &quot;background_info&quot;:null,
+        &quot;subscribed_users&quot;:[
+
+        ]
+    }
+}
+******Response Headers***********
+{
+    &quot;server&quot;:&quot;Cowboy&quot;,
+    &quot;connection&quot;:&quot;close&quot;,
+    &quot;date&quot;:&quot;Thu, 08 Feb 2018 06:26:58 GMT&quot;,
+    &quot;status&quot;:&quot;201 Created&quot;,
+    &quot;x-frame-options&quot;:&quot;SAMEORIGIN&quot;,
+    &quot;x-xss-protection&quot;:&quot;1; mode=block&quot;,
+    &quot;x-content-type-options&quot;:&quot;nosniff&quot;,
+    &quot;location&quot;:&quot;https://young-citadel-48504.herokuapp.com/tasks/271&quot;,
+    &quot;content-type&quot;:&quot;application/json; charset=utf-8&quot;,
+    &quot;etag&quot;:&quot;W/\&quot;6ac567371a89b3ca8d4c3b4167775966\&quot;&quot;,
+    &quot;cache-control&quot;:&quot;max-age=0, private, must-revalidate&quot;,
+    &quot;set-cookie&quot;:&quot;_fat_free_crm_session=aER6S3lqUnBMRW1uVWpJczNESGlLVm83Ujc2VmtHNzZheHpMNklFOTkvMm0wbWtRMGwzbUxCa1BwYUk4NW9tN0ZyVTJBcVlhZ3BZL0xualRNeS9FTGtQWk5CNWc3d01HMGgxbnhIRGE4akZxa2l4OEJQM3lYSUNEZXZVV0doVCt6Z3k0OHczM0d4RHdzN3puYWdmU21wTFRCT2ZhS1JGTWZIU0o5cWtMZksvWkxjb3c2azQ4WUhQd0ttM2p5T1BTMFhnQzg0ZEFTLzFudk5RSC9RNkVTUnV6eXp6OTRYVG83UGs4ei9ZTXhHQm9SWkZYbEJuR3JwdTAxNEthU1NVUktxdlRyRXZSdmNWUEZkQlBtR0xMc1RhRzZBNVdGaHhpOFc4ZnA5T01VMUlMakJzSVdsNUZiWGJFajl1TG5mVXYxMWNWOWphTnZzRVo4VU56RU45akhRPT0tLVJ6blpSaUpxdHJIYmtReHZTVTNzakE9PQ%3D%3D--c4393950332aadcc6e52b2163d35332002ab97a7; path=/; HttpOnly&quot;,
+    &quot;x-request-id&quot;:&quot;578a0cf8-dbf8-40d8-a7de-34b3f07d2070&quot;,
+    &quot;x-runtime&quot;:&quot;0.029709&quot;,
+    &quot;via&quot;:&quot;1.1 vegur&quot;
+}
+*********************************
+***Current Params****
+{
+    &quot;name&quot;:&quot;DSehYQnMdrNhGpvMLTtfwseOOkGpHdFKvjRPRnnWJYQrkLwzzvQmGqHrXNcQJePKq&quot;,
+    &quot;id&quot;:271,
+    &quot;date&quot;:&quot;Thu, 08 Feb 2018 06:26:58 GMT&quot;
+}
+***test items**
+
+*********************
+************Expected Response: *****************
+{
+    &quot;status&quot;:&quot;500&quot;,
+    &quot;error&quot;:&quot;Internal Server Error&quot;
+}
+*****************************
+******* Expected Code: 500
+******* Expected Headers:**********
+{
+    &quot;date&quot;:&quot;STRING&quot;,
+    &quot;server&quot;:&quot;Cowboy&quot;,
+    &quot;connection&quot;:&quot;keep-alive&quot;
+}
+**************************
+*********** Test Fail.***********
+</pre></div></td></tr>
+                    </table>
+              <table class='inf-table tab-content hide' id='xml-2'>
+                  <tr>
+                      <th>Request</th>
+                      <th>Expected Response</th>
+                      <th>Actual Response</th>
+                  </tr><tr>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Headers<br>
+                              <div class='json-to-xml'>{
+    "Content-Type":"application/json",
+    "authorization":"Basic YWRtaW46cGFzc3dvcmQ="
+}</div>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Headers<br>
+                              <div class='json-to-xml'>{
+    "date":"STRING",
+    "server":"Cowboy",
+    "connection":"keep-alive"
+}</div>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Headers<br>
+                              <div class='json-to-xml'>{
+    "server":"Cowboy",
+    "connection":"close",
+    "date":"Thu, 08 Feb 2018 06:26:58 GMT",
+    "status":"201 Created",
+    "x-frame-options":"SAMEORIGIN",
+    "x-xss-protection":"1; mode=block",
+    "x-content-type-options":"nosniff",
+    "location":"https://young-citadel-48504.herokuapp.com/tasks/271",
+    "content-type":"application/json; charset=utf-8",
+    "etag":"W/\"6ac567371a89b3ca8d4c3b4167775966\"",
+    "cache-control":"max-age=0, private, must-revalidate",
+    "set-cookie":"_fat_free_crm_session=aER6S3lqUnBMRW1uVWpJczNESGlLVm83Ujc2VmtHNzZheHpMNklFOTkvMm0wbWtRMGwzbUxCa1BwYUk4NW9tN0ZyVTJBcVlhZ3BZL0xualRNeS9FTGtQWk5CNWc3d01HMGgxbnhIRGE4akZxa2l4OEJQM3lYSUNEZXZVV0doVCt6Z3k0OHczM0d4RHdzN3puYWdmU21wTFRCT2ZhS1JGTWZIU0o5cWtMZksvWkxjb3c2azQ4WUhQd0ttM2p5T1BTMFhnQzg0ZEFTLzFudk5RSC9RNkVTUnV6eXp6OTRYVG83UGs4ei9ZTXhHQm9SWkZYbEJuR3JwdTAxNEthU1NVUktxdlRyRXZSdmNWUEZkQlBtR0xMc1RhRzZBNVdGaHhpOFc4ZnA5T01VMUlMakJzSVdsNUZiWGJFajl1TG5mVXYxMWNWOWphTnZzRVo4VU56RU45akhRPT0tLVJ6blpSaUpxdHJIYmtReHZTVTNzakE9PQ%3D%3D--c4393950332aadcc6e52b2163d35332002ab97a7; path=/; HttpOnly",
+    "x-request-id":"578a0cf8-dbf8-40d8-a7de-34b3f07d2070",
+    "x-runtime":"0.029709",
+    "via":"1.1 vegur"
+}</div>
+                          </div>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <div class='json-to-xml'>{
+    "task":{
+        "user_id":1,
+        "assigned_to":null,
+        "completed_by":null,
+        "name":"DSehYQnMdrNhGpvMLTtfwseOOkGpHdFKvjRPRnnWJYQrkLwzzvQmGqHrXNcQJePKq",
+        "asset_id":null,
+        "asset_type":"",
+        "priority":null,
+        "category":"money",
+        "bucket":"due_next_week",
+        "due_at":"2018-01-21T18:29:59.999Z",
+        "completed_at":null,
+        "deleted_at":null,
+        "created_at":"2018-01-10T03:29:02.058Z",
+        "updated_at":"2018-01-10T03:29:02.058Z",
+        "background_info":null,
+        "subscribed_users":[
+
+        ]
+    }
+}</div>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <div class='json-to-xml'>{
+    "status":"500",
+    "error":"Internal Server Error"
+}</div>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <div class='json-to-xml'>{
+    "task":{
+        "id":271,
+        "user_id":1,
+        "assigned_to":null,
+        "completed_by":null,
+        "name":"DSehYQnMdrNhGpvMLTtfwseOOkGpHdFKvjRPRnnWJYQrkLwzzvQmGqHrXNcQJePKq",
+        "asset_id":null,
+        "asset_type":"",
+        "priority":null,
+        "category":"money",
+        "bucket":"due_next_week",
+        "due_at":"2018-02-18T23:59:59.999+05:30",
+        "completed_at":null,
+        "deleted_at":null,
+        "created_at":"2018-01-10T08:59:02.058+05:30",
+        "updated_at":"2018-01-10T08:59:02.058+05:30",
+        "background_info":null,
+        "subscribed_users":[
+
+        ]
+    }
+}</div>
+                          </div>
+                      </td>
+                  </tr>
+              </table>
+          </div>
+      </td>
+  </tr><tr class='pass scenario' id='scenario3'>
+                                    <td width='39'>
+                                        <div class='jump-wrapper'>
+                                            <div data-destination='#scenario2'>↑</div>
+                                            <div data-destination='#scenario4'>↓</div>
+                                        </div>
+                                        <span class='expand-button closed' data-target='.expand-3'></span>3
+                                    </td>
+                                    <td width='80'>s_003</td>
+                                    <td width='121'><a href='https://young-citadel-48504.herokuapp.com/tasks.json' class='table-link'>https://young-citadel-48504.herokuapp.com/tasks.json</a></td>
+                                    <td width='235'>Verify with space</td>
+                                    <td width='96'>2018-02-08 11:57:11 +0530</td>
+                                    <td width='67'>POST</td>
+                                    <td width='90' class='single-scenario-time'>1058</td>
+                                    <td width='86'>201</td>
+                                    <td width='86'>201</td><td width='90' class='result-pass result-count pass-count'><span class='sprite sprite-i-passed-green'></span>Pass</td><tr class='expand-row'>
+      <td class='no-padding no-border' colspan='10'>
+          <div class='inner-table-wrapper expand-3 hide'><span class='tab-toggle summary active' data-target='summary'>Summary</span>
+                    <span class='tab-toggle log' data-target='log'>Log</span>
+                    <span class='tab-toggle xml' data-target='xml'>Xml</span><table class='inf-table tab-content' id='summary-3'>
+                  <tr>
+                      <th>Request</th>
+                      <th>Expected Response</th>
+                      <th>Actual Response</th>
+                  </tr>
+                  <tr>
+                    <td>
+                        <div class='tooltip copy-to-clipboard'>
+                            <div class='sprite sprite-i-list-grey ripplelink'></div>
+                            <div class='tooltip-inner'>
+                                <div class='tooltip-ir-inner'>
+                                    Copy to clipboard
+                                </div>
+                            </div>
+                        </div>
+                        <div class='json-wrapper'>
+                            Headers<br>
+                            <pre>{
+    "Content-Type":"application/json",
+    "authorization":"Basic YWRtaW46cGFzc3dvcmQ="
+}</pre>
+                        </div>
+                    </td>
+                    <td>
+                        <div class='tooltip copy-to-clipboard'>
+                            <div class='sprite sprite-i-list-grey ripplelink'></div>
+                            <div class='tooltip-inner'>
+                                <div class='tooltip-ir-inner'>
+                                    Copy to clipboard
+                                </div>
+                            </div>
+                        </div>
+                        <div class='json-wrapper'>
+                            Headers<br>
+                            <pre>{
+    "date":"STRING",
+    "server":"Cowboy",
+    "connection":"close"
+}</pre>
+                        </div>
+                    </td>
+                    <td>
+                        <div class='tooltip copy-to-clipboard'>
+                            <div class='sprite sprite-i-list-grey ripplelink'></div>
+                            <div class='tooltip-inner'>
+                                <div class='tooltip-ir-inner'>
+                                    Copy to clipboard
+                                </div>
+                            </div>
+                        </div>
+                        <div class='json-wrapper'>
+                            Headers<br>
+                            <pre>{
+    "server":"Cowboy",
+    "connection":"close",
+    "date":"Thu, 08 Feb 2018 06:26:59 GMT",
+    "status":"201 Created",
+    "x-frame-options":"SAMEORIGIN",
+    "x-xss-protection":"1; mode=block",
+    "x-content-type-options":"nosniff",
+    "location":"https://young-citadel-48504.herokuapp.com/tasks/272",
+    "content-type":"application/json; charset=utf-8",
+    "etag":"W/\"212d8d22f241c329b80a1de54a56b28a\"",
+    "cache-control":"max-age=0, private, must-revalidate",
+    "set-cookie":"_fat_free_crm_session=ZVVPaStpMXAzR0c4TndxemwwbXhKYW5TQ1ZTTzB6dEZnU2RqaVFudFFWRjRlR0huN2lZZ2h3VVZuNlM2cWEvdjBnU1JUQ1d5RG1UNFlJV29rUC9WamZrRWR5UVArSWt4cHlqK0NxeWNUaXNVVklQZGI1SDFXVGZYRzh4T3RPV0dSYjdIZy9wNk9YOGUwaWZoanNHVmhqemFjVy9sb2wxWXE1WEtsQks4b0NCOXJWdFJqN1ZlTGRtNVJNNS9CdTRWditYZDVzS2tHVUc0VnBGbUs0RjhDRjhzTmkyWCtLTGdOMmRNY3YzVjB6aXY0ZzBFbmgxNkRiNlp3NHZxLzh5SUxBRTF2eUlLMFVYWmU0QVRUdFcxbmhReHBwRmV1R0sya2tPM0g0enRtWTVSSE85NzMrTVREdW9PdkxES3picXF0YXNvemhQNDV3SVNxMHc5RGJxUEFBPT0tLVd3V05jM0Rkd3FOM0FVdFFZNUFoOHc9PQ%3D%3D--4ec7d7339471939ac1b2235cf3cba439847408bc; path=/; HttpOnly",
+    "x-request-id":"ae165d88-432b-4936-92fc-4f9cb8574c65",
+    "x-runtime":"0.048724",
+    "via":"1.1 vegur"
+}</pre>
+                        </div>
+                    </td>
+                  </tr>
+                  <tr>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <pre>{
+    "task":{
+        "user_id":1,
+        "assigned_to":null,
+        "completed_by":null,
+        "name":" test10",
+        "asset_id":null,
+        "asset_type":"",
+        "priority":null,
+        "category":"money",
+        "bucket":"due_next_week",
+        "due_at":"2018-01-21T18:29:59.999Z",
+        "completed_at":null,
+        "deleted_at":null,
+        "created_at":"2018-01-10T03:29:02.058Z",
+        "updated_at":"2018-01-10T03:29:02.058Z",
+        "background_info":null,
+        "subscribed_users":[
+
+        ]
+    }
+}</pre>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <pre>{
+    "task":{
+        "id":"INTEGER",
+        "user_id":1,
+        "assigned_to":null,
+        "completed_by":null,
+        "name":" test10",
+        "asset_id":null,
+        "asset_type":"",
+        "priority":null,
+        "category":"money",
+        "bucket":"due_next_week",
+        "due_at":"STRING",
+        "completed_at":null,
+        "deleted_at":null,
+        "created_at":"STRING",
+        "updated_at":"STRING",
+        "background_info":null,
+        "subscribed_users":[
+
+        ]
+    }
+}</pre>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <pre>{
+    "task":{
+        "id":272,
+        "user_id":1,
+        "assigned_to":null,
+        "completed_by":null,
+        "name":" test10",
+        "asset_id":null,
+        "asset_type":"",
+        "priority":null,
+        "category":"money",
+        "bucket":"due_next_week",
+        "due_at":"2018-02-18T23:59:59.999+05:30",
+        "completed_at":null,
+        "deleted_at":null,
+        "created_at":"2018-01-10T08:59:02.058+05:30",
+        "updated_at":"2018-01-10T08:59:02.058+05:30",
+        "background_info":null,
+        "subscribed_users":[
+
+        ]
+    }
+}</pre>
+                          </div>
+                      </td>
+                  </tr>
+                </table><table class='inf-table tab-content hide' id='log-3'>
+                      <tr><td><div style='max-height:500px; overflow: auto;
+  margin-bottom: 10px;'><pre>Execution Time: 2172 ms
+********* Test Started ***********
+*********************************
+Request: POST
+URL: https://young-citadel-48504.herokuapp.com/tasks.json
+************Header***************
+Content-Type:application/json
+authorization:Basic YWRtaW46cGFzc3dvcmQ=
+************Request**************
+{
+    &quot;task&quot;:{
+        &quot;user_id&quot;:1,
+        &quot;assigned_to&quot;:null,
+        &quot;completed_by&quot;:null,
+        &quot;name&quot;:&quot; test10&quot;,
+        &quot;asset_id&quot;:null,
+        &quot;asset_type&quot;:&quot;&quot;,
+        &quot;priority&quot;:null,
+        &quot;category&quot;:&quot;money&quot;,
+        &quot;bucket&quot;:&quot;due_next_week&quot;,
+        &quot;due_at&quot;:&quot;2018-01-21T18:29:59.999Z&quot;,
+        &quot;completed_at&quot;:null,
+        &quot;deleted_at&quot;:null,
+        &quot;created_at&quot;:&quot;2018-01-10T03:29:02.058Z&quot;,
+        &quot;updated_at&quot;:&quot;2018-01-10T03:29:02.058Z&quot;,
+        &quot;background_info&quot;:null,
+        &quot;subscribed_users&quot;:[
+
+        ]
+    }
+}
+*********************************
+************Response*************
+Status: 201
+Duration: 1058 ms
+{
+    &quot;task&quot;:{
+        &quot;id&quot;:272,
+        &quot;user_id&quot;:1,
+        &quot;assigned_to&quot;:null,
+        &quot;completed_by&quot;:null,
+        &quot;name&quot;:&quot; test10&quot;,
+        &quot;asset_id&quot;:null,
+        &quot;asset_type&quot;:&quot;&quot;,
+        &quot;priority&quot;:null,
+        &quot;category&quot;:&quot;money&quot;,
+        &quot;bucket&quot;:&quot;due_next_week&quot;,
+        &quot;due_at&quot;:&quot;2018-02-18T23:59:59.999+05:30&quot;,
+        &quot;completed_at&quot;:null,
+        &quot;deleted_at&quot;:null,
+        &quot;created_at&quot;:&quot;2018-01-10T08:59:02.058+05:30&quot;,
+        &quot;updated_at&quot;:&quot;2018-01-10T08:59:02.058+05:30&quot;,
+        &quot;background_info&quot;:null,
+        &quot;subscribed_users&quot;:[
+
+        ]
+    }
+}
+******Response Headers***********
+{
+    &quot;server&quot;:&quot;Cowboy&quot;,
+    &quot;connection&quot;:&quot;close&quot;,
+    &quot;date&quot;:&quot;Thu, 08 Feb 2018 06:26:59 GMT&quot;,
+    &quot;status&quot;:&quot;201 Created&quot;,
+    &quot;x-frame-options&quot;:&quot;SAMEORIGIN&quot;,
+    &quot;x-xss-protection&quot;:&quot;1; mode=block&quot;,
+    &quot;x-content-type-options&quot;:&quot;nosniff&quot;,
+    &quot;location&quot;:&quot;https://young-citadel-48504.herokuapp.com/tasks/272&quot;,
+    &quot;content-type&quot;:&quot;application/json; charset=utf-8&quot;,
+    &quot;etag&quot;:&quot;W/\&quot;212d8d22f241c329b80a1de54a56b28a\&quot;&quot;,
+    &quot;cache-control&quot;:&quot;max-age=0, private, must-revalidate&quot;,
+    &quot;set-cookie&quot;:&quot;_fat_free_crm_session=ZVVPaStpMXAzR0c4TndxemwwbXhKYW5TQ1ZTTzB6dEZnU2RqaVFudFFWRjRlR0huN2lZZ2h3VVZuNlM2cWEvdjBnU1JUQ1d5RG1UNFlJV29rUC9WamZrRWR5UVArSWt4cHlqK0NxeWNUaXNVVklQZGI1SDFXVGZYRzh4T3RPV0dSYjdIZy9wNk9YOGUwaWZoanNHVmhqemFjVy9sb2wxWXE1WEtsQks4b0NCOXJWdFJqN1ZlTGRtNVJNNS9CdTRWditYZDVzS2tHVUc0VnBGbUs0RjhDRjhzTmkyWCtLTGdOMmRNY3YzVjB6aXY0ZzBFbmgxNkRiNlp3NHZxLzh5SUxBRTF2eUlLMFVYWmU0QVRUdFcxbmhReHBwRmV1R0sya2tPM0g0enRtWTVSSE85NzMrTVREdW9PdkxES3picXF0YXNvemhQNDV3SVNxMHc5RGJxUEFBPT0tLVd3V05jM0Rkd3FOM0FVdFFZNUFoOHc9PQ%3D%3D--4ec7d7339471939ac1b2235cf3cba439847408bc; path=/; HttpOnly&quot;,
+    &quot;x-request-id&quot;:&quot;ae165d88-432b-4936-92fc-4f9cb8574c65&quot;,
+    &quot;x-runtime&quot;:&quot;0.048724&quot;,
+    &quot;via&quot;:&quot;1.1 vegur&quot;
+}
+*********************************
+***Current Params****
+{
+    &quot;name&quot;:&quot;DSehYQnMdrNhGpvMLTtfwseOOkGpHdFKvjRPRnnWJYQrkLwzzvQmGqHrXNcQJePKq&quot;,
+    &quot;id&quot;:272,
+    &quot;date&quot;:&quot;Thu, 08 Feb 2018 06:26:59 GMT&quot;
+}
+***test items**
+
+*********************
+************Expected Response: *****************
+{
+    &quot;task&quot;:{
+        &quot;id&quot;:&quot;INTEGER&quot;,
+        &quot;user_id&quot;:1,
+        &quot;assigned_to&quot;:null,
+        &quot;completed_by&quot;:null,
+        &quot;name&quot;:&quot; test10&quot;,
+        &quot;asset_id&quot;:null,
+        &quot;asset_type&quot;:&quot;&quot;,
+        &quot;priority&quot;:null,
+        &quot;category&quot;:&quot;money&quot;,
+        &quot;bucket&quot;:&quot;due_next_week&quot;,
+        &quot;due_at&quot;:&quot;STRING&quot;,
+        &quot;completed_at&quot;:null,
+        &quot;deleted_at&quot;:null,
+        &quot;created_at&quot;:&quot;STRING&quot;,
+        &quot;updated_at&quot;:&quot;STRING&quot;,
+        &quot;background_info&quot;:null,
+        &quot;subscribed_users&quot;:[
+
+        ]
+    }
+}
+*****************************
+******* Expected Code: 201
+******* Expected Headers:**********
+{
+    &quot;date&quot;:&quot;STRING&quot;,
+    &quot;server&quot;:&quot;Cowboy&quot;,
+    &quot;connection&quot;:&quot;close&quot;
+}
+**************************
+* Executing function call **
+call_api_by_id(true,&quot;deleteTask&quot;)
+********* Test Started ***********
+*********************************
+Request: DELETE
+URL: https://young-citadel-48504.herokuapp.com/tasks/272.json
+************Header***************
+Content-Type:application/json
+authorization:Basic YWRtaW46cGFzc3dvcmQ=
+*********************************
+************Response*************
+Status: 204
+Duration: 1108 ms
+
+******Response Headers***********
+{
+    &quot;server&quot;:&quot;Cowboy&quot;,
+    &quot;content-length&quot;:&quot;0&quot;,
+    &quot;connection&quot;:&quot;keep-alive&quot;,
+    &quot;date&quot;:&quot;Thu, 08 Feb 2018 06:27:00 GMT&quot;,
+    &quot;status&quot;:&quot;204 No Content&quot;,
+    &quot;x-frame-options&quot;:&quot;SAMEORIGIN&quot;,
+    &quot;x-xss-protection&quot;:&quot;1; mode=block&quot;,
+    &quot;x-content-type-options&quot;:&quot;nosniff&quot;,
+    &quot;cache-control&quot;:&quot;no-cache&quot;,
+    &quot;set-cookie&quot;:&quot;_fat_free_crm_session=a1ovMlRPb1dVYVJrcS9Qd3JuNHhDcS9EUTFIMjlnVVdIa0pGc25Kck9KMjhPQVZuMEVUaUFWc2VRMU1aRC9QUEhlS1d5ZnhtSGV5TGpqNWFDeSt6dzBlVDIyclZ2a3pZS1pxSnpvTzR0TldIUm5ObDVLTEwyc2xOaVFZMXV2b2g0ODkrWFFvU1lUQW5SVFZKcTR6M0kzbG9jL1o0OXdmVWdJUVhNTWR4VHU5ZU14eU1FbGwxK1BCRW5BbitCb2ZXbm5WYnIzQ0ZpM1p2TVJucVdWZXNKY3FveEIvY1B2cXEyeW9OOUhYQkxxYnB0KzFFd1NGK3FsdHZwU0c3RkpDRjVKemo5Ymg5WnlIS093M2x3ZDBMUDcwTklmSVB4VU9WSEpsNW9XaStSbzJubTZWaHVCZ3pPVVVYNG5aektNZE1OWFRmZWhRUmMvLzNKSXFTanZuVTBnPT0tLSt1NzlUN1J5ekkzWkZGVXpkSWZtaEE9PQ%3D%3D--b15ecb43bba91cca195c92a0d9e98221d7781eb0; path=/; HttpOnly&quot;,
+    &quot;x-request-id&quot;:&quot;91b21057-073d-449f-96a3-1b903b059cc6&quot;,
+    &quot;x-runtime&quot;:&quot;0.027993&quot;,
+    &quot;via&quot;:&quot;1.1 vegur&quot;
+}
+*********************************
+** Response is not a json and did not parse with custom function
+A JSON text must at least contain two octets!
+************
+***Current Params****
+{
+    &quot;name&quot;:&quot;DSehYQnMdrNhGpvMLTtfwseOOkGpHdFKvjRPRnnWJYQrkLwzzvQmGqHrXNcQJePKq&quot;,
+    &quot;id&quot;:272,
+    &quot;date&quot;:&quot;Thu, 08 Feb 2018 06:26:59 GMT&quot;
+}
+***test items**
+
+*********************
+*********end**********
+*********** Test Pass.***********</pre></div></td></tr>
+                    </table>
+              <table class='inf-table tab-content hide' id='xml-3'>
+                  <tr>
+                      <th>Request</th>
+                      <th>Expected Response</th>
+                      <th>Actual Response</th>
+                  </tr><tr>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Headers<br>
+                              <div class='json-to-xml'>{
+    "Content-Type":"application/json",
+    "authorization":"Basic YWRtaW46cGFzc3dvcmQ="
+}</div>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Headers<br>
+                              <div class='json-to-xml'>{
+    "date":"STRING",
+    "server":"Cowboy",
+    "connection":"close"
+}</div>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Headers<br>
+                              <div class='json-to-xml'>{
+    "server":"Cowboy",
+    "connection":"close",
+    "date":"Thu, 08 Feb 2018 06:26:59 GMT",
+    "status":"201 Created",
+    "x-frame-options":"SAMEORIGIN",
+    "x-xss-protection":"1; mode=block",
+    "x-content-type-options":"nosniff",
+    "location":"https://young-citadel-48504.herokuapp.com/tasks/272",
+    "content-type":"application/json; charset=utf-8",
+    "etag":"W/\"212d8d22f241c329b80a1de54a56b28a\"",
+    "cache-control":"max-age=0, private, must-revalidate",
+    "set-cookie":"_fat_free_crm_session=ZVVPaStpMXAzR0c4TndxemwwbXhKYW5TQ1ZTTzB6dEZnU2RqaVFudFFWRjRlR0huN2lZZ2h3VVZuNlM2cWEvdjBnU1JUQ1d5RG1UNFlJV29rUC9WamZrRWR5UVArSWt4cHlqK0NxeWNUaXNVVklQZGI1SDFXVGZYRzh4T3RPV0dSYjdIZy9wNk9YOGUwaWZoanNHVmhqemFjVy9sb2wxWXE1WEtsQks4b0NCOXJWdFJqN1ZlTGRtNVJNNS9CdTRWditYZDVzS2tHVUc0VnBGbUs0RjhDRjhzTmkyWCtLTGdOMmRNY3YzVjB6aXY0ZzBFbmgxNkRiNlp3NHZxLzh5SUxBRTF2eUlLMFVYWmU0QVRUdFcxbmhReHBwRmV1R0sya2tPM0g0enRtWTVSSE85NzMrTVREdW9PdkxES3picXF0YXNvemhQNDV3SVNxMHc5RGJxUEFBPT0tLVd3V05jM0Rkd3FOM0FVdFFZNUFoOHc9PQ%3D%3D--4ec7d7339471939ac1b2235cf3cba439847408bc; path=/; HttpOnly",
+    "x-request-id":"ae165d88-432b-4936-92fc-4f9cb8574c65",
+    "x-runtime":"0.048724",
+    "via":"1.1 vegur"
+}</div>
+                          </div>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <div class='json-to-xml'>{
+    "task":{
+        "user_id":1,
+        "assigned_to":null,
+        "completed_by":null,
+        "name":" test10",
+        "asset_id":null,
+        "asset_type":"",
+        "priority":null,
+        "category":"money",
+        "bucket":"due_next_week",
+        "due_at":"2018-01-21T18:29:59.999Z",
+        "completed_at":null,
+        "deleted_at":null,
+        "created_at":"2018-01-10T03:29:02.058Z",
+        "updated_at":"2018-01-10T03:29:02.058Z",
+        "background_info":null,
+        "subscribed_users":[
+
+        ]
+    }
+}</div>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <div class='json-to-xml'>{
+    "task":{
+        "id":"INTEGER",
+        "user_id":1,
+        "assigned_to":null,
+        "completed_by":null,
+        "name":" test10",
+        "asset_id":null,
+        "asset_type":"",
+        "priority":null,
+        "category":"money",
+        "bucket":"due_next_week",
+        "due_at":"STRING",
+        "completed_at":null,
+        "deleted_at":null,
+        "created_at":"STRING",
+        "updated_at":"STRING",
+        "background_info":null,
+        "subscribed_users":[
+
+        ]
+    }
+}</div>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <div class='json-to-xml'>{
+    "task":{
+        "id":272,
+        "user_id":1,
+        "assigned_to":null,
+        "completed_by":null,
+        "name":" test10",
+        "asset_id":null,
+        "asset_type":"",
+        "priority":null,
+        "category":"money",
+        "bucket":"due_next_week",
+        "due_at":"2018-02-18T23:59:59.999+05:30",
+        "completed_at":null,
+        "deleted_at":null,
+        "created_at":"2018-01-10T08:59:02.058+05:30",
+        "updated_at":"2018-01-10T08:59:02.058+05:30",
+        "background_info":null,
+        "subscribed_users":[
+
+        ]
+    }
+}</div>
+                          </div>
+                      </td>
+                  </tr>
+              </table>
+          </div>
+      </td>
+  </tr><tr class='pass scenario' id='scenario4'>
+                                    <td width='39'>
+                                        <div class='jump-wrapper'>
+                                            <div data-destination='#scenario3'>↑</div>
+                                            <div data-destination='#scenario5'>↓</div>
+                                        </div>
+                                        <span class='expand-button closed' data-target='.expand-4'></span>4
+                                    </td>
+                                    <td width='80'>s_004</td>
+                                    <td width='121'><a href='https://young-citadel-48504.herokuapp.com/tasks.json' class='table-link'>https://young-citadel-48504.herokuapp.com/tasks.json</a></td>
+                                    <td width='235'>Verify with array</td>
+                                    <td width='96'>2018-02-08 11:57:13 +0530</td>
+                                    <td width='67'>POST</td>
+                                    <td width='90' class='single-scenario-time'>1032</td>
+                                    <td width='86'>201</td>
+                                    <td width='86'>201</td><td width='90' class='result-pass result-count pass-count'><span class='sprite sprite-i-passed-green'></span>Pass</td><tr class='expand-row'>
+      <td class='no-padding no-border' colspan='10'>
+          <div class='inner-table-wrapper expand-4 hide'><span class='tab-toggle summary active' data-target='summary'>Summary</span>
+                    <span class='tab-toggle log' data-target='log'>Log</span>
+                    <span class='tab-toggle xml' data-target='xml'>Xml</span><table class='inf-table tab-content' id='summary-4'>
+                  <tr>
+                      <th>Request</th>
+                      <th>Expected Response</th>
+                      <th>Actual Response</th>
+                  </tr>
+                  <tr>
+                    <td>
+                        <div class='tooltip copy-to-clipboard'>
+                            <div class='sprite sprite-i-list-grey ripplelink'></div>
+                            <div class='tooltip-inner'>
+                                <div class='tooltip-ir-inner'>
+                                    Copy to clipboard
+                                </div>
+                            </div>
+                        </div>
+                        <div class='json-wrapper'>
+                            Headers<br>
+                            <pre>{
+    "Content-Type":"application/json",
+    "authorization":"Basic YWRtaW46cGFzc3dvcmQ="
+}</pre>
+                        </div>
+                    </td>
+                    <td>
+                        <div class='tooltip copy-to-clipboard'>
+                            <div class='sprite sprite-i-list-grey ripplelink'></div>
+                            <div class='tooltip-inner'>
+                                <div class='tooltip-ir-inner'>
+                                    Copy to clipboard
+                                </div>
+                            </div>
+                        </div>
+                        <div class='json-wrapper'>
+                            Headers<br>
+                            <pre>{
+    "date":"STRING",
+    "server":"Cowboy",
+    "connection":"close"
+}</pre>
+                        </div>
+                    </td>
+                    <td>
+                        <div class='tooltip copy-to-clipboard'>
+                            <div class='sprite sprite-i-list-grey ripplelink'></div>
+                            <div class='tooltip-inner'>
+                                <div class='tooltip-ir-inner'>
+                                    Copy to clipboard
+                                </div>
+                            </div>
+                        </div>
+                        <div class='json-wrapper'>
+                            Headers<br>
+                            <pre>{
+    "server":"Cowboy",
+    "connection":"close",
+    "date":"Thu, 08 Feb 2018 06:27:01 GMT",
+    "status":"201 Created",
+    "x-frame-options":"SAMEORIGIN",
+    "x-xss-protection":"1; mode=block",
+    "x-content-type-options":"nosniff",
+    "location":"https://young-citadel-48504.herokuapp.com/tasks/273",
+    "content-type":"application/json; charset=utf-8",
+    "etag":"W/\"17cce5bfa98c38ce2cf59dbeac5c9f84\"",
+    "cache-control":"max-age=0, private, must-revalidate",
+    "set-cookie":"_fat_free_crm_session=ZFliemJaK1NucEZlNFpTM2NvWFhGWnBoYWFaaG1EY1BTRmVoQ1Q2RWp3dnBhMWZ1dGtTTXN4dkdzckI3UVJWRHIwKzB5ZjdWUGFQeUNLL2ZOS3RkbXFreXl6K3dxQjdEc1RMM05waDA4U3RtRFcwbnFsV0dFVG1NSElvV0xWWEFQRmoxOXh5Uk5tcHpFbWpqMThGa0RMRjVNTlUxWmRBVnhlSlFGMWhUQWRtUVcvdDVISC9kK09mNGdIMHJQNzhjQ3M4d3lLdzVPZk9OSTFCMWtzVVIwazN2ZEpNRytnc1IrcVN5YzhOU0dJdllCajJ6Z2Vaam81Q25ZRmQxaVdabWpiSmNORm84ekM0dHNPK2x3V0NFVmd3czh2Zml1WnNZTExJbkM0RCtld0hmd3NxSXdNbHhYZTZRYWMwK2FrYVU5TitheWsrRjZodG1FZjk5Q2E5dmZ3PT0tLU1UMXViQ0d3aHFSTTV6RnZhc3ozcGc9PQ%3D%3D--e15e7644ccb3b17f417a103a04c1f2c066921e93; path=/; HttpOnly",
+    "x-request-id":"1f991ddc-047d-4cc7-b3b7-53c2ef46deee",
+    "x-runtime":"0.028858",
+    "via":"1.1 vegur"
+}</pre>
+                        </div>
+                    </td>
+                  </tr>
+                  <tr>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <pre>{
+    "task":{
+        "user_id":1,
+        "assigned_to":null,
+        "completed_by":null,
+        "name":[
+            "TEST50"
+        ],
+        "asset_id":null,
+        "asset_type":"",
+        "priority":null,
+        "category":"money",
+        "bucket":"due_next_week",
+        "due_at":"2018-01-21T18:29:59.999Z",
+        "completed_at":null,
+        "deleted_at":null,
+        "created_at":"2018-01-10T03:29:02.058Z",
+        "updated_at":"2018-01-10T03:29:02.058Z",
+        "background_info":null,
+        "subscribed_users":[
+
+        ]
+    }
+}</pre>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <pre>{
+    "task":{
+        "id":"INTEGER",
+        "user_id":1,
+        "assigned_to":null,
+        "completed_by":null,
+        "name":"[\"TEST50\"]",
+        "asset_id":null,
+        "asset_type":"",
+        "priority":null,
+        "category":"money",
+        "bucket":"due_next_week",
+        "due_at":"STRING",
+        "completed_at":null,
+        "deleted_at":null,
+        "created_at":"STRING",
+        "updated_at":"STRING",
+        "background_info":null,
+        "subscribed_users":[
+
+        ]
+    }
+}</pre>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <pre>{
+    "task":{
+        "id":273,
+        "user_id":1,
+        "assigned_to":null,
+        "completed_by":null,
+        "name":"[\"TEST50\"]",
+        "asset_id":null,
+        "asset_type":"",
+        "priority":null,
+        "category":"money",
+        "bucket":"due_next_week",
+        "due_at":"2018-02-18T23:59:59.999+05:30",
+        "completed_at":null,
+        "deleted_at":null,
+        "created_at":"2018-01-10T08:59:02.058+05:30",
+        "updated_at":"2018-01-10T08:59:02.058+05:30",
+        "background_info":null,
+        "subscribed_users":[
+
+        ]
+    }
+}</pre>
+                          </div>
+                      </td>
+                  </tr>
+                </table><table class='inf-table tab-content hide' id='log-4'>
+                      <tr><td><div style='max-height:500px; overflow: auto;
+  margin-bottom: 10px;'><pre>Execution Time: 2148 ms
+********* Test Started ***********
+*********************************
+Request: POST
+URL: https://young-citadel-48504.herokuapp.com/tasks.json
+************Header***************
+Content-Type:application/json
+authorization:Basic YWRtaW46cGFzc3dvcmQ=
+************Request**************
+{
+    &quot;task&quot;:{
+        &quot;user_id&quot;:1,
+        &quot;assigned_to&quot;:null,
+        &quot;completed_by&quot;:null,
+        &quot;name&quot;:[
+            &quot;TEST50&quot;
+        ],
+        &quot;asset_id&quot;:null,
+        &quot;asset_type&quot;:&quot;&quot;,
+        &quot;priority&quot;:null,
+        &quot;category&quot;:&quot;money&quot;,
+        &quot;bucket&quot;:&quot;due_next_week&quot;,
+        &quot;due_at&quot;:&quot;2018-01-21T18:29:59.999Z&quot;,
+        &quot;completed_at&quot;:null,
+        &quot;deleted_at&quot;:null,
+        &quot;created_at&quot;:&quot;2018-01-10T03:29:02.058Z&quot;,
+        &quot;updated_at&quot;:&quot;2018-01-10T03:29:02.058Z&quot;,
+        &quot;background_info&quot;:null,
+        &quot;subscribed_users&quot;:[
+
+        ]
+    }
+}
+*********************************
+************Response*************
+Status: 201
+Duration: 1032 ms
+{
+    &quot;task&quot;:{
+        &quot;id&quot;:273,
+        &quot;user_id&quot;:1,
+        &quot;assigned_to&quot;:null,
+        &quot;completed_by&quot;:null,
+        &quot;name&quot;:&quot;[\&quot;TEST50\&quot;]&quot;,
+        &quot;asset_id&quot;:null,
+        &quot;asset_type&quot;:&quot;&quot;,
+        &quot;priority&quot;:null,
+        &quot;category&quot;:&quot;money&quot;,
+        &quot;bucket&quot;:&quot;due_next_week&quot;,
+        &quot;due_at&quot;:&quot;2018-02-18T23:59:59.999+05:30&quot;,
+        &quot;completed_at&quot;:null,
+        &quot;deleted_at&quot;:null,
+        &quot;created_at&quot;:&quot;2018-01-10T08:59:02.058+05:30&quot;,
+        &quot;updated_at&quot;:&quot;2018-01-10T08:59:02.058+05:30&quot;,
+        &quot;background_info&quot;:null,
+        &quot;subscribed_users&quot;:[
+
+        ]
+    }
+}
+******Response Headers***********
+{
+    &quot;server&quot;:&quot;Cowboy&quot;,
+    &quot;connection&quot;:&quot;close&quot;,
+    &quot;date&quot;:&quot;Thu, 08 Feb 2018 06:27:01 GMT&quot;,
+    &quot;status&quot;:&quot;201 Created&quot;,
+    &quot;x-frame-options&quot;:&quot;SAMEORIGIN&quot;,
+    &quot;x-xss-protection&quot;:&quot;1; mode=block&quot;,
+    &quot;x-content-type-options&quot;:&quot;nosniff&quot;,
+    &quot;location&quot;:&quot;https://young-citadel-48504.herokuapp.com/tasks/273&quot;,
+    &quot;content-type&quot;:&quot;application/json; charset=utf-8&quot;,
+    &quot;etag&quot;:&quot;W/\&quot;17cce5bfa98c38ce2cf59dbeac5c9f84\&quot;&quot;,
+    &quot;cache-control&quot;:&quot;max-age=0, private, must-revalidate&quot;,
+    &quot;set-cookie&quot;:&quot;_fat_free_crm_session=ZFliemJaK1NucEZlNFpTM2NvWFhGWnBoYWFaaG1EY1BTRmVoQ1Q2RWp3dnBhMWZ1dGtTTXN4dkdzckI3UVJWRHIwKzB5ZjdWUGFQeUNLL2ZOS3RkbXFreXl6K3dxQjdEc1RMM05waDA4U3RtRFcwbnFsV0dFVG1NSElvV0xWWEFQRmoxOXh5Uk5tcHpFbWpqMThGa0RMRjVNTlUxWmRBVnhlSlFGMWhUQWRtUVcvdDVISC9kK09mNGdIMHJQNzhjQ3M4d3lLdzVPZk9OSTFCMWtzVVIwazN2ZEpNRytnc1IrcVN5YzhOU0dJdllCajJ6Z2Vaam81Q25ZRmQxaVdabWpiSmNORm84ekM0dHNPK2x3V0NFVmd3czh2Zml1WnNZTExJbkM0RCtld0hmd3NxSXdNbHhYZTZRYWMwK2FrYVU5TitheWsrRjZodG1FZjk5Q2E5dmZ3PT0tLU1UMXViQ0d3aHFSTTV6RnZhc3ozcGc9PQ%3D%3D--e15e7644ccb3b17f417a103a04c1f2c066921e93; path=/; HttpOnly&quot;,
+    &quot;x-request-id&quot;:&quot;1f991ddc-047d-4cc7-b3b7-53c2ef46deee&quot;,
+    &quot;x-runtime&quot;:&quot;0.028858&quot;,
+    &quot;via&quot;:&quot;1.1 vegur&quot;
+}
+*********************************
+***Current Params****
+{
+    &quot;name&quot;:&quot;DSehYQnMdrNhGpvMLTtfwseOOkGpHdFKvjRPRnnWJYQrkLwzzvQmGqHrXNcQJePKq&quot;,
+    &quot;id&quot;:273,
+    &quot;date&quot;:&quot;Thu, 08 Feb 2018 06:27:01 GMT&quot;
+}
+***test items**
+
+*********************
+************Expected Response: *****************
+{
+    &quot;task&quot;:{
+        &quot;id&quot;:&quot;INTEGER&quot;,
+        &quot;user_id&quot;:1,
+        &quot;assigned_to&quot;:null,
+        &quot;completed_by&quot;:null,
+        &quot;name&quot;:&quot;[\&quot;TEST50\&quot;]&quot;,
+        &quot;asset_id&quot;:null,
+        &quot;asset_type&quot;:&quot;&quot;,
+        &quot;priority&quot;:null,
+        &quot;category&quot;:&quot;money&quot;,
+        &quot;bucket&quot;:&quot;due_next_week&quot;,
+        &quot;due_at&quot;:&quot;STRING&quot;,
+        &quot;completed_at&quot;:null,
+        &quot;deleted_at&quot;:null,
+        &quot;created_at&quot;:&quot;STRING&quot;,
+        &quot;updated_at&quot;:&quot;STRING&quot;,
+        &quot;background_info&quot;:null,
+        &quot;subscribed_users&quot;:[
+
+        ]
+    }
+}
+*****************************
+******* Expected Code: 201
+******* Expected Headers:**********
+{
+    &quot;date&quot;:&quot;STRING&quot;,
+    &quot;server&quot;:&quot;Cowboy&quot;,
+    &quot;connection&quot;:&quot;close&quot;
+}
+**************************
+* Executing function call **
+call_api_by_id(true,&quot;deleteTask&quot;)
+********* Test Started ***********
+*********************************
+Request: DELETE
+URL: https://young-citadel-48504.herokuapp.com/tasks/273.json
+************Header***************
+Content-Type:application/json
+authorization:Basic YWRtaW46cGFzc3dvcmQ=
+*********************************
+************Response*************
+Status: 204
+Duration: 1110 ms
+
+******Response Headers***********
+{
+    &quot;server&quot;:&quot;Cowboy&quot;,
+    &quot;content-length&quot;:&quot;0&quot;,
+    &quot;connection&quot;:&quot;keep-alive&quot;,
+    &quot;date&quot;:&quot;Thu, 08 Feb 2018 06:27:02 GMT&quot;,
+    &quot;status&quot;:&quot;204 No Content&quot;,
+    &quot;x-frame-options&quot;:&quot;SAMEORIGIN&quot;,
+    &quot;x-xss-protection&quot;:&quot;1; mode=block&quot;,
+    &quot;x-content-type-options&quot;:&quot;nosniff&quot;,
+    &quot;cache-control&quot;:&quot;no-cache&quot;,
+    &quot;set-cookie&quot;:&quot;_fat_free_crm_session=cXpLaEVDQzZvSGlxN29KQmRzRUxSODNSVklPRGVPc0xvMXlWUDY1d0lQM05GQ2IwMk9HTXhHZE04RVZROGpVOGw3Kyszcyt4S2RpN2RYQUVWZjc2N1Qxc3JuL1BFcVdkckRKVjQrUm84a292YnM3eVp6dUlkOHEwcnM3R3pSVC84NHNHUGpxRlJveFFUeGhNRnIveHB1cjIrQ3dLTHJ2ejRMRkJSbWJvVE9iZFRDck1oRlFQcmU3dDQvbWxRaVp5NWtRclVWcXMwVENQVHpzYmw3elJVbkN5RmNHdWtrTVlsREU5cFQ1RjdiVkgwYXgvZzBMbE9BVHkzRVhtMUpHaUdIRmVBQVlPVTNsOWVyYm5CUzdwamVVcjlSZVhKeURrODNsZnFmNFpCNEtLTzlVUHNUQzVZRE1sNjFtbTJpc3cyRmlWN3dzcTBEZG1iOFFtS2liU0ZBPT0tLWFPMVVEVGpuMWVxcUdrZ1llVnRHK0E9PQ%3D%3D--c1d0005de3d5a16e386e0e7d875d3cc0cb77ee5b; path=/; HttpOnly&quot;,
+    &quot;x-request-id&quot;:&quot;96370afc-6a7f-4cfe-bfa0-1407685859d8&quot;,
+    &quot;x-runtime&quot;:&quot;0.042070&quot;,
+    &quot;via&quot;:&quot;1.1 vegur&quot;
+}
+*********************************
+** Response is not a json and did not parse with custom function
+A JSON text must at least contain two octets!
+************
+***Current Params****
+{
+    &quot;name&quot;:&quot;DSehYQnMdrNhGpvMLTtfwseOOkGpHdFKvjRPRnnWJYQrkLwzzvQmGqHrXNcQJePKq&quot;,
+    &quot;id&quot;:273,
+    &quot;date&quot;:&quot;Thu, 08 Feb 2018 06:27:01 GMT&quot;
+}
+***test items**
+
+*********************
+*********end**********
+*********** Test Pass.***********</pre></div></td></tr>
+                    </table>
+              <table class='inf-table tab-content hide' id='xml-4'>
+                  <tr>
+                      <th>Request</th>
+                      <th>Expected Response</th>
+                      <th>Actual Response</th>
+                  </tr><tr>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Headers<br>
+                              <div class='json-to-xml'>{
+    "Content-Type":"application/json",
+    "authorization":"Basic YWRtaW46cGFzc3dvcmQ="
+}</div>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Headers<br>
+                              <div class='json-to-xml'>{
+    "date":"STRING",
+    "server":"Cowboy",
+    "connection":"close"
+}</div>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Headers<br>
+                              <div class='json-to-xml'>{
+    "server":"Cowboy",
+    "connection":"close",
+    "date":"Thu, 08 Feb 2018 06:27:01 GMT",
+    "status":"201 Created",
+    "x-frame-options":"SAMEORIGIN",
+    "x-xss-protection":"1; mode=block",
+    "x-content-type-options":"nosniff",
+    "location":"https://young-citadel-48504.herokuapp.com/tasks/273",
+    "content-type":"application/json; charset=utf-8",
+    "etag":"W/\"17cce5bfa98c38ce2cf59dbeac5c9f84\"",
+    "cache-control":"max-age=0, private, must-revalidate",
+    "set-cookie":"_fat_free_crm_session=ZFliemJaK1NucEZlNFpTM2NvWFhGWnBoYWFaaG1EY1BTRmVoQ1Q2RWp3dnBhMWZ1dGtTTXN4dkdzckI3UVJWRHIwKzB5ZjdWUGFQeUNLL2ZOS3RkbXFreXl6K3dxQjdEc1RMM05waDA4U3RtRFcwbnFsV0dFVG1NSElvV0xWWEFQRmoxOXh5Uk5tcHpFbWpqMThGa0RMRjVNTlUxWmRBVnhlSlFGMWhUQWRtUVcvdDVISC9kK09mNGdIMHJQNzhjQ3M4d3lLdzVPZk9OSTFCMWtzVVIwazN2ZEpNRytnc1IrcVN5YzhOU0dJdllCajJ6Z2Vaam81Q25ZRmQxaVdabWpiSmNORm84ekM0dHNPK2x3V0NFVmd3czh2Zml1WnNZTExJbkM0RCtld0hmd3NxSXdNbHhYZTZRYWMwK2FrYVU5TitheWsrRjZodG1FZjk5Q2E5dmZ3PT0tLU1UMXViQ0d3aHFSTTV6RnZhc3ozcGc9PQ%3D%3D--e15e7644ccb3b17f417a103a04c1f2c066921e93; path=/; HttpOnly",
+    "x-request-id":"1f991ddc-047d-4cc7-b3b7-53c2ef46deee",
+    "x-runtime":"0.028858",
+    "via":"1.1 vegur"
+}</div>
+                          </div>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <div class='json-to-xml'>{
+    "task":{
+        "user_id":1,
+        "assigned_to":null,
+        "completed_by":null,
+        "name":[
+            "TEST50"
+        ],
+        "asset_id":null,
+        "asset_type":"",
+        "priority":null,
+        "category":"money",
+        "bucket":"due_next_week",
+        "due_at":"2018-01-21T18:29:59.999Z",
+        "completed_at":null,
+        "deleted_at":null,
+        "created_at":"2018-01-10T03:29:02.058Z",
+        "updated_at":"2018-01-10T03:29:02.058Z",
+        "background_info":null,
+        "subscribed_users":[
+
+        ]
+    }
+}</div>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <div class='json-to-xml'>{
+    "task":{
+        "id":"INTEGER",
+        "user_id":1,
+        "assigned_to":null,
+        "completed_by":null,
+        "name":"[\"TEST50\"]",
+        "asset_id":null,
+        "asset_type":"",
+        "priority":null,
+        "category":"money",
+        "bucket":"due_next_week",
+        "due_at":"STRING",
+        "completed_at":null,
+        "deleted_at":null,
+        "created_at":"STRING",
+        "updated_at":"STRING",
+        "background_info":null,
+        "subscribed_users":[
+
+        ]
+    }
+}</div>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <div class='json-to-xml'>{
+    "task":{
+        "id":273,
+        "user_id":1,
+        "assigned_to":null,
+        "completed_by":null,
+        "name":"[\"TEST50\"]",
+        "asset_id":null,
+        "asset_type":"",
+        "priority":null,
+        "category":"money",
+        "bucket":"due_next_week",
+        "due_at":"2018-02-18T23:59:59.999+05:30",
+        "completed_at":null,
+        "deleted_at":null,
+        "created_at":"2018-01-10T08:59:02.058+05:30",
+        "updated_at":"2018-01-10T08:59:02.058+05:30",
+        "background_info":null,
+        "subscribed_users":[
+
+        ]
+    }
+}</div>
+                          </div>
+                      </td>
+                  </tr>
+              </table>
+          </div>
+      </td>
+  </tr><tr class='pass scenario' id='scenario5'>
+                                    <td width='39'>
+                                        <div class='jump-wrapper'>
+                                            <div data-destination='#scenario4'>↑</div>
+                                            <div data-destination='#scenario6'>↓</div>
+                                        </div>
+                                        <span class='expand-button closed' data-target='.expand-5'></span>5
+                                    </td>
+                                    <td width='80'>s_005</td>
+                                    <td width='121'><a href='https://young-citadel-48504.herokuapp.com/tasks.json' class='table-link'>https://young-citadel-48504.herokuapp.com/tasks.json</a></td>
+                                    <td width='235'>invalid type, empty string</td>
+                                    <td width='96'>2018-02-08 11:57:14 +0530</td>
+                                    <td width='67'>POST</td>
+                                    <td width='90' class='single-scenario-time'>1021</td>
+                                    <td width='86'>422</td>
+                                    <td width='86'>422</td><td width='90' class='result-pass result-count pass-count'><span class='sprite sprite-i-passed-green'></span>Pass</td><tr class='expand-row'>
+      <td class='no-padding no-border' colspan='10'>
+          <div class='inner-table-wrapper expand-5 hide'><span class='tab-toggle summary active' data-target='summary'>Summary</span>
+                    <span class='tab-toggle log' data-target='log'>Log</span>
+                    <span class='tab-toggle xml' data-target='xml'>Xml</span><table class='inf-table tab-content' id='summary-5'>
+                  <tr>
+                      <th>Request</th>
+                      <th>Expected Response</th>
+                      <th>Actual Response</th>
+                  </tr>
+                  <tr>
+                    <td>
+                        <div class='tooltip copy-to-clipboard'>
+                            <div class='sprite sprite-i-list-grey ripplelink'></div>
+                            <div class='tooltip-inner'>
+                                <div class='tooltip-ir-inner'>
+                                    Copy to clipboard
+                                </div>
+                            </div>
+                        </div>
+                        <div class='json-wrapper'>
+                            Headers<br>
+                            <pre>{
+    "Content-Type":"application/json",
+    "authorization":"Basic YWRtaW46cGFzc3dvcmQ="
+}</pre>
+                        </div>
+                    </td>
+                    <td>
+                        <div class='tooltip copy-to-clipboard'>
+                            <div class='sprite sprite-i-list-grey ripplelink'></div>
+                            <div class='tooltip-inner'>
+                                <div class='tooltip-ir-inner'>
+                                    Copy to clipboard
+                                </div>
+                            </div>
+                        </div>
+                        <div class='json-wrapper'>
+                            Headers<br>
+                            <pre>{
+    "date":"STRING",
+    "server":"Cowboy",
+    "connection":"close"
+}</pre>
+                        </div>
+                    </td>
+                    <td>
+                        <div class='tooltip copy-to-clipboard'>
+                            <div class='sprite sprite-i-list-grey ripplelink'></div>
+                            <div class='tooltip-inner'>
+                                <div class='tooltip-ir-inner'>
+                                    Copy to clipboard
+                                </div>
+                            </div>
+                        </div>
+                        <div class='json-wrapper'>
+                            Headers<br>
+                            <pre>{
+    "server":"Cowboy",
+    "connection":"close",
+    "date":"Thu, 08 Feb 2018 06:27:03 GMT",
+    "status":"422 Unprocessable Entity",
+    "x-frame-options":"SAMEORIGIN",
+    "x-xss-protection":"1; mode=block",
+    "x-content-type-options":"nosniff",
+    "content-type":"application/json; charset=utf-8",
+    "cache-control":"no-cache",
+    "set-cookie":"_fat_free_crm_session=bExVZFdyMkFCaE5oTG53SUdHanhMVlVldStIV3VPSkNRY2xlc0JHU1Z5SmFlaVRNUjdxQUtpUXpURmdXTjFLTkdnZGJOYURkSEt4VXlDRTIxNk42N2RYOC9CMVpWaVZnN0tsZnkzclRaMTJSb0tkbm50UjNKMUZSdURTQWpnOHN5TXJWZmlMdEpoV0plSkhGc0xZOVpsNGp5RVFvVmlvUmpPOWF5ZUpWMlNaTWVrVjRPUW5rUTFCNHFhTWVvR0xFSlBtcVVuQjU4bFR5TDdyVkR0N0JINm5OYU5YWTlKN1REWWFTNEZWRFhBOWRaRWMwSVZPSDNHSXBsY09GeFFweGJHMklhSTRqVnByQUlvNWU2YU1wNTFNcFVvLzlzVmhNd0czUzR6S0dwdXY1aHB1eWpnSUxGaE13WmE3dHFmb0ViWjBtS29RUTJzYUhJOENucEtQQ0lRPT0tLUgxK1ZFRlpUT3NFejBqVnU1Nit0Z0E9PQ%3D%3D--dde95cf0358f6de34f61b2696c3445425f334e6d; path=/; HttpOnly",
+    "x-request-id":"c200d451-034e-4d0a-988d-ee9a875f24f0",
+    "x-runtime":"0.017910",
+    "via":"1.1 vegur"
+}</pre>
+                        </div>
+                    </td>
+                  </tr>
+                  <tr>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <pre>{
+    "task":{
+        "user_id":1,
+        "assigned_to":null,
+        "completed_by":null,
+        "name":"",
+        "asset_id":null,
+        "asset_type":"",
+        "priority":null,
+        "category":"money",
+        "bucket":"due_next_week",
+        "due_at":"2018-01-21T18:29:59.999Z",
+        "completed_at":null,
+        "deleted_at":null,
+        "created_at":"2018-01-10T03:29:02.058Z",
+        "updated_at":"2018-01-10T03:29:02.058Z",
+        "background_info":null,
+        "subscribed_users":[
+
+        ]
+    }
+}</pre>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <pre>{
+    "errors":{
+        "name":[
+            "^Please specify task name."
+        ]
+    }
+}</pre>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <pre>{
+    "errors":{
+        "name":[
+            "^Please specify task name."
+        ]
+    }
+}</pre>
+                          </div>
+                      </td>
+                  </tr>
+                </table><table class='inf-table tab-content hide' id='log-5'>
+                      <tr><td><div style='max-height:500px; overflow: auto;
+  margin-bottom: 10px;'><pre>Execution Time: 1024 ms
+********* Test Started ***********
+* Executing function call **
+clear
+*********end**********
+*********************************
+Request: POST
+URL: https://young-citadel-48504.herokuapp.com/tasks.json
+************Header***************
+Content-Type:application/json
+authorization:Basic YWRtaW46cGFzc3dvcmQ=
+************Request**************
+{
+    &quot;task&quot;:{
+        &quot;user_id&quot;:1,
+        &quot;assigned_to&quot;:null,
+        &quot;completed_by&quot;:null,
+        &quot;name&quot;:&quot;&quot;,
+        &quot;asset_id&quot;:null,
+        &quot;asset_type&quot;:&quot;&quot;,
+        &quot;priority&quot;:null,
+        &quot;category&quot;:&quot;money&quot;,
+        &quot;bucket&quot;:&quot;due_next_week&quot;,
+        &quot;due_at&quot;:&quot;2018-01-21T18:29:59.999Z&quot;,
+        &quot;completed_at&quot;:null,
+        &quot;deleted_at&quot;:null,
+        &quot;created_at&quot;:&quot;2018-01-10T03:29:02.058Z&quot;,
+        &quot;updated_at&quot;:&quot;2018-01-10T03:29:02.058Z&quot;,
+        &quot;background_info&quot;:null,
+        &quot;subscribed_users&quot;:[
+
+        ]
+    }
+}
+*********************************
+************Response*************
+Status: 422
+Duration: 1021 ms
+{
+    &quot;errors&quot;:{
+        &quot;name&quot;:[
+            &quot;^Please specify task name.&quot;
+        ]
+    }
+}
+******Response Headers***********
+{
+    &quot;server&quot;:&quot;Cowboy&quot;,
+    &quot;connection&quot;:&quot;close&quot;,
+    &quot;date&quot;:&quot;Thu, 08 Feb 2018 06:27:03 GMT&quot;,
+    &quot;status&quot;:&quot;422 Unprocessable Entity&quot;,
+    &quot;x-frame-options&quot;:&quot;SAMEORIGIN&quot;,
+    &quot;x-xss-protection&quot;:&quot;1; mode=block&quot;,
+    &quot;x-content-type-options&quot;:&quot;nosniff&quot;,
+    &quot;content-type&quot;:&quot;application/json; charset=utf-8&quot;,
+    &quot;cache-control&quot;:&quot;no-cache&quot;,
+    &quot;set-cookie&quot;:&quot;_fat_free_crm_session=bExVZFdyMkFCaE5oTG53SUdHanhMVlVldStIV3VPSkNRY2xlc0JHU1Z5SmFlaVRNUjdxQUtpUXpURmdXTjFLTkdnZGJOYURkSEt4VXlDRTIxNk42N2RYOC9CMVpWaVZnN0tsZnkzclRaMTJSb0tkbm50UjNKMUZSdURTQWpnOHN5TXJWZmlMdEpoV0plSkhGc0xZOVpsNGp5RVFvVmlvUmpPOWF5ZUpWMlNaTWVrVjRPUW5rUTFCNHFhTWVvR0xFSlBtcVVuQjU4bFR5TDdyVkR0N0JINm5OYU5YWTlKN1REWWFTNEZWRFhBOWRaRWMwSVZPSDNHSXBsY09GeFFweGJHMklhSTRqVnByQUlvNWU2YU1wNTFNcFVvLzlzVmhNd0czUzR6S0dwdXY1aHB1eWpnSUxGaE13WmE3dHFmb0ViWjBtS29RUTJzYUhJOENucEtQQ0lRPT0tLUgxK1ZFRlpUT3NFejBqVnU1Nit0Z0E9PQ%3D%3D--dde95cf0358f6de34f61b2696c3445425f334e6d; path=/; HttpOnly&quot;,
+    &quot;x-request-id&quot;:&quot;c200d451-034e-4d0a-988d-ee9a875f24f0&quot;,
+    &quot;x-runtime&quot;:&quot;0.017910&quot;,
+    &quot;via&quot;:&quot;1.1 vegur&quot;
+}
+*********************************
+***Current Params****
+{
+}
+***test items**
+
+*********************
+************Expected Response: *****************
+{
+    &quot;errors&quot;:{
+        &quot;name&quot;:[
+            &quot;^Please specify task name.&quot;
+        ]
+    }
+}
+*****************************
+******* Expected Code: 422
+******* Expected Headers:**********
+{
+    &quot;date&quot;:&quot;STRING&quot;,
+    &quot;server&quot;:&quot;Cowboy&quot;,
+    &quot;connection&quot;:&quot;close&quot;
+}
+**************************
+*********** Test Pass.***********</pre></div></td></tr>
+                    </table>
+              <table class='inf-table tab-content hide' id='xml-5'>
+                  <tr>
+                      <th>Request</th>
+                      <th>Expected Response</th>
+                      <th>Actual Response</th>
+                  </tr><tr>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Headers<br>
+                              <div class='json-to-xml'>{
+    "Content-Type":"application/json",
+    "authorization":"Basic YWRtaW46cGFzc3dvcmQ="
+}</div>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Headers<br>
+                              <div class='json-to-xml'>{
+    "date":"STRING",
+    "server":"Cowboy",
+    "connection":"close"
+}</div>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Headers<br>
+                              <div class='json-to-xml'>{
+    "server":"Cowboy",
+    "connection":"close",
+    "date":"Thu, 08 Feb 2018 06:27:03 GMT",
+    "status":"422 Unprocessable Entity",
+    "x-frame-options":"SAMEORIGIN",
+    "x-xss-protection":"1; mode=block",
+    "x-content-type-options":"nosniff",
+    "content-type":"application/json; charset=utf-8",
+    "cache-control":"no-cache",
+    "set-cookie":"_fat_free_crm_session=bExVZFdyMkFCaE5oTG53SUdHanhMVlVldStIV3VPSkNRY2xlc0JHU1Z5SmFlaVRNUjdxQUtpUXpURmdXTjFLTkdnZGJOYURkSEt4VXlDRTIxNk42N2RYOC9CMVpWaVZnN0tsZnkzclRaMTJSb0tkbm50UjNKMUZSdURTQWpnOHN5TXJWZmlMdEpoV0plSkhGc0xZOVpsNGp5RVFvVmlvUmpPOWF5ZUpWMlNaTWVrVjRPUW5rUTFCNHFhTWVvR0xFSlBtcVVuQjU4bFR5TDdyVkR0N0JINm5OYU5YWTlKN1REWWFTNEZWRFhBOWRaRWMwSVZPSDNHSXBsY09GeFFweGJHMklhSTRqVnByQUlvNWU2YU1wNTFNcFVvLzlzVmhNd0czUzR6S0dwdXY1aHB1eWpnSUxGaE13WmE3dHFmb0ViWjBtS29RUTJzYUhJOENucEtQQ0lRPT0tLUgxK1ZFRlpUT3NFejBqVnU1Nit0Z0E9PQ%3D%3D--dde95cf0358f6de34f61b2696c3445425f334e6d; path=/; HttpOnly",
+    "x-request-id":"c200d451-034e-4d0a-988d-ee9a875f24f0",
+    "x-runtime":"0.017910",
+    "via":"1.1 vegur"
+}</div>
+                          </div>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <div class='json-to-xml'>{
+    "task":{
+        "user_id":1,
+        "assigned_to":null,
+        "completed_by":null,
+        "name":"",
+        "asset_id":null,
+        "asset_type":"",
+        "priority":null,
+        "category":"money",
+        "bucket":"due_next_week",
+        "due_at":"2018-01-21T18:29:59.999Z",
+        "completed_at":null,
+        "deleted_at":null,
+        "created_at":"2018-01-10T03:29:02.058Z",
+        "updated_at":"2018-01-10T03:29:02.058Z",
+        "background_info":null,
+        "subscribed_users":[
+
+        ]
+    }
+}</div>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <div class='json-to-xml'>{
+    "errors":{
+        "name":[
+            "^Please specify task name."
+        ]
+    }
+}</div>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <div class='json-to-xml'>{
+    "errors":{
+        "name":[
+            "^Please specify task name."
+        ]
+    }
+}</div>
+                          </div>
+                      </td>
+                  </tr>
+              </table>
+          </div>
+      </td>
+  </tr><tr class='pass scenario' id='scenario6'>
+                                    <td width='39'>
+                                        <div class='jump-wrapper'>
+                                            <div data-destination='#scenario5'>↑</div>
+                                            <div data-destination='#scenario7'>↓</div>
+                                        </div>
+                                        <span class='expand-button closed' data-target='.expand-6'></span>6
+                                    </td>
+                                    <td width='80'>s_006</td>
+                                    <td width='121'><a href='https://young-citadel-48504.herokuapp.com/tasks.json' class='table-link'>https://young-citadel-48504.herokuapp.com/tasks.json</a></td>
+                                    <td width='235'>invalid type, empty array</td>
+                                    <td width='96'>2018-02-08 11:57:15 +0530</td>
+                                    <td width='67'>POST</td>
+                                    <td width='90' class='single-scenario-time'>1012</td>
+                                    <td width='86'>422</td>
+                                    <td width='86'>422</td><td width='90' class='result-pass result-count pass-count'><span class='sprite sprite-i-passed-green'></span>Pass</td><tr class='expand-row'>
+      <td class='no-padding no-border' colspan='10'>
+          <div class='inner-table-wrapper expand-6 hide'><span class='tab-toggle summary active' data-target='summary'>Summary</span>
+                    <span class='tab-toggle log' data-target='log'>Log</span>
+                    <span class='tab-toggle xml' data-target='xml'>Xml</span><table class='inf-table tab-content' id='summary-6'>
+                  <tr>
+                      <th>Request</th>
+                      <th>Expected Response</th>
+                      <th>Actual Response</th>
+                  </tr>
+                  <tr>
+                    <td>
+                        <div class='tooltip copy-to-clipboard'>
+                            <div class='sprite sprite-i-list-grey ripplelink'></div>
+                            <div class='tooltip-inner'>
+                                <div class='tooltip-ir-inner'>
+                                    Copy to clipboard
+                                </div>
+                            </div>
+                        </div>
+                        <div class='json-wrapper'>
+                            Headers<br>
+                            <pre>{
+    "Content-Type":"application/json",
+    "authorization":"Basic YWRtaW46cGFzc3dvcmQ="
+}</pre>
+                        </div>
+                    </td>
+                    <td>
+                        <div class='tooltip copy-to-clipboard'>
+                            <div class='sprite sprite-i-list-grey ripplelink'></div>
+                            <div class='tooltip-inner'>
+                                <div class='tooltip-ir-inner'>
+                                    Copy to clipboard
+                                </div>
+                            </div>
+                        </div>
+                        <div class='json-wrapper'>
+                            Headers<br>
+                            <pre>{
+    "date":"STRING",
+    "server":"Cowboy",
+    "connection":"close"
+}</pre>
+                        </div>
+                    </td>
+                    <td>
+                        <div class='tooltip copy-to-clipboard'>
+                            <div class='sprite sprite-i-list-grey ripplelink'></div>
+                            <div class='tooltip-inner'>
+                                <div class='tooltip-ir-inner'>
+                                    Copy to clipboard
+                                </div>
+                            </div>
+                        </div>
+                        <div class='json-wrapper'>
+                            Headers<br>
+                            <pre>{
+    "server":"Cowboy",
+    "connection":"close",
+    "date":"Thu, 08 Feb 2018 06:27:04 GMT",
+    "status":"422 Unprocessable Entity",
+    "x-frame-options":"SAMEORIGIN",
+    "x-xss-protection":"1; mode=block",
+    "x-content-type-options":"nosniff",
+    "content-type":"application/json; charset=utf-8",
+    "cache-control":"no-cache",
+    "set-cookie":"_fat_free_crm_session=YTFESEdENjNsVjI4SmI0ck4yS0dvMmVOblFqb1dNbU1wdnRXRXlEWHQ1VmZRZnBmY2h1dGtCN1FOTlFNWlRGQlZiWWFvZks2ZExiNmp6L2pkdEI4YnJIdkdueVh1VmUzMVdMZjAwY2lldkZOcUczb1Y2OG5RYW1FanpjTC9lVERsWmM5SVl1akVobTA0cTFmeHVzeW1aSW5EUUg4VjJyTXh4Y3Q1UHpWKzVXWFZ6OCtRWHhTR3p5aFp4TEFna05XQmZjR0dFRE85OWJlM3lWYjYwTytPc3RqRG9JSENiUjQ2bktsYkNMQ2JMRU85ZTl2MWFCWFJKNzVld3lML3lUYjRZSDkyQ0k4c0t3ZDM1MkdGczUrSFJUSk04UFFWbjF5aUN2M0taZWFsd3d3dmY0UmtJTXdYeWJzd2MzYXlHWnBGYjhJVHRTTnRhT0cvSFJCKy8wNXhBPT0tLVk2MURYaS9nU1hkRWRjQjBJZlc4bWc9PQ%3D%3D--dc2e501dd95da4ede05faadfef2c3054cd164d83; path=/; HttpOnly",
+    "x-request-id":"8d6f41c0-486a-45bb-adca-ab1e43fbab72",
+    "x-runtime":"0.018516",
+    "via":"1.1 vegur"
+}</pre>
+                        </div>
+                    </td>
+                  </tr>
+                  <tr>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <pre>{
+    "task":{
+        "user_id":1,
+        "assigned_to":null,
+        "completed_by":null,
+        "name":[
+
+        ],
+        "asset_id":null,
+        "asset_type":"",
+        "priority":null,
+        "category":"money",
+        "bucket":"due_next_week",
+        "due_at":"2018-01-21T18:29:59.999Z",
+        "completed_at":null,
+        "deleted_at":null,
+        "created_at":"2018-01-10T03:29:02.058Z",
+        "updated_at":"2018-01-10T03:29:02.058Z",
+        "background_info":null,
+        "subscribed_users":[
+
+        ]
+    }
+}</pre>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <pre>{
+    "errors":{
+        "name":[
+            "^Please specify task name."
+        ]
+    }
+}</pre>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <pre>{
+    "errors":{
+        "name":[
+            "^Please specify task name."
+        ]
+    }
+}</pre>
+                          </div>
+                      </td>
+                  </tr>
+                </table><table class='inf-table tab-content hide' id='log-6'>
+                      <tr><td><div style='max-height:500px; overflow: auto;
+  margin-bottom: 10px;'><pre>Execution Time: 1014 ms
+********* Test Started ***********
+* Executing function call **
+clear
+*********end**********
+*********************************
+Request: POST
+URL: https://young-citadel-48504.herokuapp.com/tasks.json
+************Header***************
+Content-Type:application/json
+authorization:Basic YWRtaW46cGFzc3dvcmQ=
+************Request**************
+{
+    &quot;task&quot;:{
+        &quot;user_id&quot;:1,
+        &quot;assigned_to&quot;:null,
+        &quot;completed_by&quot;:null,
+        &quot;name&quot;:[
+
+        ],
+        &quot;asset_id&quot;:null,
+        &quot;asset_type&quot;:&quot;&quot;,
+        &quot;priority&quot;:null,
+        &quot;category&quot;:&quot;money&quot;,
+        &quot;bucket&quot;:&quot;due_next_week&quot;,
+        &quot;due_at&quot;:&quot;2018-01-21T18:29:59.999Z&quot;,
+        &quot;completed_at&quot;:null,
+        &quot;deleted_at&quot;:null,
+        &quot;created_at&quot;:&quot;2018-01-10T03:29:02.058Z&quot;,
+        &quot;updated_at&quot;:&quot;2018-01-10T03:29:02.058Z&quot;,
+        &quot;background_info&quot;:null,
+        &quot;subscribed_users&quot;:[
+
+        ]
+    }
+}
+*********************************
+************Response*************
+Status: 422
+Duration: 1012 ms
+{
+    &quot;errors&quot;:{
+        &quot;name&quot;:[
+            &quot;^Please specify task name.&quot;
+        ]
+    }
+}
+******Response Headers***********
+{
+    &quot;server&quot;:&quot;Cowboy&quot;,
+    &quot;connection&quot;:&quot;close&quot;,
+    &quot;date&quot;:&quot;Thu, 08 Feb 2018 06:27:04 GMT&quot;,
+    &quot;status&quot;:&quot;422 Unprocessable Entity&quot;,
+    &quot;x-frame-options&quot;:&quot;SAMEORIGIN&quot;,
+    &quot;x-xss-protection&quot;:&quot;1; mode=block&quot;,
+    &quot;x-content-type-options&quot;:&quot;nosniff&quot;,
+    &quot;content-type&quot;:&quot;application/json; charset=utf-8&quot;,
+    &quot;cache-control&quot;:&quot;no-cache&quot;,
+    &quot;set-cookie&quot;:&quot;_fat_free_crm_session=YTFESEdENjNsVjI4SmI0ck4yS0dvMmVOblFqb1dNbU1wdnRXRXlEWHQ1VmZRZnBmY2h1dGtCN1FOTlFNWlRGQlZiWWFvZks2ZExiNmp6L2pkdEI4YnJIdkdueVh1VmUzMVdMZjAwY2lldkZOcUczb1Y2OG5RYW1FanpjTC9lVERsWmM5SVl1akVobTA0cTFmeHVzeW1aSW5EUUg4VjJyTXh4Y3Q1UHpWKzVXWFZ6OCtRWHhTR3p5aFp4TEFna05XQmZjR0dFRE85OWJlM3lWYjYwTytPc3RqRG9JSENiUjQ2bktsYkNMQ2JMRU85ZTl2MWFCWFJKNzVld3lML3lUYjRZSDkyQ0k4c0t3ZDM1MkdGczUrSFJUSk04UFFWbjF5aUN2M0taZWFsd3d3dmY0UmtJTXdYeWJzd2MzYXlHWnBGYjhJVHRTTnRhT0cvSFJCKy8wNXhBPT0tLVk2MURYaS9nU1hkRWRjQjBJZlc4bWc9PQ%3D%3D--dc2e501dd95da4ede05faadfef2c3054cd164d83; path=/; HttpOnly&quot;,
+    &quot;x-request-id&quot;:&quot;8d6f41c0-486a-45bb-adca-ab1e43fbab72&quot;,
+    &quot;x-runtime&quot;:&quot;0.018516&quot;,
+    &quot;via&quot;:&quot;1.1 vegur&quot;
+}
+*********************************
+***Current Params****
+{
+}
+***test items**
+
+*********************
+************Expected Response: *****************
+{
+    &quot;errors&quot;:{
+        &quot;name&quot;:[
+            &quot;^Please specify task name.&quot;
+        ]
+    }
+}
+*****************************
+******* Expected Code: 422
+******* Expected Headers:**********
+{
+    &quot;date&quot;:&quot;STRING&quot;,
+    &quot;server&quot;:&quot;Cowboy&quot;,
+    &quot;connection&quot;:&quot;close&quot;
+}
+**************************
+*********** Test Pass.***********</pre></div></td></tr>
+                    </table>
+              <table class='inf-table tab-content hide' id='xml-6'>
+                  <tr>
+                      <th>Request</th>
+                      <th>Expected Response</th>
+                      <th>Actual Response</th>
+                  </tr><tr>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Headers<br>
+                              <div class='json-to-xml'>{
+    "Content-Type":"application/json",
+    "authorization":"Basic YWRtaW46cGFzc3dvcmQ="
+}</div>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Headers<br>
+                              <div class='json-to-xml'>{
+    "date":"STRING",
+    "server":"Cowboy",
+    "connection":"close"
+}</div>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Headers<br>
+                              <div class='json-to-xml'>{
+    "server":"Cowboy",
+    "connection":"close",
+    "date":"Thu, 08 Feb 2018 06:27:04 GMT",
+    "status":"422 Unprocessable Entity",
+    "x-frame-options":"SAMEORIGIN",
+    "x-xss-protection":"1; mode=block",
+    "x-content-type-options":"nosniff",
+    "content-type":"application/json; charset=utf-8",
+    "cache-control":"no-cache",
+    "set-cookie":"_fat_free_crm_session=YTFESEdENjNsVjI4SmI0ck4yS0dvMmVOblFqb1dNbU1wdnRXRXlEWHQ1VmZRZnBmY2h1dGtCN1FOTlFNWlRGQlZiWWFvZks2ZExiNmp6L2pkdEI4YnJIdkdueVh1VmUzMVdMZjAwY2lldkZOcUczb1Y2OG5RYW1FanpjTC9lVERsWmM5SVl1akVobTA0cTFmeHVzeW1aSW5EUUg4VjJyTXh4Y3Q1UHpWKzVXWFZ6OCtRWHhTR3p5aFp4TEFna05XQmZjR0dFRE85OWJlM3lWYjYwTytPc3RqRG9JSENiUjQ2bktsYkNMQ2JMRU85ZTl2MWFCWFJKNzVld3lML3lUYjRZSDkyQ0k4c0t3ZDM1MkdGczUrSFJUSk04UFFWbjF5aUN2M0taZWFsd3d3dmY0UmtJTXdYeWJzd2MzYXlHWnBGYjhJVHRTTnRhT0cvSFJCKy8wNXhBPT0tLVk2MURYaS9nU1hkRWRjQjBJZlc4bWc9PQ%3D%3D--dc2e501dd95da4ede05faadfef2c3054cd164d83; path=/; HttpOnly",
+    "x-request-id":"8d6f41c0-486a-45bb-adca-ab1e43fbab72",
+    "x-runtime":"0.018516",
+    "via":"1.1 vegur"
+}</div>
+                          </div>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <div class='json-to-xml'>{
+    "task":{
+        "user_id":1,
+        "assigned_to":null,
+        "completed_by":null,
+        "name":[
+
+        ],
+        "asset_id":null,
+        "asset_type":"",
+        "priority":null,
+        "category":"money",
+        "bucket":"due_next_week",
+        "due_at":"2018-01-21T18:29:59.999Z",
+        "completed_at":null,
+        "deleted_at":null,
+        "created_at":"2018-01-10T03:29:02.058Z",
+        "updated_at":"2018-01-10T03:29:02.058Z",
+        "background_info":null,
+        "subscribed_users":[
+
+        ]
+    }
+}</div>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <div class='json-to-xml'>{
+    "errors":{
+        "name":[
+            "^Please specify task name."
+        ]
+    }
+}</div>
+                          </div>
+                      </td>
+                      <td>
+                          <div class='tooltip copy-to-clipboard'>
+                              <div class='sprite sprite-i-list-grey ripplelink'></div>
+                              <div class='tooltip-inner'>
+                                  <div class='tooltip-ir-inner'>
+                                      Copy to clipboard
+                                  </div>
+                              </div>
+                          </div>
+                          <div class='json-wrapper'>
+                              Body<br>
+                              <div class='json-to-xml'>{
+    "errors":{
+        "name":[
+            "^Please specify task name."
+        ]
+    }
+}</div>
+                          </div>
+                      </td>
+                  </tr>
+              </table>
+          </div>
+      </td>
+  </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div id="return-to-top"><i class="sprite sprite-i-dropdown-grey"></i></div>
+
+<script type="text/javascript">
+    function formatXml(xml) {
+        var formatted = "";
+        var reg = /(>)(<)(\/*)/g;
+        xml = xml.replace(reg, "$1\r\n$2$3");
+        var pad = 0;
+        jQuery.each(xml.split("\r\n"), function(index, node) {
+            var indent = 0;
+            if (node.match( /.+<\/\w[^>]*>$/ )) {
+                indent = 0;
+            } else if (node.match( /^<\/\w/ )) {
+                if (pad != 0) {
+                    pad -= 1;
+                }
+            } else if (node.match( /^<\w[^>]*[^\/]>.*$/ )) {
+                indent = 1;
+            } else {
+                indent = 0;
+            }
+
+            var padding = "";
+            for (var i = 0; i < pad; i++) {
+                padding += "  ";
+            }
+
+            formatted += padding + node + "\r\n";
+            pad += indent;
+        });
+
+        return formatted;
+    }
+
+    var totalScenarioNumber = $(".result-count").length;
+    var passedScenarioNumber = $(".result-count.pass-count").length;
+    var passPercentage = (passedScenarioNumber * 100 / totalScenarioNumber).toFixed(2) + "%";
+    $("#total-scenario-number").html(totalScenarioNumber);
+    $("#passed-scenario-number").html(passedScenarioNumber);
+    $("#pass-percentage").html(passPercentage);
+    var totalTimeInSecond = 0;
+    $(".single-scenario-time").each(function () {
+        var timeText = $(this).html();
+        totalTimeInSecond += Number(timeText.split(" ")[0]);
+    });
+		var totalTimeInSec = Math.round(totalTimeInSecond);
+    $("#total-time").html(totalTimeInSec);
+
+    $(".json-to-xml").each(function () {
+        var validJson = false;
+        var originalJson = $(this).text();
+        var preParseJson = originalJson.replace(/=>/g, ":");
+        var realJson = preParseJson;
+        try {
+            realJson = JSON.parse(preParseJson);
+            validJson = true;
+        }
+        catch (err) {
+            console.log(err.message);
+        }
+        if (validJson == true) {
+            var finalXml = realJson;
+            try {
+                finalXml = json2xml(realJson);
+            }
+            catch (err) {
+                console.log(err.message);
+            }
+            var xmlHead = "<pre><code class=\"xml\">";
+            var xmlTail = "</code></pre>";
+            var lol = (formatXml(finalXml));
+            var replacedFinalXml = lol.replace(/>/g, "&gt;").replace(/</g, "&lt;").replace(/"/g, "&quot;");
+  $(this).html(xmlHead + replacedFinalXml + xmlTail);
+  }
+  });
+  hljs.initHighlightingOnLoad();
+  </script>
+</body>
+</html>
